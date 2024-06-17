@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+本登録画面
 </body>
 </html>

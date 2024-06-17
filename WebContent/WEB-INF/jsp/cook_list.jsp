@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+料理の一覧
 </body>
 </html>

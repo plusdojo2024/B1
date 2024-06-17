@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+プレイ画面（条件提示＆料理中画面）
 </body>
 </html>

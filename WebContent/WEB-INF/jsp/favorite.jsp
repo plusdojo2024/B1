@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+お気に入り一覧
 </body>
 </html>

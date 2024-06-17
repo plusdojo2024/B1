@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+参加中のツアー
 </body>
 </html>

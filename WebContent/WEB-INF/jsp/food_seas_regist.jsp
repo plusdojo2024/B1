@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+食材調味料の登録
 </body>
 </html>
