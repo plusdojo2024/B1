@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>本登録｜献立ゴルフ</title>
+<link rel="stylesheet" type="text/css" href="/b1/css/style.css">
 </head>
 <body>
 本登録画面
