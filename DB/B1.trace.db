@@ -680,3 +680,100 @@ FOREIGN KEY (cook_num) REFERENCES cooks(cook_num)) [42122-200]
 =======
 	... 21 more
 >>>>>>> e05a3a060b0db45c394a8a2d621319bb5246bc59
+2024-06-18 16:26:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "COOK_SEAS" が見つかりません
+Table "COOK_SEAS" not found; SQL statement:
+INSERT INTO cook_seas
+VALUES(1,1,0,'なし') [42102-200]
+2024-06-18 16:27:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO COOKS _SEAS[*]
+VALUES(1,1,0,'なし')"; 期待されるステートメント "., (, DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO COOKS _SEAS[*]
+VALUES(1,1,0,'なし')"; expected "., (, DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO cooks _seas
+VALUES(1,1,0,'なし') [42001-200]
+2024-06-18 16:27:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO COOKS _SEAS[*]
+VALUES(1,1,'F','なし')"; 期待されるステートメント "., (, DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO COOKS _SEAS[*]
+VALUES(1,1,'F','なし')"; expected "., (, DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO cooks _seas
+VALUES(1,1,'F','なし') [42001-200]
+2024-06-18 16:28:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO COOKS _SEAS[*](*)
+VALUES(1,1,'F','なし')"; 期待されるステートメント "., (, DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO COOKS _SEAS[*](*)
+VALUES(1,1,'F','なし')"; expected "., (, DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO cooks _seas(*)
+VALUES(1,1,'F','なし') [42001-200]
+2024-06-18 16:28:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO COOKS _SEAS[*](*)
+VALUES(1,1,0,'なし')"; 期待されるステートメント "., (, DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO COOKS _SEAS[*](*)
+VALUES(1,1,0,'なし')"; expected "., (, DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO cooks _seas(*)
+VALUES(1,1,0,'なし') [42001-200]
+2024-06-18 16:30:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "COOKS_SEAS[*]"; 期待されるステートメント "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT"
+Syntax error in SQL statement "COOKS_SEAS[*]"; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT"; SQL statement:
+COOKS_SEAS [42001-200]
+2024-06-18 16:43:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO SEAS
+VALUE[*](1,1,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,
+TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,
+FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUEFALSE,FALSE,
+FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE)"; 期待されるステートメント "., (, DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO SEAS
+VALUE[*](1,1,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,
+TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,
+FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUEFALSE,FALSE,
+FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE)"; expected "., (, DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO seas
+VALUE(1,1,true,false,false,false,false,true,true,false,
+true,false,true,true,true,false,false,false,false,true,
+false,true,false,false,false,true,false,truefalse,false,
+false,true,true,false,true,true,true,false) [42001-200]
+2024-06-18 16:46:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERTINTO[*] COOKS_SEAS(COOK_SEAS_NUM,SEAS_NUM,SOLTY,REGION)
+VALUES(1,1,FALSE,'なし')"; 期待されるステートメント "INSERT"
+Syntax error in SQL statement "INSERTINTO[*] COOKS_SEAS(COOK_SEAS_NUM,SEAS_NUM,SOLTY,REGION)
+VALUES(1,1,FALSE,'なし')"; expected "INSERT"; SQL statement:
+INSERTINTO cooks_seas(cook_seas_num,seas_num,solty,region)
+VALUES(1,1,false,'なし') [42001-200]
+2024-06-18 16:47:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERTINTO[*] COOKS_SEAS(REGION)
+VALUES('なし')"; 期待されるステートメント "INSERT"
+Syntax error in SQL statement "INSERTINTO[*] COOKS_SEAS(REGION)
+VALUES('なし')"; expected "INSERT"; SQL statement:
+INSERTINTO cooks_seas(region)
+VALUES('なし') [42001-200]
+2024-06-18 16:47:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "COOK_SEAS_NUM" が見つかりません
+Column "COOK_SEAS_NUM" not found; SQL statement:
+INSERT INTO cooks_seas(cook_seas_num,region)
+VALUES(1,'なし') [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.getColumn(Table.java:703)
+	at org.h2.command.Parser.parseColumn(Parser.java:1450)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1435)
+	at org.h2.command.Parser.parseInsertGivenTable(Parser.java:1804)
+	at org.h2.command.Parser.parseInsert(Parser.java:1749)
+	at org.h2.command.Parser.parsePrepared(Parser.java:954)
+	at org.h2.command.Parser.parse(Parser.java:843)
+	at org.h2.command.Parser.parse(Parser.java:815)
+	at org.h2.command.Parser.prepareCommand(Parser.java:738)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
