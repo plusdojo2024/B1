@@ -37,8 +37,15 @@ public class Test extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String jsp = request.getParameter("jsp");
+		String servlet = request.getParameter("servlet");
 
-		String pass = "/WEB-INF/jsp/" + jsp +".jsp";
+		String pass="";
+
+		if(jsp.length() != 0) {
+		pass = "/WEB-INF/jsp/" + jsp +".jsp";
+		}else {
+		pass =   servlet ;
+		}
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher(pass);
 		dispatcher.forward(request,response);
