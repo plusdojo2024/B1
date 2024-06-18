@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2024-06-18 13:37:44 database: wrong user or password; user: "SA"
 org.h2.message.DbException: ユーザ名またはパスワードが不正です
 Wrong user name or password [28000-200]
@@ -26,7 +27,52 @@ Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: ユーザ名ま
 Wrong user name or password [28000-200]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:461)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
-<<<<<<< HEAD
+	... 21 more
+=======
+2024-06-18 13:42:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO SEAS DROP[*] COLUMN SEAS_NUM INTEGER"; 期待されるステートメント "., (, DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "INSERT INTO SEAS DROP[*] COLUMN SEAS_NUM INTEGER"; expected "., (, DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO seas DROP COLUMN seas_num INTEGER [42001-200]
+2024-06-18 13:44:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "テーブル名" が見つかりません
+Table "テーブル名" not found; SQL statement:
+ALTER TABLE テーブル名 ADD COLUMN user_num INTEGER [42102-200]
+2024-06-18 13:45:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: 不明なデータ型: "BOOREAN"
+Unknown data type: "BOOREAN"; SQL statement:
+ALTER TABLE seas ADD COLUMN suger BOOREAN [50004-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:5971)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:5697)
+	at org.h2.command.Parser.parseTableColumnDefinition(Parser.java:8442)
+	at org.h2.command.Parser.parseAlterTableAddColumn(Parser.java:8133)
+	at org.h2.command.Parser.parseAlterTable(Parser.java:7690)
+	at org.h2.command.Parser.parseAlter(Parser.java:6983)
+	at org.h2.command.Parser.parsePrepared(Parser.java:887)
+	at org.h2.command.Parser.parse(Parser.java:843)
+	at org.h2.command.Parser.parse(Parser.java:815)
+	at org.h2.command.Parser.prepareCommand(Parser.java:738)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-06-18 13:47:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "SEAS_NUM" にはnull値を許すべきてはありません
+Column "SEAS_NUM" must not be nullable; SQL statement:
+ALTER TABLE seas ADD PRIMARY KEY (seas_num) [90023-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
 	at org.h2.message.DbException.get(DbException.java:205)
 	at org.h2.message.DbException.get(DbException.java:181)
 	at org.h2.mvstore.db.MVTable.addIndex(MVTable.java:334)
@@ -133,39 +179,93 @@ ALTER TABLE seas ADD COLUMN herbBOOLEAN [50004-200]
 	at org.h2.server.web.WebThread.process(WebThread.java:178)
 	at org.h2.server.web.WebThread.run(WebThread.java:94)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-2024-06-18 14:33:50 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE COOKS_SEAS(
-    COOKS_SEAS_NUM  INT(5)          NOT NULL,
-    SEAS_NUM        INT(5)          NOT NULL,
-    SOLTY           BOOLEAN         ,
-    REGION          CHAR(10)
-    FOREIGN[*] KEY (SEAS_NUM) REFERENCES SEAS(SEAS_NUM)
-)"; 期待されるステートメント "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
-Syntax error in SQL statement "CREATE TABLE COOKS_SEAS(
-    COOKS_SEAS_NUM  INT(5)          NOT NULL,
-    SEAS_NUM        INT(5)          NOT NULL,
-    SOLTY           BOOLEAN         ,
-    REGION          CHAR(10)
-    FOREIGN[*] KEY (SEAS_NUM) REFERENCES SEAS(SEAS_NUM)
-)"; expected "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
-CREATE TABLE cooks_seas(
-    cooks_seas_num  INT(5)          not null,
-    seas_num        INT(5)          not null,
-    solty           BOOLEAN         ,
-    region          CHAR(10)
-    FOREIGN KEY (seas_num) REFERENCES seas(seas_num)
-) [42001-200]
-2024-06-18 14:34:54 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "SEAS" が見つかりません
-Table "SEAS" not found; SQL statement:
-CREATE TABLE cooks_seas(
-    cooks_seas_num  INT(5) NOT NULL,
-    seas_num        INT(5) NOT NULL,
-    solty           BOOLEAN,
-    region          CHAR(10),
-    FOREIGN KEY (seas_num) REFERENCES seas(seas_num)
-) [42102-200]
-2024-06-18 14:49:27 jdbc[3]: exception
+2024-06-18 14:29:26 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "SEAS" はすでに存在します
+Table "SEAS" already exists; SQL statement:
+CREATE TABLE seas [42101-200]
+2024-06-18 14:29:26 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列名 "SEAS_NUM" が重複しています
+Duplicate column name "SEAS_NUM"; SQL statement:
+ALTER TABLE seas ADD COLUMN seas_num INTEGER [42121-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.setColumns(Table.java:446)
+	at org.h2.table.TableBase.<init>(TableBase.java:75)
+	at org.h2.table.RegularTable.<init>(RegularTable.java:126)
+	at org.h2.mvstore.db.MVTable.<init>(MVTable.java:113)
+	at org.h2.mvstore.db.MVTableEngine$Store.createTable(MVTableEngine.java:253)
+	at org.h2.mvstore.db.MVTableEngine.createTable(MVTableEngine.java:127)
+	at org.h2.mvstore.db.MVTableEngine.createTable(MVTableEngine.java:41)
+	at org.h2.schema.Schema.createTable(Schema.java:697)
+	at org.h2.command.ddl.AlterTableAlterColumn.cloneTableStructure(AlterTableAlterColumn.java:414)
+	at org.h2.command.ddl.AlterTableAlterColumn.copyData(AlterTableAlterColumn.java:301)
+	at org.h2.command.ddl.AlterTableAlterColumn.update(AlterTableAlterColumn.java:210)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:228)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-06-18 14:29:26 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列名 "USER_NUM" が重複しています
+Duplicate column name "USER_NUM"; SQL statement:
+ALTER TABLE seas ADD COLUMN user_num INTEGER [42121-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.setColumns(Table.java:446)
+	at org.h2.table.TableBase.<init>(TableBase.java:75)
+	at org.h2.table.RegularTable.<init>(RegularTable.java:126)
+	at org.h2.mvstore.db.MVTable.<init>(MVTable.java:113)
+	at org.h2.mvstore.db.MVTableEngine$Store.createTable(MVTableEngine.java:253)
+	at org.h2.mvstore.db.MVTableEngine.createTable(MVTableEngine.java:127)
+	at org.h2.mvstore.db.MVTableEngine.createTable(MVTableEngine.java:41)
+	at org.h2.schema.Schema.createTable(Schema.java:697)
+	at org.h2.command.ddl.AlterTableAlterColumn.cloneTableStructure(AlterTableAlterColumn.java:414)
+	at org.h2.command.ddl.AlterTableAlterColumn.copyData(AlterTableAlterColumn.java:301)
+	at org.h2.command.ddl.AlterTableAlterColumn.update(AlterTableAlterColumn.java:210)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:228)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-06-18 14:29:26 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 複数のプライマリキーを定義しようとしました
+Attempt to define a second primary key; SQL statement:
+ALTER TABLE seas ADD PRIMARY KEY(seas_num) [90017-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:129)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:78)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:228)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-06-18 14:29:26 jdbc[4]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: 複数のプライマリキーを定義しようとしました
 Attempt to define a second primary key; SQL statement:
 ALTER TABLE seas ADD PRIMARY KEY(user_num) [90017-200]
@@ -187,255 +287,17 @@ ALTER TABLE seas ADD PRIMARY KEY(user_num) [90017-200]
 	at org.h2.server.web.WebThread.process(WebThread.java:178)
 	at org.h2.server.web.WebThread.run(WebThread.java:94)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-2024-06-18 15:15:50 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE PAST_SCORES(
-SCORES_NUM INTEGER(5) NOT NULL,
-USER_NUM INTEGER(5) NOT NULL,
-TOURS_NUM INTEGER(5) NOT NULL,
-ROUNDS_NUM INTEGER(5) NOT NULL,
-HOLE_NUM INTEGER(2) NOT NULL,
-TOUR_STA DATE NOT NULL,
-TOUR_FIN DATE NOT NULL,
-COOKS_NUM INTEGER(5) NOT NULL,
-SCORES INTEGER(3) NOT NULL,
-PRIMARY KEY(TOURS_NUM,ROUNDS_NUM,HOLE_NUM)
-FOREIGN[*] KEY (SCORES_NUM) REFERENCES SCORES(SCORES_NUM)
-FOREIGN KEY (USER_NUM) REFERENCES USERS(USER_NUM)
-FOREIGN KEY (TOURS_NUM) REFERENCES TOURS(TOURS_NUM)
-FOREIGN KEY (ROUNDS_NUM) REFERENCES ROUNDS(ROUNDS_NUM)
-FOREIGN KEY (HOLE_NUM) REFERENCES ROUNDS(HOLE_NUM)
-FOREIGN KEY (TOUR_STA) REFERENCES TOURS(TOUR_STA)
-FOREIGN KEY (TOUR_FIN) REFERENCES TOURS(TOUR_FIN)
-FOREIGN KEY (COOKS_NUM) REFERENCES COOKS(COOKS_NUM))"; 期待されるステートメント "INDEX, ,, )"
-Syntax error in SQL statement "CREATE TABLE PAST_SCORES(
-SCORES_NUM INTEGER(5) NOT NULL,
-USER_NUM INTEGER(5) NOT NULL,
-TOURS_NUM INTEGER(5) NOT NULL,
-ROUNDS_NUM INTEGER(5) NOT NULL,
-HOLE_NUM INTEGER(2) NOT NULL,
-TOUR_STA DATE NOT NULL,
-TOUR_FIN DATE NOT NULL,
-COOKS_NUM INTEGER(5) NOT NULL,
-SCORES INTEGER(3) NOT NULL,
-PRIMARY KEY(TOURS_NUM,ROUNDS_NUM,HOLE_NUM)
-FOREIGN[*] KEY (SCORES_NUM) REFERENCES SCORES(SCORES_NUM)
-FOREIGN KEY (USER_NUM) REFERENCES USERS(USER_NUM)
-FOREIGN KEY (TOURS_NUM) REFERENCES TOURS(TOURS_NUM)
-FOREIGN KEY (ROUNDS_NUM) REFERENCES ROUNDS(ROUNDS_NUM)
-FOREIGN KEY (HOLE_NUM) REFERENCES ROUNDS(HOLE_NUM)
-FOREIGN KEY (TOUR_STA) REFERENCES TOURS(TOUR_STA)
-FOREIGN KEY (TOUR_FIN) REFERENCES TOURS(TOUR_FIN)
-FOREIGN KEY (COOKS_NUM) REFERENCES COOKS(COOKS_NUM))"; expected "INDEX, ,, )"; SQL statement:
-CREATE TABLE past_scores(
-scores_num INTEGER(5) NOT NULL,
-user_num INTEGER(5) NOT NULL,
-tours_num INTEGER(5) NOT NULL,
-rounds_num INTEGER(5) NOT NULL,
-hole_num INTEGER(2) NOT NULL,
-tour_sta DATE NOT NULL,
-tour_fin DATE NOT NULL,
-cooks_num INTEGER(5) NOT NULL,
-scores INTEGER(3) NOT NULL,
-PRIMARY KEY(tours_num,rounds_num,hole_num)
-FOREIGN KEY (scores_num) REFERENCES scores(scores_num)
-FOREIGN KEY (user_num) REFERENCES users(user_num)
-FOREIGN KEY (tours_num) REFERENCES tours(tours_num)
-FOREIGN KEY (rounds_num) REFERENCES rounds(rounds_num)
-FOREIGN KEY (hole_num) REFERENCES rounds(hole_num)
-FOREIGN KEY (tour_sta) REFERENCES tours(tour_sta)
-FOREIGN KEY (tour_fin) REFERENCES tours(tour_fin)
-FOREIGN KEY (cooks_num) REFERENCES cooks(cooks_num)) [42001-200]
-2024-06-18 15:28:44 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE ROUNDS
-(
-ROUND_NUM INTEGER(5) NOT NULL AUTO_INCREMENT,
-HOLE_NUM INTEGER(1) NOT NULL,
-FOOD_SEAS_NUM INTEGER(5),
-SEAS_NUM INTEGER(5),
-COOK_NUM INTEGER(5),
-SCORE_NUM INTEGER(5),
-PLAY_STATUS VARCHAR(4) NOT NULL,
-COURCE_NAME VARCHAR(10) ,
-HOLE_DATE DATE(10)
-FOREIGN[*] KEY (FOOD_SEAS_NUM) REFERENCES FOOD_SEAS(FOOD_SEAS_NUM)
-FOREIGN KEY (SEAS_NUM) REFERENCES SEAS(SEAS_NUM)
-FOREIGN KEY (SEAS_NUM) REFERENCES SEAS(SEAS_NUM)
-FOREIGN KEY (COOK_NUM) REFERENCES COOKS(COOK_NUM)
-FOREIGN KEY (SCORES_NUM) REFERENCES SCORES(SCORES_NUM)
-)"; 期待されるステートメント "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
-Syntax error in SQL statement "CREATE TABLE ROUNDS
-(
-ROUND_NUM INTEGER(5) NOT NULL AUTO_INCREMENT,
-HOLE_NUM INTEGER(1) NOT NULL,
-FOOD_SEAS_NUM INTEGER(5),
-SEAS_NUM INTEGER(5),
-COOK_NUM INTEGER(5),
-SCORE_NUM INTEGER(5),
-PLAY_STATUS VARCHAR(4) NOT NULL,
-COURCE_NAME VARCHAR(10) ,
-HOLE_DATE DATE(10)
-FOREIGN[*] KEY (FOOD_SEAS_NUM) REFERENCES FOOD_SEAS(FOOD_SEAS_NUM)
-FOREIGN KEY (SEAS_NUM) REFERENCES SEAS(SEAS_NUM)
-FOREIGN KEY (SEAS_NUM) REFERENCES SEAS(SEAS_NUM)
-FOREIGN KEY (COOK_NUM) REFERENCES COOKS(COOK_NUM)
-FOREIGN KEY (SCORES_NUM) REFERENCES SCORES(SCORES_NUM)
-)"; expected "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
-CREATE TABLE rounds
-(
-round_num INTEGER(5) NOT NULL AUTO_INCREMENT,
-hole_num INTEGER(1) NOT NULL,
-food_seas_num INTEGER(5),
-seas_num INTEGER(5),
-cook_num INTEGER(5),
-score_num INTEGER(5),
-play_status VARCHAR(4) NOT NULL,
-cource_name VARCHAR(10) ,
-hole_date DATE(10)
-FOREIGN KEY (food_seas_num) REFERENCES food_seas(food_seas_num)
-FOREIGN KEY (seas_num) REFERENCES seas(seas_num)
-FOREIGN KEY (seas_num) REFERENCES seas(seas_num)
-FOREIGN KEY (cook_num) REFERENCES cooks(cook_num)
-FOREIGN KEY (scores_num) REFERENCES scores(scores_num)
-) [42001-200]
-2024-06-18 15:28:44 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "ROUNDS" が見つかりません
-Table "ROUNDS" not found; SQL statement:
-//複合主キーの設定
-ALTER TABLE rounds ADD PRIMARY KEY(round_num , hole_num) [42102-200]
-2024-06-18 15:29:44 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE ROUNDS
-(
-ROUND_NUM INTEGER(5) NOT NULL AUTO_INCREMENT,
-HOLE_NUM INTEGER(1) NOT NULL,
-FOOD_SEAS_NUM INTEGER(5),
-SEAS_NUM INTEGER(5),
-COOK_NUM INTEGER(5),
-SCORE_NUM INTEGER(5),
-PLAY_STATUS VARCHAR(4) NOT NULL,
-COURCE_NAME VARCHAR(10) ,
-HOLE_DATE DATE(10)
-FOREIGN[*] KEY (FOOD_SEAS_NUM) REFERENCES FOOD_SEAS(FOOD_SEAS_NUM)
-FOREIGN KEY (SEAS_NUM) REFERENCES SEAS(SEAS_NUM)
-FOREIGN KEY (SEAS_NUM) REFERENCES SEAS(SEAS_NUM)
-FOREIGN KEY (COOK_NUM) REFERENCES COOKS(COOK_NUM)
-FOREIGN KEY (SCORES_NUM) REFERENCES SCORES(SCORES_NUM)
-PRIMARY KEY(ROUNDS_NUM , HOLE_NUM))"; 期待されるステートメント "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
-Syntax error in SQL statement "CREATE TABLE ROUNDS
-(
-ROUND_NUM INTEGER(5) NOT NULL AUTO_INCREMENT,
-HOLE_NUM INTEGER(1) NOT NULL,
-FOOD_SEAS_NUM INTEGER(5),
-SEAS_NUM INTEGER(5),
-COOK_NUM INTEGER(5),
-SCORE_NUM INTEGER(5),
-PLAY_STATUS VARCHAR(4) NOT NULL,
-COURCE_NAME VARCHAR(10) ,
-HOLE_DATE DATE(10)
-FOREIGN[*] KEY (FOOD_SEAS_NUM) REFERENCES FOOD_SEAS(FOOD_SEAS_NUM)
-FOREIGN KEY (SEAS_NUM) REFERENCES SEAS(SEAS_NUM)
-FOREIGN KEY (SEAS_NUM) REFERENCES SEAS(SEAS_NUM)
-FOREIGN KEY (COOK_NUM) REFERENCES COOKS(COOK_NUM)
-FOREIGN KEY (SCORES_NUM) REFERENCES SCORES(SCORES_NUM)
-PRIMARY KEY(ROUNDS_NUM , HOLE_NUM))"; expected "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
-CREATE TABLE rounds
-(
-round_num INTEGER(5) NOT NULL AUTO_INCREMENT,
-hole_num INTEGER(1) NOT NULL,
-food_seas_num INTEGER(5),
-seas_num INTEGER(5),
-cook_num INTEGER(5),
-score_num INTEGER(5),
-play_status VARCHAR(4) NOT NULL,
-cource_name VARCHAR(10) ,
-hole_date DATE(10)
-FOREIGN KEY (food_seas_num) REFERENCES food_seas(food_seas_num)
-FOREIGN KEY (seas_num) REFERENCES seas(seas_num)
-FOREIGN KEY (seas_num) REFERENCES seas(seas_num)
-FOREIGN KEY (cook_num) REFERENCES cooks(cook_num)
-FOREIGN KEY (scores_num) REFERENCES scores(scores_num)
-PRIMARY KEY(rounds_num , hole_num)) [42001-200]
-2024-06-18 15:33:01 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE ROUNDS
-(
-ROUND_NUM INTEGER(5) NOT NULL AUTO_INCREMENT,
-HOLE_NUM INTEGER(1) NOT NULL,
-FOOD_SEAS_NUM INTEGER(5),
-SEAS_NUM INTEGER(5),
-COOK_NUM INTEGER(5),
-SCORE_NUM INTEGER(5),
-PLAY_STATUS VARCHAR(4) NOT NULL,
-COURCE_NAME VARCHAR(10) ,
-HOLE_DATE DATE(10),
-FOREIGN KEY (FOOD_SEAS_NUM) REFERENCES FOOD_SEAS(FOOD_SEAS_NUM)
-FOREIGN[*] KEY (SEAS_NUM) REFERENCES SEAS(SEAS_NUM)
-FOREIGN KEY (SEAS_NUM) REFERENCES SEAS(SEAS_NUM)
-FOREIGN KEY (COOK_NUM) REFERENCES COOKS(COOK_NUM)
-FOREIGN KEY (SCORES_NUM) REFERENCES SCORES(SCORES_NUM)
-PRIMARY KEY(ROUND_NUM , HOLE_NUM))"; 期待されるステートメント "INDEX, ON, NOT, DEFERRABLE, NOCHECK, CHECK, ,, )"
-Syntax error in SQL statement "CREATE TABLE ROUNDS
-(
-ROUND_NUM INTEGER(5) NOT NULL AUTO_INCREMENT,
-HOLE_NUM INTEGER(1) NOT NULL,
-FOOD_SEAS_NUM INTEGER(5),
-SEAS_NUM INTEGER(5),
-COOK_NUM INTEGER(5),
-SCORE_NUM INTEGER(5),
-PLAY_STATUS VARCHAR(4) NOT NULL,
-COURCE_NAME VARCHAR(10) ,
-HOLE_DATE DATE(10),
-FOREIGN KEY (FOOD_SEAS_NUM) REFERENCES FOOD_SEAS(FOOD_SEAS_NUM)
-FOREIGN[*] KEY (SEAS_NUM) REFERENCES SEAS(SEAS_NUM)
-FOREIGN KEY (SEAS_NUM) REFERENCES SEAS(SEAS_NUM)
-FOREIGN KEY (COOK_NUM) REFERENCES COOKS(COOK_NUM)
-FOREIGN KEY (SCORES_NUM) REFERENCES SCORES(SCORES_NUM)
-PRIMARY KEY(ROUND_NUM , HOLE_NUM))"; expected "INDEX, ON, NOT, DEFERRABLE, NOCHECK, CHECK, ,, )"; SQL statement:
-CREATE TABLE rounds
-(
-round_num INTEGER(5) NOT NULL AUTO_INCREMENT,
-hole_num INTEGER(1) NOT NULL,
-food_seas_num INTEGER(5),
-seas_num INTEGER(5),
-cook_num INTEGER(5),
-score_num INTEGER(5),
-play_status VARCHAR(4) NOT NULL,
-cource_name VARCHAR(10) ,
-hole_date DATE(10),
-FOREIGN KEY (food_seas_num) REFERENCES food_seas(food_seas_num)
-FOREIGN KEY (seas_num) REFERENCES seas(seas_num)
-FOREIGN KEY (seas_num) REFERENCES seas(seas_num)
-FOREIGN KEY (cook_num) REFERENCES cooks(cook_num)
-FOREIGN KEY (scores_num) REFERENCES scores(scores_num)
-PRIMARY KEY(round_num , hole_num)) [42001-200]
-2024-06-18 15:33:40 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "SCORES_NUM" が見つかりません
-Column "SCORES_NUM" not found; SQL statement:
-CREATE TABLE rounds
-(
-round_num INTEGER(5) NOT NULL AUTO_INCREMENT,
-hole_num INTEGER(1) NOT NULL,
-food_seas_num INTEGER(5),
-seas_num INTEGER(5),
-cook_num INTEGER(5),
-score_num INTEGER(5),
-play_status VARCHAR(4) NOT NULL,
-cource_name VARCHAR(10) ,
-hole_date DATE(10),
-FOREIGN KEY (food_seas_num) REFERENCES food_seas(food_seas_num),
-FOREIGN KEY (seas_num) REFERENCES seas(seas_num),
-FOREIGN KEY (seas_num) REFERENCES seas(seas_num),
-FOREIGN KEY (cook_num) REFERENCES cooks(cook_num),
-FOREIGN KEY (scores_num) REFERENCES scores(scores_num),
-PRIMARY KEY(round_num , hole_num)) [42122-200]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+2024-06-18 14:29:57 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "SEAS_NUM" にはnull値を許すべきてはありません
+Column "SEAS_NUM" must not be nullable; SQL statement:
+ALTER TABLE seas ADD PRIMARY KEY(seas_num) [90023-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
 	at org.h2.message.DbException.get(DbException.java:205)
 	at org.h2.message.DbException.get(DbException.java:181)
-	at org.h2.table.Table.getColumn(Table.java:703)
-	at org.h2.table.IndexColumn.mapColumns(IndexColumn.java:115)
-	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:216)
+	at org.h2.mvstore.db.MVTable.addIndex(MVTable.java:334)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:151)
 	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:78)
-	at org.h2.command.ddl.CommandWithColumns.createConstraints(CommandWithColumns.java:83)
-	at org.h2.command.ddl.CreateTable.update(CreateTable.java:133)
 	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
 	at org.h2.command.Command.executeUpdate(Command.java:251)
 	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:228)
@@ -447,182 +309,17 @@ PRIMARY KEY(round_num , hole_num)) [42122-200]
 	at org.h2.server.web.WebThread.process(WebThread.java:178)
 	at org.h2.server.web.WebThread.run(WebThread.java:94)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-2024-06-18 15:37:58 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE TOURS
-(
-TOUR_NUM INTEGER(5) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-USER_NUM INTEGER(5) NOT NULL,
-TOUR_STA DATE(10) NOT NULL,
-TOUR_FIN DATE(10),
-ROUND_ST INTEGER(5)NOT NULL ,
-ROUND_ND INTEGER(5),
-ROUND_TH INTEGER(5),
-ROUND_STATUS CHAR(2)NOT NULL
-FOREIGN[*] KEY (ROUND_ST) REFERENCES ROUNDS(ROUND_NUM)
-FOREIGN KEY (ROUND_ND) REFERENCES ROUNDS(ROUND_NUM)
-FOREIGN KEY (ROUND_TH) REFERENCES ROUNDS(ROUND_NUM)
-)"; 期待されるステートメント "AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
-Syntax error in SQL statement "CREATE TABLE TOURS
-(
-TOUR_NUM INTEGER(5) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-USER_NUM INTEGER(5) NOT NULL,
-TOUR_STA DATE(10) NOT NULL,
-TOUR_FIN DATE(10),
-ROUND_ST INTEGER(5)NOT NULL ,
-ROUND_ND INTEGER(5),
-ROUND_TH INTEGER(5),
-ROUND_STATUS CHAR(2)NOT NULL
-FOREIGN[*] KEY (ROUND_ST) REFERENCES ROUNDS(ROUND_NUM)
-FOREIGN KEY (ROUND_ND) REFERENCES ROUNDS(ROUND_NUM)
-FOREIGN KEY (ROUND_TH) REFERENCES ROUNDS(ROUND_NUM)
-)"; expected "AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
-CREATE TABLE tours
-(
-tour_num INTEGER(5) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-user_num INTEGER(5) NOT NULL,
-tour_sta DATE(10) NOT NULL,
-tour_fin DATE(10),
-round_st INTEGER(5)NOT NULL ,
-round_nd INTEGER(5),
-round_th INTEGER(5),
-round_status CHAR(2)NOT NULL
-FOREIGN KEY (round_st) REFERENCES rounds(round_num)
-FOREIGN KEY (round_nd) REFERENCES rounds(round_num)
-FOREIGN KEY (round_th) REFERENCES rounds(round_num)
-) [42001-200]
-2024-06-18 15:38:04 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE TOURS
-(
-TOUR_NUM INTEGER(5) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-USER_NUM INTEGER(5) NOT NULL,
-TOUR_STA DATE(10) NOT NULL,
-TOUR_FIN DATE(10),
-ROUND_ST INTEGER(5)NOT NULL ,
-ROUND_ND INTEGER(5),
-ROUND_TH INTEGER(5),
-ROUND_STATUS CHAR(2)NOT NULL,
-FOREIGN KEY (ROUND_ST) REFERENCES ROUNDS(ROUND_NUM)
-FOREIGN[*] KEY (ROUND_ND) REFERENCES ROUNDS(ROUND_NUM)
-FOREIGN KEY (ROUND_TH) REFERENCES ROUNDS(ROUND_NUM)
-)"; 期待されるステートメント "INDEX, ON, NOT, DEFERRABLE, NOCHECK, CHECK, ,, )"
-Syntax error in SQL statement "CREATE TABLE TOURS
-(
-TOUR_NUM INTEGER(5) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-USER_NUM INTEGER(5) NOT NULL,
-TOUR_STA DATE(10) NOT NULL,
-TOUR_FIN DATE(10),
-ROUND_ST INTEGER(5)NOT NULL ,
-ROUND_ND INTEGER(5),
-ROUND_TH INTEGER(5),
-ROUND_STATUS CHAR(2)NOT NULL,
-FOREIGN KEY (ROUND_ST) REFERENCES ROUNDS(ROUND_NUM)
-FOREIGN[*] KEY (ROUND_ND) REFERENCES ROUNDS(ROUND_NUM)
-FOREIGN KEY (ROUND_TH) REFERENCES ROUNDS(ROUND_NUM)
-)"; expected "INDEX, ON, NOT, DEFERRABLE, NOCHECK, CHECK, ,, )"; SQL statement:
-CREATE TABLE tours
-(
-tour_num INTEGER(5) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-user_num INTEGER(5) NOT NULL,
-tour_sta DATE(10) NOT NULL,
-tour_fin DATE(10),
-round_st INTEGER(5)NOT NULL ,
-round_nd INTEGER(5),
-round_th INTEGER(5),
-round_status CHAR(2)NOT NULL,
-FOREIGN KEY (round_st) REFERENCES rounds(round_num)
-FOREIGN KEY (round_nd) REFERENCES rounds(round_num)
-FOREIGN KEY (round_th) REFERENCES rounds(round_num)
-) [42001-200]
-2024-06-18 15:38:51 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE PAST_SCORES(
-SCORES_NUM INTEGER(5) NOT NULL,
-USER_NUM INTEGER(5) NOT NULL,
-TOURS_NUM INTEGER(5) NOT NULL,
-ROUND_NUM INTEGER(5) NOT NULL,
-HOLE_NUM INTEGER(2) NOT NULL,
-TOUR_STA DATE NOT NULL,
-TOUR_FIN DATE NOT NULL,
-COOK_NUM INTEGER(5) NOT NULL,
-SCORES INTEGER(3) NOT NULL,
-PRIMARY KEY(TOURS_NUM,ROUNDS_NUM,HOLE_NUM)
-FOREIGN[*] KEY (SCORES_NUM) REFERENCES SCORES(SCORES_NUM)
-FOREIGN KEY (USER_NUM) REFERENCES USERS(USER_NUM)
-FOREIGN KEY (TOURS_NUM) REFERENCES TOURS(TOURS_NUM)
-FOREIGN KEY (ROUND_NUM) REFERENCES ROUNDS(ROUND_NUM)
-FOREIGN KEY (HOLE_NUM) REFERENCES ROUNDS(HOLE_NUM)
-FOREIGN KEY (TOUR_STA) REFERENCES TOURS(TOUR_STA)
-FOREIGN KEY (TOUR_FIN) REFERENCES TOURS(TOUR_FIN)
-FOREIGN KEY (COOK_NUM) REFERENCES COOKS(COOK_NUM))"; 期待されるステートメント "INDEX, ,, )"
-Syntax error in SQL statement "CREATE TABLE PAST_SCORES(
-SCORES_NUM INTEGER(5) NOT NULL,
-USER_NUM INTEGER(5) NOT NULL,
-TOURS_NUM INTEGER(5) NOT NULL,
-ROUND_NUM INTEGER(5) NOT NULL,
-HOLE_NUM INTEGER(2) NOT NULL,
-TOUR_STA DATE NOT NULL,
-TOUR_FIN DATE NOT NULL,
-COOK_NUM INTEGER(5) NOT NULL,
-SCORES INTEGER(3) NOT NULL,
-PRIMARY KEY(TOURS_NUM,ROUNDS_NUM,HOLE_NUM)
-FOREIGN[*] KEY (SCORES_NUM) REFERENCES SCORES(SCORES_NUM)
-FOREIGN KEY (USER_NUM) REFERENCES USERS(USER_NUM)
-FOREIGN KEY (TOURS_NUM) REFERENCES TOURS(TOURS_NUM)
-FOREIGN KEY (ROUND_NUM) REFERENCES ROUNDS(ROUND_NUM)
-FOREIGN KEY (HOLE_NUM) REFERENCES ROUNDS(HOLE_NUM)
-FOREIGN KEY (TOUR_STA) REFERENCES TOURS(TOUR_STA)
-FOREIGN KEY (TOUR_FIN) REFERENCES TOURS(TOUR_FIN)
-FOREIGN KEY (COOK_NUM) REFERENCES COOKS(COOK_NUM))"; expected "INDEX, ,, )"; SQL statement:
-CREATE TABLE past_scores(
-scores_num INTEGER(5) NOT NULL,
-user_num INTEGER(5) NOT NULL,
-tours_num INTEGER(5) NOT NULL,
-round_num INTEGER(5) NOT NULL,
-hole_num INTEGER(2) NOT NULL,
-tour_sta DATE NOT NULL,
-tour_fin DATE NOT NULL,
-cook_num INTEGER(5) NOT NULL,
-scores INTEGER(3) NOT NULL,
-PRIMARY KEY(tours_num,rounds_num,hole_num)
-FOREIGN KEY (scores_num) REFERENCES scores(scores_num)
-FOREIGN KEY (user_num) REFERENCES users(user_num)
-FOREIGN KEY (tours_num) REFERENCES tours(tours_num)
-FOREIGN KEY (round_num) REFERENCES rounds(round_num)
-FOREIGN KEY (hole_num) REFERENCES rounds(hole_num)
-FOREIGN KEY (tour_sta) REFERENCES tours(tour_sta)
-FOREIGN KEY (tour_fin) REFERENCES tours(tour_fin)
-FOREIGN KEY (cook_num) REFERENCES cooks(cook_num)) [42001-200]
-2024-06-18 15:39:06 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "ROUNDS_NUM" が見つかりません
-Column "ROUNDS_NUM" not found; SQL statement:
-CREATE TABLE past_scores(
-scores_num INTEGER(5) NOT NULL,
-user_num INTEGER(5) NOT NULL,
-tours_num INTEGER(5) NOT NULL,
-round_num INTEGER(5) NOT NULL,
-hole_num INTEGER(2) NOT NULL,
-tour_sta DATE NOT NULL,
-tour_fin DATE NOT NULL,
-cook_num INTEGER(5) NOT NULL,
-scores INTEGER(3) NOT NULL,
-PRIMARY KEY(tours_num,rounds_num,hole_num),
-FOREIGN KEY (scores_num) REFERENCES scores(scores_num),
-FOREIGN KEY (user_num) REFERENCES users(user_num),
-FOREIGN KEY (tours_num) REFERENCES tours(tours_num),
-FOREIGN KEY (round_num) REFERENCES rounds(round_num),
-FOREIGN KEY (hole_num) REFERENCES rounds(hole_num),
-FOREIGN KEY (tour_sta) REFERENCES tours(tour_sta),
-FOREIGN KEY (tour_fin) REFERENCES tours(tour_fin),
-FOREIGN KEY (cook_num) REFERENCES cooks(cook_num)) [42122-200]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+2024-06-18 14:29:57 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "USER_NUM" にはnull値を許すべきてはありません
+Column "USER_NUM" must not be nullable; SQL statement:
+ALTER TABLE seas ADD PRIMARY KEY(user_num) [90023-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
 	at org.h2.message.DbException.get(DbException.java:205)
 	at org.h2.message.DbException.get(DbException.java:181)
-	at org.h2.table.Table.getColumn(Table.java:703)
-	at org.h2.table.IndexColumn.mapColumns(IndexColumn.java:115)
-	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:123)
+	at org.h2.mvstore.db.MVTable.addIndex(MVTable.java:334)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:151)
 	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:78)
-	at org.h2.command.ddl.CommandWithColumns.createConstraints(CommandWithColumns.java:83)
-	at org.h2.command.ddl.CreateTable.update(CreateTable.java:133)
 	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
 	at org.h2.command.Command.executeUpdate(Command.java:251)
 	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:228)
@@ -634,38 +331,29 @@ FOREIGN KEY (cook_num) REFERENCES cooks(cook_num)) [42122-200]
 	at org.h2.server.web.WebThread.process(WebThread.java:178)
 	at org.h2.server.web.WebThread.run(WebThread.java:94)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-2024-06-18 15:39:32 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "TOURS_NUM" が見つかりません
-Column "TOURS_NUM" not found; SQL statement:
-CREATE TABLE past_scores(
-scores_num INTEGER(5) NOT NULL,
-user_num INTEGER(5) NOT NULL,
-tours_num INTEGER(5) NOT NULL,
-round_num INTEGER(5) NOT NULL,
-hole_num INTEGER(2) NOT NULL,
-tour_sta DATE NOT NULL,
-tour_fin DATE NOT NULL,
-cook_num INTEGER(5) NOT NULL,
-scores INTEGER(3) NOT NULL,
-PRIMARY KEY(tours_num,round_num,hole_num),
-FOREIGN KEY (scores_num) REFERENCES scores(scores_num),
-FOREIGN KEY (user_num) REFERENCES users(user_num),
-FOREIGN KEY (tours_num) REFERENCES tours(tours_num),
-FOREIGN KEY (round_num) REFERENCES rounds(round_num),
-FOREIGN KEY (hole_num) REFERENCES rounds(hole_num),
-FOREIGN KEY (tour_sta) REFERENCES tours(tour_sta),
-FOREIGN KEY (tour_fin) REFERENCES tours(tour_fin),
-FOREIGN KEY (cook_num) REFERENCES cooks(cook_num)) [42122-200]
+2024-06-18 14:31:09 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "SEAS" はすでに存在します
+Table "SEAS" already exists; SQL statement:
+CREATE TABLE seas [42101-200]
+2024-06-18 14:31:09 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列名 "SEAS_NUM" が重複しています
+Duplicate column name "SEAS_NUM"; SQL statement:
+ALTER TABLE seas ADD COLUMN seas_num INTEGER [42121-200]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
 	at org.h2.message.DbException.get(DbException.java:205)
 	at org.h2.message.DbException.get(DbException.java:181)
-	at org.h2.table.Table.getColumn(Table.java:703)
-	at org.h2.table.IndexColumn.mapColumns(IndexColumn.java:115)
-	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:231)
-	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:78)
-	at org.h2.command.ddl.CommandWithColumns.createConstraints(CommandWithColumns.java:83)
-	at org.h2.command.ddl.CreateTable.update(CreateTable.java:133)
+	at org.h2.table.Table.setColumns(Table.java:446)
+	at org.h2.table.TableBase.<init>(TableBase.java:75)
+	at org.h2.table.RegularTable.<init>(RegularTable.java:126)
+	at org.h2.mvstore.db.MVTable.<init>(MVTable.java:113)
+	at org.h2.mvstore.db.MVTableEngine$Store.createTable(MVTableEngine.java:253)
+	at org.h2.mvstore.db.MVTableEngine.createTable(MVTableEngine.java:127)
+	at org.h2.mvstore.db.MVTableEngine.createTable(MVTableEngine.java:41)
+	at org.h2.schema.Schema.createTable(Schema.java:697)
+	at org.h2.command.ddl.AlterTableAlterColumn.cloneTableStructure(AlterTableAlterColumn.java:414)
+	at org.h2.command.ddl.AlterTableAlterColumn.copyData(AlterTableAlterColumn.java:301)
+	at org.h2.command.ddl.AlterTableAlterColumn.update(AlterTableAlterColumn.java:210)
 	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
 	at org.h2.command.Command.executeUpdate(Command.java:251)
 	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:228)
@@ -677,6 +365,7 @@ FOREIGN KEY (cook_num) REFERENCES cooks(cook_num)) [42122-200]
 	at org.h2.server.web.WebThread.process(WebThread.java:178)
 	at org.h2.server.web.WebThread.run(WebThread.java:94)
 	at java.base/java.lang.Thread.run(Thread.java:834)
+<<<<<<< HEAD
 =======
 	... 21 more
 >>>>>>> e05a3a060b0db45c394a8a2d621319bb5246bc59
@@ -752,10 +441,17 @@ org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "COOK_SEAS_NUM" が見つかりま�
 Column "COOK_SEAS_NUM" not found; SQL statement:
 INSERT INTO cooks_seas(cook_seas_num,region)
 VALUES(1,'なし') [42122-200]
+=======
+2024-06-18 14:31:09 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列名 "USER_NUM" が重複しています
+Duplicate column name "USER_NUM"; SQL statement:
+ALTER TABLE seas ADD COLUMN user_num INTEGER [42121-200]
+>>>>>>> f6c9659f3d18b339c0717751cf3926bca605c108
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
 	at org.h2.message.DbException.get(DbException.java:205)
 	at org.h2.message.DbException.get(DbException.java:181)
+<<<<<<< HEAD
 	at org.h2.table.Table.getColumn(Table.java:703)
 	at org.h2.command.Parser.parseColumn(Parser.java:1450)
 	at org.h2.command.Parser.parseColumnList(Parser.java:1435)
@@ -769,6 +465,22 @@ VALUES(1,'なし') [42122-200]
 	at org.h2.engine.Session.prepareCommand(Session.java:595)
 	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
 	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+=======
+	at org.h2.table.Table.setColumns(Table.java:446)
+	at org.h2.table.TableBase.<init>(TableBase.java:75)
+	at org.h2.table.RegularTable.<init>(RegularTable.java:126)
+	at org.h2.mvstore.db.MVTable.<init>(MVTable.java:113)
+	at org.h2.mvstore.db.MVTableEngine$Store.createTable(MVTableEngine.java:253)
+	at org.h2.mvstore.db.MVTableEngine.createTable(MVTableEngine.java:127)
+	at org.h2.mvstore.db.MVTableEngine.createTable(MVTableEngine.java:41)
+	at org.h2.schema.Schema.createTable(Schema.java:697)
+	at org.h2.command.ddl.AlterTableAlterColumn.cloneTableStructure(AlterTableAlterColumn.java:414)
+	at org.h2.command.ddl.AlterTableAlterColumn.copyData(AlterTableAlterColumn.java:301)
+	at org.h2.command.ddl.AlterTableAlterColumn.update(AlterTableAlterColumn.java:210)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:228)
+>>>>>>> f6c9659f3d18b339c0717751cf3926bca605c108
 	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
 	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
 	at org.h2.server.web.WebApp.query(WebApp.java:1116)
@@ -777,6 +489,7 @@ VALUES(1,'なし') [42122-200]
 	at org.h2.server.web.WebThread.process(WebThread.java:178)
 	at org.h2.server.web.WebThread.run(WebThread.java:94)
 	at java.base/java.lang.Thread.run(Thread.java:834)
+<<<<<<< HEAD
 2024-06-18 17:33:59 jdbc[4]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "INSERT INTO COOKS_SEAS
 VALUES(1,1,'false','なし')
@@ -793,3 +506,136 @@ VALUES(1,1,'false','なし')
 
 INSERT INTO seas(seas_num,user_num)
 VALUES(1,1) [42000-200]
+=======
+2024-06-18 14:31:09 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 複数のプライマリキーを定義しようとしました
+Attempt to define a second primary key; SQL statement:
+ALTER TABLE seas ADD PRIMARY KEY(user_num) [90017-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:129)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:78)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:228)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-06-18 14:31:20 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "SEAS" はすでに存在します
+Table "SEAS" already exists; SQL statement:
+CREATE TABLE seas [42101-200]
+2024-06-18 14:31:20 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列名 "SEAS_NUM" が重複しています
+Duplicate column name "SEAS_NUM"; SQL statement:
+ALTER TABLE seas ADD COLUMN seas_num INTEGER [42121-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.setColumns(Table.java:446)
+	at org.h2.table.TableBase.<init>(TableBase.java:75)
+	at org.h2.table.RegularTable.<init>(RegularTable.java:126)
+	at org.h2.mvstore.db.MVTable.<init>(MVTable.java:113)
+	at org.h2.mvstore.db.MVTableEngine$Store.createTable(MVTableEngine.java:253)
+	at org.h2.mvstore.db.MVTableEngine.createTable(MVTableEngine.java:127)
+	at org.h2.mvstore.db.MVTableEngine.createTable(MVTableEngine.java:41)
+	at org.h2.schema.Schema.createTable(Schema.java:697)
+	at org.h2.command.ddl.AlterTableAlterColumn.cloneTableStructure(AlterTableAlterColumn.java:414)
+	at org.h2.command.ddl.AlterTableAlterColumn.copyData(AlterTableAlterColumn.java:301)
+	at org.h2.command.ddl.AlterTableAlterColumn.update(AlterTableAlterColumn.java:210)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:228)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-06-18 14:31:20 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列名 "USER_NUM" が重複しています
+Duplicate column name "USER_NUM"; SQL statement:
+ALTER TABLE seas ADD COLUMN user_num INTEGER [42121-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.setColumns(Table.java:446)
+	at org.h2.table.TableBase.<init>(TableBase.java:75)
+	at org.h2.table.RegularTable.<init>(RegularTable.java:126)
+	at org.h2.mvstore.db.MVTable.<init>(MVTable.java:113)
+	at org.h2.mvstore.db.MVTableEngine$Store.createTable(MVTableEngine.java:253)
+	at org.h2.mvstore.db.MVTableEngine.createTable(MVTableEngine.java:127)
+	at org.h2.mvstore.db.MVTableEngine.createTable(MVTableEngine.java:41)
+	at org.h2.schema.Schema.createTable(Schema.java:697)
+	at org.h2.command.ddl.AlterTableAlterColumn.cloneTableStructure(AlterTableAlterColumn.java:414)
+	at org.h2.command.ddl.AlterTableAlterColumn.copyData(AlterTableAlterColumn.java:301)
+	at org.h2.command.ddl.AlterTableAlterColumn.update(AlterTableAlterColumn.java:210)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:228)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-06-18 14:31:20 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 複数のプライマリキーを定義しようとしました
+Attempt to define a second primary key; SQL statement:
+ALTER TABLE seas ADD PRIMARY KEY(seas_num) [90017-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:129)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:78)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:228)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-06-18 14:31:20 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 複数のプライマリキーを定義しようとしました
+Attempt to define a second primary key; SQL statement:
+ALTER TABLE seas ADD PRIMARY KEY(user_num) [90017-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:129)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:78)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:228)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+>>>>>>> 2ecd0083c734e57d6f5cea4ddf5683e0be5a28d2
+>>>>>>> f6c9659f3d18b339c0717751cf3926bca605c108
