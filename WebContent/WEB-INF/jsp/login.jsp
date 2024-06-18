@@ -8,5 +8,9 @@
 </head>
 <body>
 ログイン画面
+
+<form method="post" action="/B1/login">
+	<input type="submit">
+</form>
 </body>
 </html>
