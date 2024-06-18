@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>開発用ページ</title>
 </head>
 <body>
+
+
+開発用のページです
+送信を押すと選択したファイルに遷移します
 <form method="post" action="/B1/Test">
 
 	ＪＳＰ選択<br>
@@ -25,7 +29,7 @@
 		<option value="food_seas_list"/>
 		<option value="food_seas_regist"/>
 		<option value="main"/>
-	</datalist><br>
+	</datalist>.jsp<br>
 
 	サーブレット選択<br>
 	<input list="servlet" name="servlet">
@@ -41,15 +45,16 @@
 		<option value="foodSeasList"/>
 		<option value="foodSeasRegist"/>
 		<option value="score"/>
-	</datalist><br>
+	</datalist>.java<br>
 
 	<!--
 	<input type="text" name="jsp">.jsp<br>
 	<input type="text" name="servlet">.java<br>
 	-->
 
-
 	<input type="submit">
 </form>
+
+
 </body>
 </html>

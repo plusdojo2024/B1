@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.UsersDAO;
+
 /**
  * Servlet implementation class login
  */
@@ -40,8 +42,22 @@ public class login extends HttpServlet {
 		String user_name = request.getParameter("user_name");
 		String user_pass = request.getParameter("user_pass");
 
+		if(user_name.length() == 0) {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/test.jsp");
 		dispatcher.forward(request,response);
+		}else {
+
+		boolean LoginTicket = UsersDAO.getLoginTicket(user_name,user_pass);
+
+		if(LoginTicket){
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
+			dispatcher.forward(request,response);
+		}else {
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+			dispatcher.forward(request,response);
+
+		}
+		}
 	}
 
 }
