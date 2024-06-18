@@ -7,9 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-ログイン画面
-
-<form method="post" action="/B1/login">
+<form method="post" action="/B1/Test">
+	<input type="text" name="jsp">.jsp<br>
 	<input type="submit">
 </form>
 </body>
