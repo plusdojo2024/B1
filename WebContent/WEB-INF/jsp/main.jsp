@@ -10,9 +10,9 @@
 メイン画面
 
 
-	<div>
+<!--	<div>
 	<a href = "/B1/WorldTourPlay" class=""></a>
-	</div>>
-
+	</div>
+-->
 </body>
 </html>
