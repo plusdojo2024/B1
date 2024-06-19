@@ -37,6 +37,13 @@ public class FoodSeasDAO {
                     foodSeasNames.add(rsVegetable.getString("food_seas_name"));
                 }
             }
+            // 地域名でグループ化された調味料名をすべて取得し、利用可能なものだけ明るくなどする。
+            //
+
+
+            // お助けアイテムを取得
+
+
 
         } catch (SQLException e) {
             e.printStackTrace();
