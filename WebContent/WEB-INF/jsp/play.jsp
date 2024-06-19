@@ -1,4 +1,5 @@
-<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,8 +10,8 @@
     <h1>調理条件</h1>
 
     <ul>
-        <c:forEach var="name" items="${sessionScope.foodSeasNames}">
-            <li>${name}</li>
+     	<c:forEach var="name" items="${sessionScope.foodSeasNames}">
+        		<li>${name}</li>
         </c:forEach>
     </ul>
 
