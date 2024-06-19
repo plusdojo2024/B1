@@ -8,5 +8,11 @@
 </head>
 <body>
 メイン画面
+
+
+<!--	<div>
+	<a href = "/B1/WorldTourPlay" class=""></a>
+	</div>
+-->
 </body>
 </html>
