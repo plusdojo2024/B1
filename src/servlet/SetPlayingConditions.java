@@ -41,14 +41,14 @@ public class SetPlayingConditions extends HttpServlet {
         FoodSeasDAO fcDao = new FoodSeasDAO();
         List<String> foodSeasNames = fcDao.getRandomFoodSeasNames();
 
+        // セッションスコープにfoodSeasNamesを保存
+        session.setAttribute("foodSeasNames", foodSeasNames);
+
         request.setAttribute("foodSeasNames", foodSeasNames);
         request.getRequestDispatcher("/play.jsp").forward(request, response);
 
         // webブラウザからのリクエスト（国内か海外かランダムか）を受け取り、それに応じて調味料を返す。
 		//
-
-
-
 
 
 		// TODO Auto-generated method stub
