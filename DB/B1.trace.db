@@ -1179,6 +1179,947 @@ ALTER TABLE seas ADD PRIMARY KEY(user_num) [90017-200]
 	at org.h2.server.web.WebThread.run(WebThread.java:94)
 	at java.base/java.lang.Thread.run(Thread.java:834)
 >>>>>>> 2ecd0083c734e57d6f5cea4ddf5683e0be5a28d2
+<<<<<<< HEAD
+>>>>>>> f6c9659f3d18b339c0717751cf3926bca605c108
+2024-06-19 08:57:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 制約 "ROUND_NUM" が見つかりません
+Constraint "ROUND_NUM" not found; SQL statement:
+ALTER TABLE tours DROP CONSTRAINT round_num [90057-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.command.ddl.AlterTableDropConstraint.update(AlterTableDropConstraint.java:41)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:228)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-06-19 08:57:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 制約 "ROUND_ST" が見つかりません
+Constraint "ROUND_ST" not found; SQL statement:
+ALTER TABLE tours DROP CONSTRAINT round_st [90057-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.command.ddl.AlterTableDropConstraint.update(AlterTableDropConstraint.java:41)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:228)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-06-19 08:58:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 制約 "ROUND_NUM" が見つかりません
+Constraint "ROUND_NUM" not found; SQL statement:
+ALTER TABLE tours DROP CONSTRAINT round_num [90057-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.command.ddl.AlterTableDropConstraint.update(AlterTableDropConstraint.java:41)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:228)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-06-19 08:58:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: "CONSTRAINT_E917, CONSTRAINT_E917D0E, CONSTRAINT_E917D0EE_0" が依存しているため、"TOURS" をドロップすることはできません
+Cannot drop "TOURS" because "CONSTRAINT_E917, CONSTRAINT_E917D0E, CONSTRAINT_E917D0EE_0" depends on it; SQL statement:
+DROP TABLE tours [90107-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.command.ddl.DropTable.prepareDrop(DropTable.java:98)
+	at org.h2.command.ddl.DropTable.update(DropTable.java:124)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:228)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-06-19 08:58:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: "CONSTRAINT_E917, CONSTRAINT_E917D0E, CONSTRAINT_E917D0EE_0" が依存しているため、"TOURS" をドロップすることはできません
+Cannot drop "TOURS" because "CONSTRAINT_E917, CONSTRAINT_E917D0E, CONSTRAINT_E917D0EE_0" depends on it; SQL statement:
+DROP TABLE tours [90107-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.command.ddl.DropTable.prepareDrop(DropTable.java:98)
+	at org.h2.command.ddl.DropTable.update(DropTable.java:124)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:228)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-06-19 08:59:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: "DATE" 定数 "1" を解析できません
+Cannot parse "DATE" constant "1"; SQL statement:
+INSERT INTO "PUBLIC"."TOURS"("TOUR_NUM","USER_NUM","TOUR_STA","TOUR_FIN","ROUND_ST","ROUND_ND","ROUND_TH","ROUND_STATUS")VALUES(?,?,?,?,?,?,?,?) [22007-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:457)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.value.ValueDate.parse(ValueDate.java:74)
+	at org.h2.value.Value.convertToDate(Value.java:1093)
+	at org.h2.value.Value.convertTo(Value.java:816)
+	at org.h2.value.Value.convertTo(Value.java:772)
+	at org.h2.value.TypeInfo.cast(TypeInfo.java:515)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:378)
+	at org.h2.table.Table.validateConvertUpdateSequence(Table.java:845)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:187)
+	at org.h2.command.dml.Insert.update(Insert.java:151)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:191)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:152)
+	at org.h2.result.UpdatableRow.insertRow(UpdatableRow.java:324)
+	at org.h2.jdbc.JdbcResultSet.insertRow(JdbcResultSet.java:3015)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1138)
+	at org.h2.server.web.WebApp.process(WebApp.java:247)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:173)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.IllegalArgumentException: 1
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:166)
+	at org.h2.value.ValueDate.parse(ValueDate.java:72)
+	... 20 more
+2024-06-19 08:59:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: "DATE" 定数 "1" を解析できません
+Cannot parse "DATE" constant "1"; SQL statement:
+INSERT INTO "PUBLIC"."TOURS"("TOUR_NUM","USER_NUM","TOUR_STA","TOUR_FIN","ROUND_ST","ROUND_ND","ROUND_TH","ROUND_STATUS")VALUES(?,?,?,?,?,?,?,?) [22007-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:457)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.value.ValueDate.parse(ValueDate.java:74)
+	at org.h2.value.Value.convertToDate(Value.java:1093)
+	at org.h2.value.Value.convertTo(Value.java:816)
+	at org.h2.value.Value.convertTo(Value.java:772)
+	at org.h2.value.TypeInfo.cast(TypeInfo.java:515)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:378)
+	at org.h2.table.Table.validateConvertUpdateSequence(Table.java:845)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:187)
+	at org.h2.command.dml.Insert.update(Insert.java:151)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:191)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:152)
+	at org.h2.result.UpdatableRow.insertRow(UpdatableRow.java:324)
+	at org.h2.jdbc.JdbcResultSet.insertRow(JdbcResultSet.java:3015)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1138)
+	at org.h2.server.web.WebApp.process(WebApp.java:247)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:173)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.IllegalArgumentException: 1
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:166)
+	at org.h2.value.ValueDate.parse(ValueDate.java:72)
+	... 20 more
+2024-06-19 09:00:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: データ変換中にエラーが発生しました "'' (TOURS: ""USER_NUM"" INTEGER NOT NULL)"
+Data conversion error converting "'' (TOURS: ""USER_NUM"" INTEGER NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."TOURS"("TOUR_NUM","USER_NUM","TOUR_STA","TOUR_FIN","ROUND_ST","ROUND_ND","ROUND_TH","ROUND_STATUS")VALUES(?,?,?,?,?,?,?,?) [22018-200]
+2024-06-19 09:00:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: データ変換中にエラーが発生しました "'' (TOURS: ""USER_NUM"" INTEGER NOT NULL)"
+Data conversion error converting "'' (TOURS: ""USER_NUM"" INTEGER NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."TOURS"("TOUR_NUM","USER_NUM","TOUR_STA","TOUR_FIN","ROUND_ST","ROUND_ND","ROUND_TH","ROUND_STATUS")VALUES(?,?,?,?,?,?,?,?) [22018-200]
+2024-06-19 09:00:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: "DATE" 定数  を解析できません
+Cannot parse "DATE" constant ; SQL statement:
+INSERT INTO "PUBLIC"."TOURS"("TOUR_NUM","USER_NUM","TOUR_STA","TOUR_FIN","ROUND_ST","ROUND_ND","ROUND_TH","ROUND_STATUS")VALUES(?,?,?,?,?,?,?,?) [22007-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:457)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.value.ValueDate.parse(ValueDate.java:74)
+	at org.h2.value.Value.convertToDate(Value.java:1093)
+	at org.h2.value.Value.convertTo(Value.java:816)
+	at org.h2.value.Value.convertTo(Value.java:772)
+	at org.h2.value.TypeInfo.cast(TypeInfo.java:515)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:378)
+	at org.h2.table.Table.validateConvertUpdateSequence(Table.java:845)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:187)
+	at org.h2.command.dml.Insert.update(Insert.java:151)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:191)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:152)
+	at org.h2.result.UpdatableRow.insertRow(UpdatableRow.java:324)
+	at org.h2.jdbc.JdbcResultSet.insertRow(JdbcResultSet.java:3015)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1138)
+	at org.h2.server.web.WebApp.process(WebApp.java:247)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:173)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.StringIndexOutOfBoundsException: String index out of range: 0
+	at java.base/java.lang.StringLatin1.charAt(StringLatin1.java:47)
+	at java.base/java.lang.String.charAt(String.java:693)
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:145)
+	at org.h2.value.ValueDate.parse(ValueDate.java:72)
+	... 20 more
+2024-06-19 09:00:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: "DATE" 定数  を解析できません
+Cannot parse "DATE" constant ; SQL statement:
+INSERT INTO "PUBLIC"."TOURS"("TOUR_NUM","USER_NUM","TOUR_STA","TOUR_FIN","ROUND_ST","ROUND_ND","ROUND_TH","ROUND_STATUS")VALUES(?,?,?,?,?,?,?,?) [22007-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:457)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.value.ValueDate.parse(ValueDate.java:74)
+	at org.h2.value.Value.convertToDate(Value.java:1093)
+	at org.h2.value.Value.convertTo(Value.java:816)
+	at org.h2.value.Value.convertTo(Value.java:772)
+	at org.h2.value.TypeInfo.cast(TypeInfo.java:515)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:378)
+	at org.h2.table.Table.validateConvertUpdateSequence(Table.java:845)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:187)
+	at org.h2.command.dml.Insert.update(Insert.java:151)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:191)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:152)
+	at org.h2.result.UpdatableRow.insertRow(UpdatableRow.java:324)
+	at org.h2.jdbc.JdbcResultSet.insertRow(JdbcResultSet.java:3015)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1138)
+	at org.h2.server.web.WebApp.process(WebApp.java:247)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:173)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.StringIndexOutOfBoundsException: String index out of range: 0
+	at java.base/java.lang.StringLatin1.charAt(StringLatin1.java:47)
+	at java.base/java.lang.String.charAt(String.java:693)
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:145)
+	at org.h2.value.ValueDate.parse(ValueDate.java:72)
+	... 20 more
+2024-06-19 09:00:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: データ変換中にエラーが発生しました "'' (TOURS: ""USER_NUM"" INTEGER NOT NULL)"
+Data conversion error converting "'' (TOURS: ""USER_NUM"" INTEGER NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."TOURS"("TOUR_NUM","USER_NUM","TOUR_STA","TOUR_FIN","ROUND_ST","ROUND_ND","ROUND_TH","ROUND_STATUS")VALUES(?,?,?,?,?,?,?,?) [22018-200]
+2024-06-19 09:00:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: データ変換中にエラーが発生しました "'' (TOURS: ""USER_NUM"" INTEGER NOT NULL)"
+Data conversion error converting "'' (TOURS: ""USER_NUM"" INTEGER NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."TOURS"("TOUR_NUM","USER_NUM","TOUR_STA","TOUR_FIN","ROUND_ST","ROUND_ND","ROUND_TH","ROUND_STATUS")VALUES(?,?,?,?,?,?,?,?) [22018-200]
+2024-06-19 09:00:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: データ変換中にエラーが発生しました "'' (TOURS: ""USER_NUM"" INTEGER NOT NULL)"
+Data conversion error converting "'' (TOURS: ""USER_NUM"" INTEGER NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."TOURS"("TOUR_NUM","USER_NUM","TOUR_STA","TOUR_FIN","ROUND_ST","ROUND_ND","ROUND_TH","ROUND_STATUS")VALUES(?,?,?,?,?,?,?,?) [22018-200]
+2024-06-19 09:00:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: データ変換中にエラーが発生しました "'' (TOURS: ""USER_NUM"" INTEGER NOT NULL)"
+Data conversion error converting "'' (TOURS: ""USER_NUM"" INTEGER NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."TOURS"("TOUR_NUM","USER_NUM","TOUR_STA","TOUR_FIN","ROUND_ST","ROUND_ND","ROUND_TH","ROUND_STATUS")VALUES(?,?,?,?,?,?,?,?) [22018-200]
+2024-06-19 09:03:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: "CONSTRAINT_E917, CONSTRAINT_E917D0E, CONSTRAINT_E917D0EE_0" が依存しているため、"TOURS" をドロップすることはできません
+Cannot drop "TOURS" because "CONSTRAINT_E917, CONSTRAINT_E917D0E, CONSTRAINT_E917D0EE_0" depends on it; SQL statement:
+DROP TABLE tours [90107-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.command.ddl.DropTable.prepareDrop(DropTable.java:98)
+	at org.h2.command.ddl.DropTable.update(DropTable.java:124)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:228)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-06-19 09:03:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: "CONSTRAINT_E917, CONSTRAINT_E917D0E, CONSTRAINT_E917D0EE_0" が依存しているため、"TOURS" をドロップすることはできません
+Cannot drop "TOURS" because "CONSTRAINT_E917, CONSTRAINT_E917D0E, CONSTRAINT_E917D0EE_0" depends on it; SQL statement:
+DROP TABLE tours [90107-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.command.ddl.DropTable.prepareDrop(DropTable.java:98)
+	at org.h2.command.ddl.DropTable.update(DropTable.java:124)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:228)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-06-19 09:06:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE TOURS DROP FOREIGN[*] KEY ROUND_NUM"; 期待されるステートメント "identifier"
+Syntax error in SQL statement "ALTER TABLE TOURS DROP FOREIGN[*] KEY ROUND_NUM"; expected "identifier"; SQL statement:
+ALTER TABLE tours DROP FOREIGN KEY round_num [42001-200]
+2024-06-19 09:06:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE TOURS DROP FOREIGN[*] KEY ROUND_NUM"; 期待されるステートメント "identifier"
+Syntax error in SQL statement "ALTER TABLE TOURS DROP FOREIGN[*] KEY ROUND_NUM"; expected "identifier"; SQL statement:
+ALTER TABLE tours DROP FOREIGN KEY round_num [42001-200]
+2024-06-19 09:11:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE TOURS DROP FOREIGN[*] KEY ROUND_ST"; 期待されるステートメント "identifier"
+Syntax error in SQL statement "ALTER TABLE TOURS DROP FOREIGN[*] KEY ROUND_ST"; expected "identifier"; SQL statement:
+ALTER TABLE tours DROP FOREIGN KEY round_st [42001-200]
+2024-06-19 09:12:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE TOURS DROP FOREIGN[*] KEY ROUND_NUM"; 期待されるステートメント "identifier"
+Syntax error in SQL statement "ALTER TABLE TOURS DROP FOREIGN[*] KEY ROUND_NUM"; expected "identifier"; SQL statement:
+ALTER TABLE tours DROP FOREIGN KEY round_num [42001-200]
+2024-06-19 09:13:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SHOW CREATE[*] TABLE TOURS"
+Syntax error in SQL statement "SHOW CREATE[*] TABLE TOURS"; SQL statement:
+SHOW CREATE TABLE tours [42000-200]
+2024-06-19 09:13:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SHOW CREATE[*] TABLE TOURS"
+Syntax error in SQL statement "SHOW CREATE[*] TABLE TOURS"; SQL statement:
+SHOW CREATE TABLE tours [42000-200]
+2024-06-19 09:13:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SHOW CREATE[*] TABLE TOURS"
+Syntax error in SQL statement "SHOW CREATE[*] TABLE TOURS"; SQL statement:
+SHOW CREATE TABLE tours [42000-200]
+2024-06-19 09:13:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SHOW CREATE[*] TABLE TOURS"
+Syntax error in SQL statement "SHOW CREATE[*] TABLE TOURS"; SQL statement:
+SHOW CREATE TABLE tours [42000-200]
+2024-06-19 09:13:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SHOW CREATE[*] TABLE TOURS"
+Syntax error in SQL statement "SHOW CREATE[*] TABLE TOURS"; SQL statement:
+SHOW CREATE TABLE tours [42000-200]
+2024-06-19 09:13:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SHOW TABLE[*] TOURS"
+Syntax error in SQL statement "SHOW TABLE[*] TOURS"; SQL statement:
+SHOW TABLE tours [42000-200]
+2024-06-19 09:13:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SHOW CREATE[*] TABLE TOURS"
+Syntax error in SQL statement "SHOW CREATE[*] TABLE TOURS"; SQL statement:
+SHOW CREATE TABLE tours [42000-200]
+2024-06-19 09:13:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SHOW CREATE[*] TABLE TOURS"
+Syntax error in SQL statement "SHOW CREATE[*] TABLE TOURS"; SQL statement:
+SHOW CREATE TABLE tours [42000-200]
+2024-06-19 09:14:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SHOW CREATE[*] TABLE TOURS"
+Syntax error in SQL statement "SHOW CREATE[*] TABLE TOURS"; SQL statement:
+SHOW CREATE TABLE tours [42000-200]
+2024-06-19 09:14:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SHOW CREATE[*] TABLE TOURS"
+Syntax error in SQL statement "SHOW CREATE[*] TABLE TOURS"; SQL statement:
+SHOW CREATE TABLE tours [42000-200]
+2024-06-19 09:16:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "REFERENCED_TABLE_NAME" が見つかりません
+Column "REFERENCED_TABLE_NAME" not found; SQL statement:
+SELECT
+    CONSTRAINT_NAME,
+    TABLE_NAME,
+    COLUMN_NAME,
+    REFERENCED_TABLE_NAME,
+    REFERENCED_COLUMN_NAME
+FROM
+    INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+WHERE
+    TABLE_SCHEMA = 'your_database_name'  -- あなたのデータベース名
+    AND TABLE_NAME = 'tours'
+    AND CONSTRAINT_NAME LIKE '%round_num%' [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:163)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:145)
+	at org.h2.command.dml.Select.prepare(Select.java:1206)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-06-19 09:19:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE TOURS DROP FOREIGN[*] KEY `ROUND_NUM`"; 期待されるステートメント "identifier"
+Syntax error in SQL statement "ALTER TABLE TOURS DROP FOREIGN[*] KEY `ROUND_NUM`"; expected "identifier"; SQL statement:
+ALTER TABLE tours DROP FOREIGN KEY `round_num` [42001-200]
+2024-06-19 09:19:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE TOURS DROP FOREIGN[*] KEY `ROUND_ST`"; 期待されるステートメント "identifier"
+Syntax error in SQL statement "ALTER TABLE TOURS DROP FOREIGN[*] KEY `ROUND_ST`"; expected "identifier"; SQL statement:
+ALTER TABLE tours DROP FOREIGN KEY `round_st` [42001-200]
+2024-06-19 09:20:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "USER_CONSTRAINTS" が見つかりません
+Table "USER_CONSTRAINTS" not found; SQL statement:
+SELECT * FROM user_constraints [42102-200]
+2024-06-19 09:22:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: "DATE" 定数 "NULL" を解析できません
+Cannot parse "DATE" constant "NULL"; SQL statement:
+INSERT INTO "PUBLIC"."TOURS"("TOUR_NUM","USER_NUM","TOUR_STA","TOUR_FIN","ROUND_ST","ROUND_ND","ROUND_TH","ROUND_STATUS")VALUES(?,?,?,?,?,?,?,?) [22007-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:457)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.value.ValueDate.parse(ValueDate.java:74)
+	at org.h2.value.Value.convertToDate(Value.java:1093)
+	at org.h2.value.Value.convertTo(Value.java:816)
+	at org.h2.value.Value.convertTo(Value.java:772)
+	at org.h2.value.TypeInfo.cast(TypeInfo.java:515)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:378)
+	at org.h2.table.Table.validateConvertUpdateSequence(Table.java:845)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:187)
+	at org.h2.command.dml.Insert.update(Insert.java:151)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:191)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:152)
+	at org.h2.result.UpdatableRow.insertRow(UpdatableRow.java:324)
+	at org.h2.jdbc.JdbcResultSet.insertRow(JdbcResultSet.java:3015)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1138)
+	at org.h2.server.web.WebApp.process(WebApp.java:247)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:173)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.IllegalArgumentException: NULL
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:166)
+	at org.h2.value.ValueDate.parse(ValueDate.java:72)
+	... 20 more
+2024-06-19 09:22:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: "DATE" 定数 "NULL" を解析できません
+Cannot parse "DATE" constant "NULL"; SQL statement:
+INSERT INTO "PUBLIC"."TOURS"("TOUR_NUM","USER_NUM","TOUR_STA","TOUR_FIN","ROUND_ST","ROUND_ND","ROUND_TH","ROUND_STATUS")VALUES(?,?,?,?,?,?,?,?) [22007-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:457)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.value.ValueDate.parse(ValueDate.java:74)
+	at org.h2.value.Value.convertToDate(Value.java:1093)
+	at org.h2.value.Value.convertTo(Value.java:816)
+	at org.h2.value.Value.convertTo(Value.java:772)
+	at org.h2.value.TypeInfo.cast(TypeInfo.java:515)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:378)
+	at org.h2.table.Table.validateConvertUpdateSequence(Table.java:845)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:187)
+	at org.h2.command.dml.Insert.update(Insert.java:151)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:191)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:152)
+	at org.h2.result.UpdatableRow.insertRow(UpdatableRow.java:324)
+	at org.h2.jdbc.JdbcResultSet.insertRow(JdbcResultSet.java:3015)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1138)
+	at org.h2.server.web.WebApp.process(WebApp.java:247)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:173)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.IllegalArgumentException: NULL
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:166)
+	at org.h2.value.ValueDate.parse(ValueDate.java:72)
+	... 20 more
+2024-06-19 09:23:43 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: 列 "ROUND_STATUS CHAR(2)" の値が長過ぎます: "STRINGDECODE('\u8abf\u7406\u524d') (3)"
+Value too long for column "ROUND_STATUS CHAR(2)": "STRINGDECODE('\u8abf\u7406\u524d') (3)"; SQL statement:
+INSERT INTO tours
+VALUES(1,1,'2024-06-18',null,1,1,1,'調理前') [22001-200]
+2024-06-19 09:27:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE TOURS
+DROP FOREIGN[*] KEY ROUND_NUM"; 期待されるステートメント "identifier"
+Syntax error in SQL statement "ALTER TABLE TOURS
+DROP FOREIGN[*] KEY ROUND_NUM"; expected "identifier"; SQL statement:
+ALTER TABLE tours
+DROP FOREIGN KEY round_num [42001-200]
+2024-06-19 09:28:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE TOURS
+DROP FOREIGN[*] KEY ROUND_ST"; 期待されるステートメント "identifier"
+Syntax error in SQL statement "ALTER TABLE TOURS
+DROP FOREIGN[*] KEY ROUND_ST"; expected "identifier"; SQL statement:
+ALTER TABLE tours
+DROP FOREIGN KEY round_st [42001-200]
+2024-06-19 09:28:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE TOURS
+DROP FOREIGN[*] KEY ROUND_ND"; 期待されるステートメント "identifier"
+Syntax error in SQL statement "ALTER TABLE TOURS
+DROP FOREIGN[*] KEY ROUND_ND"; expected "identifier"; SQL statement:
+ALTER TABLE tours
+DROP FOREIGN KEY round_nd [42001-200]
+2024-06-19 09:28:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE TOURS
+DROP FOREIGN[*] KEY ROUND_TH"; 期待されるステートメント "identifier"
+Syntax error in SQL statement "ALTER TABLE TOURS
+DROP FOREIGN[*] KEY ROUND_TH"; expected "identifier"; SQL statement:
+ALTER TABLE tours
+DROP FOREIGN KEY round_th [42001-200]
+2024-06-19 09:30:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SELECT FOREIGN[*] KEY
+FROM INFORMATION_SCHEMA.FOREIGN KEY
+WHERE TABLE_NAME = 'tours' 
+  AND FOREIGN KEY_TYPE = 'REFERENTIAL'"; 期待されるステートメント "TOP, LIMIT, DISTINCT, ALL, *, NOT, EXISTS, INTERSECTS, UNIQUE"
+Syntax error in SQL statement "SELECT FOREIGN[*] KEY
+FROM INFORMATION_SCHEMA.FOREIGN KEY
+WHERE TABLE_NAME = 'tours' 
+  AND FOREIGN KEY_TYPE = 'REFERENTIAL'"; expected "TOP, LIMIT, DISTINCT, ALL, *, NOT, EXISTS, INTERSECTS, UNIQUE"; SQL statement:
+SELECT FOREIGN KEY
+FROM INFORMATION_SCHEMA.FOREIGN KEY
+WHERE TABLE_NAME = 'tours' 
+  AND FOREIGN KEY_TYPE = 'REFERENTIAL' [42001-200]
+2024-06-19 09:32:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "SHOW CREATE[*] TABLE TOURS"
+Syntax error in SQL statement "SHOW CREATE[*] TABLE TOURS"; SQL statement:
+SHOW CREATE TABLE tours [42000-200]
+2024-06-19 09:32:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE TOURS
+DROP FOREIGN[*] KEY FK_ROUND_NUM"; 期待されるステートメント "identifier"
+Syntax error in SQL statement "ALTER TABLE TOURS
+DROP FOREIGN[*] KEY FK_ROUND_NUM"; expected "identifier"; SQL statement:
+ALTER TABLE tours
+DROP FOREIGN KEY fk_round_num [42001-200]
+2024-06-19 09:32:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE TOURS
+DROP FOREIGN[*] KEY ROUND_NUM"; 期待されるステートメント "identifier"
+Syntax error in SQL statement "ALTER TABLE TOURS
+DROP FOREIGN[*] KEY ROUND_NUM"; expected "identifier"; SQL statement:
+ALTER TABLE tours
+DROP FOREIGN KEY round_num [42001-200]
+2024-06-19 09:32:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE TOURS
+DROP FOREIGN[*] KEY (ROUND_NUM)"; 期待されるステートメント "identifier"
+Syntax error in SQL statement "ALTER TABLE TOURS
+DROP FOREIGN[*] KEY (ROUND_NUM)"; expected "identifier"; SQL statement:
+ALTER TABLE tours
+DROP FOREIGN KEY (round_num) [42001-200]
+2024-06-19 09:33:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE TOURS
+DROP FOREIGN[*] KEY 'round_num'"; 期待されるステートメント "identifier"
+Syntax error in SQL statement "ALTER TABLE TOURS
+DROP FOREIGN[*] KEY 'round_num'"; expected "identifier"; SQL statement:
+ALTER TABLE tours
+DROP FOREIGN KEY 'round_num' [42001-200]
+2024-06-19 09:35:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE ROUNDS DROP FOREIGN[*] KEY ROUND_NUM"; 期待されるステートメント "identifier"
+Syntax error in SQL statement "ALTER TABLE ROUNDS DROP FOREIGN[*] KEY ROUND_NUM"; expected "identifier"; SQL statement:
+ALTER TABLE rounds DROP FOREIGN KEY round_num [42001-200]
+2024-06-19 09:35:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE ROUNDS DROP FOREIGN[*] KEY ROUND_ST"; 期待されるステートメント "identifier"
+Syntax error in SQL statement "ALTER TABLE ROUNDS DROP FOREIGN[*] KEY ROUND_ST"; expected "identifier"; SQL statement:
+ALTER TABLE rounds DROP FOREIGN KEY round_st [42001-200]
+2024-06-19 09:36:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE TOURS DROP FOREIGN[*] KEY ROUND_NUM"; 期待されるステートメント "identifier"
+Syntax error in SQL statement "ALTER TABLE TOURS DROP FOREIGN[*] KEY ROUND_NUM"; expected "identifier"; SQL statement:
+ALTER TABLE tours DROP FOREIGN KEY round_num [42001-200]
+2024-06-19 09:37:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE TOURS DROP FOREIGN[*] KEY ROUND_NUM"; 期待されるステートメント "identifier"
+Syntax error in SQL statement "ALTER TABLE TOURS DROP FOREIGN[*] KEY ROUND_NUM"; expected "identifier"; SQL statement:
+ALTER TABLE tours DROP FOREIGN KEY round_num [42001-200]
+2024-06-19 09:37:43 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE TOURS DROP FOREIGN[*] KEY ROUND_NUM"; 期待されるステートメント "identifier"
+Syntax error in SQL statement "ALTER TABLE TOURS DROP FOREIGN[*] KEY ROUND_NUM"; expected "identifier"; SQL statement:
+ALTER TABLE tours DROP FOREIGN KEY round_num [42001-200]
+2024-06-19 09:37:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE TOURS DROP FOREIGN[*] KEY ROUND_ST"; 期待されるステートメント "identifier"
+Syntax error in SQL statement "ALTER TABLE TOURS DROP FOREIGN[*] KEY ROUND_ST"; expected "identifier"; SQL statement:
+ALTER TABLE tours DROP FOREIGN KEY round_st [42001-200]
+2024-06-19 09:38:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE TOURS DROP FOREIGN[*] KEY ROUND_NUM"; 期待されるステートメント "identifier"
+Syntax error in SQL statement "ALTER TABLE TOURS DROP FOREIGN[*] KEY ROUND_NUM"; expected "identifier"; SQL statement:
+ALTER TABLE tours DROP FOREIGN KEY round_num [42001-200]
+2024-06-19 09:38:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE TOURS DROP FOREIGN[*] KEY ROUND_NUM"; 期待されるステートメント "identifier"
+Syntax error in SQL statement "ALTER TABLE TOURS DROP FOREIGN[*] KEY ROUND_NUM"; expected "identifier"; SQL statement:
+ALTER TABLE tours DROP FOREIGN KEY round_num [42001-200]
+2024-06-19 09:48:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE PAST_SCORES(
+SCORES_NUM INTEGER(5) NOT NULL,
+USER_NUM INTEGER(5) NOT NULL,
+TOURS_NUM INTEGER(5) NOT NULL,
+ROUND_NUM INTEGER(5) NOT NULL,
+HOLE_NUM INTEGER(2) NOT NULL,
+TOUR_STA DATE NOT NULL,
+TOUR_FIN DATE NOT NULL,
+COOK_NUM INTEGER(5) NOT NULL,
+SCORES INTEGER(3) NOT NULL,
+PRIMARY KEY(TOURS_NUM,ROUNDS_NUM,HOLE_NUM)
+FOREIGN[*] KEY (SCORES_NUM) REFERENCES SCORES(SCORES_NUM)
+FOREIGN KEY (USER_NUM) REFERENCES USERS(USER_NUM)
+FOREIGN KEY (TOURS_NUM) REFERENCES TOURS(TOURS_NUM)
+FOREIGN KEY (ROUND_NUM) REFERENCES ROUNDS(ROUND_NUM)
+FOREIGN KEY (HOLE_NUM) REFERENCES ROUNDS(HOLE_NUM)
+FOREIGN KEY (TOUR_STA) REFERENCES TOURS(TOUR_STA)
+FOREIGN KEY (TOUR_FIN) REFERENCES TOURS(TOUR_FIN)
+FOREIGN KEY (COOK_NUM) REFERENCES COOKS(COOK_NUM))"; 期待されるステートメント "INDEX, ,, )"
+Syntax error in SQL statement "CREATE TABLE PAST_SCORES(
+SCORES_NUM INTEGER(5) NOT NULL,
+USER_NUM INTEGER(5) NOT NULL,
+TOURS_NUM INTEGER(5) NOT NULL,
+ROUND_NUM INTEGER(5) NOT NULL,
+HOLE_NUM INTEGER(2) NOT NULL,
+TOUR_STA DATE NOT NULL,
+TOUR_FIN DATE NOT NULL,
+COOK_NUM INTEGER(5) NOT NULL,
+SCORES INTEGER(3) NOT NULL,
+PRIMARY KEY(TOURS_NUM,ROUNDS_NUM,HOLE_NUM)
+FOREIGN[*] KEY (SCORES_NUM) REFERENCES SCORES(SCORES_NUM)
+FOREIGN KEY (USER_NUM) REFERENCES USERS(USER_NUM)
+FOREIGN KEY (TOURS_NUM) REFERENCES TOURS(TOURS_NUM)
+FOREIGN KEY (ROUND_NUM) REFERENCES ROUNDS(ROUND_NUM)
+FOREIGN KEY (HOLE_NUM) REFERENCES ROUNDS(HOLE_NUM)
+FOREIGN KEY (TOUR_STA) REFERENCES TOURS(TOUR_STA)
+FOREIGN KEY (TOUR_FIN) REFERENCES TOURS(TOUR_FIN)
+FOREIGN KEY (COOK_NUM) REFERENCES COOKS(COOK_NUM))"; expected "INDEX, ,, )"; SQL statement:
+CREATE TABLE past_scores(
+scores_num INTEGER(5) NOT NULL,
+user_num INTEGER(5) NOT NULL,
+tours_num INTEGER(5) NOT NULL,
+round_num INTEGER(5) NOT NULL,
+hole_num INTEGER(2) NOT NULL,
+tour_sta DATE NOT NULL,
+tour_fin DATE NOT NULL,
+cook_num INTEGER(5) NOT NULL,
+scores INTEGER(3) NOT NULL,
+PRIMARY KEY(tours_num,rounds_num,hole_num)
+FOREIGN KEY (scores_num) REFERENCES scores(scores_num)
+FOREIGN KEY (user_num) REFERENCES users(user_num)
+FOREIGN KEY (tours_num) REFERENCES tours(tours_num)
+FOREIGN KEY (round_num) REFERENCES rounds(round_num)
+FOREIGN KEY (hole_num) REFERENCES rounds(hole_num)
+FOREIGN KEY (tour_sta) REFERENCES tours(tour_sta)
+FOREIGN KEY (tour_fin) REFERENCES tours(tour_fin)
+FOREIGN KEY (cook_num) REFERENCES cooks(cook_num)) [42001-200]
+2024-06-19 09:49:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE PAST_SCORES(
+SCORES_NUM INTEGER(5) NOT NULL,
+USER_NUM INTEGER(5) NOT NULL,
+TOUR_NUM INTEGER(5) NOT NULL,
+ROUND_NUM INTEGER(5) NOT NULL,
+HOLE_NUM INTEGER(2) NOT NULL,
+TOUR_STA DATE NOT NULL,
+TOUR_FIN DATE NOT NULL,
+COOK_NUM INTEGER(5) NOT NULL,
+SCORES INTEGER(3) NOT NULL,
+PRIMARY KEY(TOUR_NUM,ROUND_NUM,HOLE_NUM)
+FOREIGN[*] KEY (SCORES_NUM) REFERENCES SCORES(SCORES_NUM)
+FOREIGN KEY (USER_NUM) REFERENCES USERS(USER_NUM)
+FOREIGN KEY (TOUR_NUM) REFERENCES TOURS(TOUR_NUM)
+FOREIGN KEY (ROUND_NUM) REFERENCES ROUNDS(ROUND_NUM)
+FOREIGN KEY (HOLE_NUM) REFERENCES ROUNDS(HOLE_NUM)
+FOREIGN KEY (TOUR_STA) REFERENCES TOURS(TOUR_STA)
+FOREIGN KEY (TOUR_FIN) REFERENCES TOURS(TOUR_FIN)
+FOREIGN KEY (COOK_NUM) REFERENCES COOKS(COOK_NUM))"; 期待されるステートメント "INDEX, ,, )"
+Syntax error in SQL statement "CREATE TABLE PAST_SCORES(
+SCORES_NUM INTEGER(5) NOT NULL,
+USER_NUM INTEGER(5) NOT NULL,
+TOUR_NUM INTEGER(5) NOT NULL,
+ROUND_NUM INTEGER(5) NOT NULL,
+HOLE_NUM INTEGER(2) NOT NULL,
+TOUR_STA DATE NOT NULL,
+TOUR_FIN DATE NOT NULL,
+COOK_NUM INTEGER(5) NOT NULL,
+SCORES INTEGER(3) NOT NULL,
+PRIMARY KEY(TOUR_NUM,ROUND_NUM,HOLE_NUM)
+FOREIGN[*] KEY (SCORES_NUM) REFERENCES SCORES(SCORES_NUM)
+FOREIGN KEY (USER_NUM) REFERENCES USERS(USER_NUM)
+FOREIGN KEY (TOUR_NUM) REFERENCES TOURS(TOUR_NUM)
+FOREIGN KEY (ROUND_NUM) REFERENCES ROUNDS(ROUND_NUM)
+FOREIGN KEY (HOLE_NUM) REFERENCES ROUNDS(HOLE_NUM)
+FOREIGN KEY (TOUR_STA) REFERENCES TOURS(TOUR_STA)
+FOREIGN KEY (TOUR_FIN) REFERENCES TOURS(TOUR_FIN)
+FOREIGN KEY (COOK_NUM) REFERENCES COOKS(COOK_NUM))"; expected "INDEX, ,, )"; SQL statement:
+CREATE TABLE past_scores(
+scores_num INTEGER(5) NOT NULL,
+user_num INTEGER(5) NOT NULL,
+tour_num INTEGER(5) NOT NULL,
+round_num INTEGER(5) NOT NULL,
+hole_num INTEGER(2) NOT NULL,
+tour_sta DATE NOT NULL,
+tour_fin DATE NOT NULL,
+cook_num INTEGER(5) NOT NULL,
+scores INTEGER(3) NOT NULL,
+PRIMARY KEY(tour_num,round_num,hole_num)
+FOREIGN KEY (scores_num) REFERENCES scores(scores_num)
+FOREIGN KEY (user_num) REFERENCES users(user_num)
+FOREIGN KEY (tour_num) REFERENCES tours(tour_num)
+FOREIGN KEY (round_num) REFERENCES rounds(round_num)
+FOREIGN KEY (hole_num) REFERENCES rounds(hole_num)
+FOREIGN KEY (tour_sta) REFERENCES tours(tour_sta)
+FOREIGN KEY (tour_fin) REFERENCES tours(tour_fin)
+FOREIGN KEY (cook_num) REFERENCES cooks(cook_num)) [42001-200]
+2024-06-19 09:52:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE PAST_SCORES(
+SCORES_NUM INTEGER(5) NOT NULL,
+USER_NUM INTEGER(5) NOT NULL,
+TOUR_NUM INTEGER(5) NOT NULL,
+ROUND_NUM INTEGER(5) NOT NULL,
+HOLE_NUM INTEGER(2) NOT NULL,
+TOUR_STA DATE NOT NULL,
+TOUR_FIN DATE NOT NULL,
+COOK_NUM INTEGER(5) NOT NULL,
+SCORES INTEGER(3) NOT NULL,
+PRIMARY KEY(TOUR_NUM,ROUND_NUM,HOLE_NUM)
+FOREIGN[*] KEY (SCORES_NUM) REFERENCES SCORES(SCORES_NUM)
+FOREIGN KEY (USER_NUM) REFERENCES USERS(USER_NUM)
+FOREIGN KEY (TOUR_NUM) REFERENCES TOURS(TOUR_NUM)
+FOREIGN KEY (ROUND_NUM) REFERENCES ROUNDS(ROUND_NUM)
+FOREIGN KEY (HOLE_NUM) REFERENCES ROUNDS(HOLE_NUM)
+FOREIGN KEY (TOUR_STA) REFERENCES TOURS(TOUR_STA)
+FOREIGN KEY (TOUR_FIN) REFERENCES TOURS(TOUR_FIN)
+FOREIGN KEY (COOK_NUM) REFERENCES COOKS(COOK_NUM))"; 期待されるステートメント "INDEX, ,, )"
+Syntax error in SQL statement "CREATE TABLE PAST_SCORES(
+SCORES_NUM INTEGER(5) NOT NULL,
+USER_NUM INTEGER(5) NOT NULL,
+TOUR_NUM INTEGER(5) NOT NULL,
+ROUND_NUM INTEGER(5) NOT NULL,
+HOLE_NUM INTEGER(2) NOT NULL,
+TOUR_STA DATE NOT NULL,
+TOUR_FIN DATE NOT NULL,
+COOK_NUM INTEGER(5) NOT NULL,
+SCORES INTEGER(3) NOT NULL,
+PRIMARY KEY(TOUR_NUM,ROUND_NUM,HOLE_NUM)
+FOREIGN[*] KEY (SCORES_NUM) REFERENCES SCORES(SCORES_NUM)
+FOREIGN KEY (USER_NUM) REFERENCES USERS(USER_NUM)
+FOREIGN KEY (TOUR_NUM) REFERENCES TOURS(TOUR_NUM)
+FOREIGN KEY (ROUND_NUM) REFERENCES ROUNDS(ROUND_NUM)
+FOREIGN KEY (HOLE_NUM) REFERENCES ROUNDS(HOLE_NUM)
+FOREIGN KEY (TOUR_STA) REFERENCES TOURS(TOUR_STA)
+FOREIGN KEY (TOUR_FIN) REFERENCES TOURS(TOUR_FIN)
+FOREIGN KEY (COOK_NUM) REFERENCES COOKS(COOK_NUM))"; expected "INDEX, ,, )"; SQL statement:
+CREATE TABLE past_scores(
+scores_num INTEGER(5) NOT NULL,
+user_num INTEGER(5) NOT NULL,
+tour_num INTEGER(5) NOT NULL,
+round_num INTEGER(5) NOT NULL,
+hole_num INTEGER(2) NOT NULL,
+tour_sta DATE NOT NULL,
+tour_fin DATE NOT NULL,
+cook_num INTEGER(5) NOT NULL,
+scores INTEGER(3) NOT NULL,
+PRIMARY KEY(tour_num,round_num,hole_num)
+FOREIGN KEY (scores_num) REFERENCES scores(scores_num)
+FOREIGN KEY (user_num) REFERENCES users(user_num)
+FOREIGN KEY (tour_num) REFERENCES tours(tour_num)
+FOREIGN KEY (round_num) REFERENCES rounds(round_num)
+FOREIGN KEY (hole_num) REFERENCES rounds(hole_num)
+FOREIGN KEY (tour_sta) REFERENCES tours(tour_sta)
+FOREIGN KEY (tour_fin) REFERENCES tours(tour_fin)
+FOREIGN KEY (cook_num) REFERENCES cooks(cook_num)) [42001-200]
+2024-06-19 09:55:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "PAST_SCORES" はすでに存在します
+Table "PAST_SCORES" already exists; SQL statement:
+CREATE TABLE past_scores(
+scores_num INTEGER(5) NOT NULL,
+user_num INTEGER(5) NOT NULL,
+tour_num INTEGER(5) NOT NULL,
+round_num INTEGER(5) NOT NULL,
+hole_num INTEGER(2) NOT NULL,
+tour_sta DATE NOT NULL,
+tour_fin DATE,
+cook_num INTEGER(5) NOT NULL,
+scores INTEGER(3) NOT NULL,
+PRIMARY KEY(tour_num,round_num,hole_num),
+FOREIGN KEY (scores_num) REFERENCES scores(scores_num),
+FOREIGN KEY (user_num) REFERENCES users(user_num),
+FOREIGN KEY (tour_num) REFERENCES tours(tour_num),
+FOREIGN KEY (round_num) REFERENCES rounds(round_num),
+FOREIGN KEY (hole_num) REFERENCES rounds(hole_num),
+FOREIGN KEY (tour_sta) REFERENCES tours(tour_sta),
+FOREIGN KEY (tour_fin) REFERENCES tours(tour_fin),
+FOREIGN KEY (cook_num) REFERENCES cooks(cook_num)) [42101-200]
+2024-06-19 09:55:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "更新数[*]: 0"
+Syntax error in SQL statement "更新数[*]: 0"; SQL statement:
+更新数: 0 [42000-200]
+2024-06-19 09:56:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "更新数[*]: 0"
+Syntax error in SQL statement "更新数[*]: 0"; SQL statement:
+更新数: 0 [42000-200]
+2024-06-19 10:18:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "COOK_SEAS" が見つかりません
+Table "COOK_SEAS" not found; SQL statement:
+INSERT INTO cook_seas
+VALUES(2,2,true,'なし') [42102-200]
+2024-06-19 10:22:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "SEAS_NUM" が見つかりません
+Column "SEAS_NUM" not found; SQL statement:
+INSERT INTO food_seas(seas_num,user_num)
+VALUES(2,1) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.getColumn(Table.java:703)
+	at org.h2.command.Parser.parseColumn(Parser.java:1450)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1435)
+	at org.h2.command.Parser.parseInsertGivenTable(Parser.java:1804)
+	at org.h2.command.Parser.parseInsert(Parser.java:1749)
+	at org.h2.command.Parser.parsePrepared(Parser.java:954)
+	at org.h2.command.Parser.parse(Parser.java:843)
+	at org.h2.command.Parser.parse(Parser.java:815)
+	at org.h2.command.Parser.prepareCommand(Parser.java:738)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:212)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-06-19 10:29:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "CREATE TABLE COOKS_SEAS(
+    COOKS_SEAS_NUM  INT(5)          NOT NULL,
+    SOLTY           BOOLEAN         ,
+    REGION          CHAR(10)
+    FOREIGN[*] KEY (SEAS_NUM) REFERENCES SEAS(SEAS_NUM)
+)"; 期待されるステートメント "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE COOKS_SEAS(
+    COOKS_SEAS_NUM  INT(5)          NOT NULL,
+    SOLTY           BOOLEAN         ,
+    REGION          CHAR(10)
+    FOREIGN[*] KEY (SEAS_NUM) REFERENCES SEAS(SEAS_NUM)
+)"; expected "FOR, UNSIGNED, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, COMMENT, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE cooks_seas(
+    cooks_seas_num  INT(5)          not null,
+    solty           BOOLEAN         ,
+    region          CHAR(10)
+    FOREIGN KEY (seas_num) REFERENCES seas(seas_num)
+) [42001-200]
+2024-06-19 10:29:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: 列 "SEAS_NUM" が見つかりません
+Column "SEAS_NUM" not found; SQL statement:
+CREATE TABLE cooks_seas(
+    cooks_seas_num  INT(5)          not null,
+    solty           BOOLEAN         ,
+    region          CHAR(10),
+    FOREIGN KEY (seas_num) REFERENCES seas(seas_num)
+) [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.getColumn(Table.java:703)
+	at org.h2.table.IndexColumn.mapColumns(IndexColumn.java:115)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:216)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:78)
+	at org.h2.command.ddl.CommandWithColumns.createConstraints(CommandWithColumns.java:83)
+	at org.h2.command.ddl.CreateTable.update(CreateTable.java:133)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:228)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-06-19 10:42:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE SEAS
+MODIFY[*] SEAS_NUM VARCHAR(5) NOT NULL"; 期待されるステートメント "., ADD, SET, RENAME, DROP, ALTER"
+Syntax error in SQL statement "ALTER TABLE SEAS
+MODIFY[*] SEAS_NUM VARCHAR(5) NOT NULL"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+ALTER TABLE seas
+MODIFY seas_num VARCHAR(5) NOT NULL [42001-200]
+2024-06-19 10:44:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE SEAS
+MODIFY[*] SEAS_NUM VARCHAR NOT NULL"; 期待されるステートメント "., ADD, SET, RENAME, DROP, ALTER"
+Syntax error in SQL statement "ALTER TABLE SEAS
+MODIFY[*] SEAS_NUM VARCHAR NOT NULL"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+ALTER TABLE seas
+MODIFY seas_num VARCHAR NOT NULL [42001-200]
+2024-06-19 10:45:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE SEAS
+MODIFY[*] COLUMN SEAS_NUM VARCHAR NOT NULL"; 期待されるステートメント "., ADD, SET, RENAME, DROP, ALTER"
+Syntax error in SQL statement "ALTER TABLE SEAS
+MODIFY[*] COLUMN SEAS_NUM VARCHAR NOT NULL"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+ALTER TABLE seas
+MODIFY COLUMN seas_num VARCHAR NOT NULL [42001-200]
+2024-06-19 10:46:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE SEAS
+MODIFY[*]  SEAS_NUM VARCHAR(5) NOT NULL"; 期待されるステートメント "., ADD, SET, RENAME, DROP, ALTER"
+Syntax error in SQL statement "ALTER TABLE SEAS
+MODIFY[*]  SEAS_NUM VARCHAR(5) NOT NULL"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+ALTER TABLE seas
+MODIFY  seas_num VARCHAR(5) NOT NULL [42001-200]
+2024-06-19 10:46:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE SEAS
+MODIFY[*]  SEAS_NUM VARCHAR(5) NOT NULL"; 期待されるステートメント "., ADD, SET, RENAME, DROP, ALTER"
+Syntax error in SQL statement "ALTER TABLE SEAS
+MODIFY[*]  SEAS_NUM VARCHAR(5) NOT NULL"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+ALTER TABLE seas
+MODIFY  seas_num VARCHAR(5) NOT NULL [42001-200]
+2024-06-19 10:46:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE SEAS
+MODIFY[*]  SEAS_NUM VARCHAR(5) NOT NULL"; 期待されるステートメント "., ADD, SET, RENAME, DROP, ALTER"
+Syntax error in SQL statement "ALTER TABLE SEAS
+MODIFY[*]  SEAS_NUM VARCHAR(5) NOT NULL"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+ALTER TABLE seas
+MODIFY  seas_num VARCHAR(5) NOT NULL [42001-200]
+2024-06-19 10:46:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE SEAS
+MODIFY[*]  SEAS_NUM VARCHAR(5) NOT NULL"; 期待されるステートメント "., ADD, SET, RENAME, DROP, ALTER"
+Syntax error in SQL statement "ALTER TABLE SEAS
+MODIFY[*]  SEAS_NUM VARCHAR(5) NOT NULL"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+ALTER TABLE seas
+MODIFY  seas_num VARCHAR(5) NOT NULL [42001-200]
+2024-06-19 10:46:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "ALTER TABLE SEAS
+MODIFY[*]  SEAS_NUM VARCHAR(5) NOT NULL"; 期待されるステートメント "., ADD, SET, RENAME, DROP, ALTER"
+Syntax error in SQL statement "ALTER TABLE SEAS
+MODIFY[*]  SEAS_NUM VARCHAR(5) NOT NULL"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+ALTER TABLE seas
+MODIFY  seas_num VARCHAR(5) NOT NULL [42001-200]
+2024-06-19 10:49:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: "CONSTRAINT_906, CONSTRAINT_906E" が依存しているため、"SEAS" をドロップすることはできません
+Cannot drop "SEAS" because "CONSTRAINT_906, CONSTRAINT_906E" depends on it; SQL statement:
+DROP TABLE seas [90107-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:576)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.command.ddl.DropTable.prepareDrop(DropTable.java:98)
+	at org.h2.command.ddl.DropTable.update(DropTable.java:124)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:228)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1459)
+	at org.h2.server.web.WebApp.query(WebApp.java:1116)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1078)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1065)
+	at org.h2.server.web.WebThread.process(WebThread.java:178)
+	at org.h2.server.web.WebThread.run(WebThread.java:94)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+=======
 =======
 >>>>>>> e05a3a060b0db45c394a8a2d621319bb5246bc59
 >>>>>>> ba7279739aeb88f2699e7368b048b11a35158cfc
+>>>>>>> 38a5ea1de012b36ba58b69404b577a8e96895230
