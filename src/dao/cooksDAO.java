@@ -21,7 +21,7 @@ public class cooksDAO {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B1/DB/B1", "B1", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B1/B1", "B1", "");
 
 			// SQL文を準備する
 			String sql = "SELECT * FROM cooks WHERE cook_num =? ORDER BY cook_num ";
@@ -38,7 +38,7 @@ public class cooksDAO {
 			while (rs.next()) {
 				cooks record = new cooks(
 				rs.getInt("cook_num"),
-				rs.getInt("cook_date"),
+				rs.getString("cook_date"),
 				rs.getString("cook_img"),
 				rs.getString("cook_name"),
 				rs.getString("cook_time"),

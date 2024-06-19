@@ -12,7 +12,7 @@
 		<p>一致するデータはありません。</p>
 	</c:if>
 <c:forEach var="e" items="${cardList}">
-"${e.cook_num}"
+		<p>${e.cook_img}</p>
 </c:forEach>
 お気に入り一覧
 </body>
