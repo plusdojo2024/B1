@@ -9,7 +9,7 @@
 </head>
 <body>
 <c:forEach var="e" items="${cardList}">
-${e.number}
+${e.cook_num}
 </c:forEach>
 料理の一覧
 </body>

@@ -1,57 +1,69 @@
 package dao;
 
-/**
- * Servlet implementation class FoodSeasListDAO
- */
-//@WebServlet("/FoodSeasListDAO")
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
-//public class FoodSeasListDAO extends HttpServlet {
-//	private static final long serialVersionUID = 1L;
-//
-//    /**
-//     * @see HttpServlet#HttpServlet()
-//     */
-//    public FoodSeasListDAO() {
-//        super();
-//        // TODO Auto-generated constructor stub
-// //   }
+import model.fsl;
 
-//	/**
-//	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-//	 */
-//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		// TODO Auto-generated method stub
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
-//	}
-//
-//	/**
-//	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-//	 */
-//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		// TODO Auto-generated method stub
-//		doGet(request, response);
-////	}
-//
-////ここから編集
-//	public static String[] fsl(String genre) throws SQLException {
-//		Connection conn = null;
-//		String[] fslList = new String[4];
-//
-//		conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/", "B1", "");
-//
-//	String sql = "SELECT * FROM food_seas WHERE meat;";
-//	PreparedStatement pStmt = conn.prepareStatement(sql);
-//
-//
-//
-//	//SQL文を完成させる
-//	if (fls.getName() != null) {
-//		pStmt.setString(1, "%" + fls.getName() + "%");
-	//}
-//	else {
-//		pStmt.setString(1, "%");
-//	}
-//	if (fls.getAddress() != null) {
-//		pStmt.setString(2, "%" + fls.getAddress() + "%");
-//	}
-//	else {
+public class FoodSeasListDAO {
+	// 引数paramで検索項目を指定し、検索結果のリストを返す
+	public List<fsl> select(String food_seas_genre) {
+		Connection conn = null;
+		List<fsl> fslList = new ArrayList<fsl>();
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B1/DB/B1", "B1", "");
+
+			// SQL文を準備する
+			String sql = "SELECT * FROM food_seas WHERE ?;";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+
+			// SQL文を実行し、結果表を取得する
+			ResultSet rs = pStmt.executeQuery();
+
+			// 結果表をコレクションにコピーする
+			while (rs.next()) {
+				fsl record = new fsl(
+				rs.getInt("food_seas_num"),
+				rs.getString("food_seas_name"),
+				rs.getString("food_seas_genre"),
+				rs.getBoolean("food_seas_stock")
+						);
+						fslList.add(record);
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			cardList = null;
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			cardList = null;
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+					cardList = null;
+				}
+			}
+		}
+
+		// 結果を返す
+		return fslList;
+	}
+}
