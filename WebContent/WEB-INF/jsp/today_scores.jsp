@@ -4,8 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>本日のスコア｜献立ゴルフ</title>
-<link rel="stylesheet" type="text/css" href="/b1/css/style.css">
+<title>Insert title here</title>
 </head>
 <body>
 本日のスコア
