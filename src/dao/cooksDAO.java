@@ -27,6 +27,9 @@ public class cooksDAO {
 			String sql = "SELECT * FROM cooks WHERE cook_num =? ORDER BY cook_num ";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
+			pStmt.setInt(1, cook_num);
+
+
 
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
