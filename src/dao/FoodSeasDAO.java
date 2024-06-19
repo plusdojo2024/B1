@@ -12,12 +12,12 @@ public class FoodSeasDAO {
     public List<String> getRandomFoodSeasNamesByGenreAndStock() {
         List<String> foodSeasNames = new ArrayList<>();
 
-        String sqlMeat = "SELECT food_seas_name FROM food_seas WHERE food_seas_genre = '肉' AND food_seas_stock = TRUE ORDER BY RANDOM() LIMIT 1";
-        String sqlVegetable = "SELECT food_seas_name FROM food_seas WHERE food_seas_genre = '野菜' AND food_seas_stock = TRUE ORDER BY RANDOM() LIMIT 2";
+        String sqlMeat = "SELECT food_seas_name FROM food_seas WHERE food_seas_genre = 'meat' AND food_seas_stock = TRUE ORDER BY RANDOM() LIMIT 1";
+        String sqlVegetable = "SELECT food_seas_name FROM food_seas WHERE food_seas_genre = 'vege' AND food_seas_stock = TRUE ORDER BY RANDOM() LIMIT 2";
 
         try (
         	//データベース読み込み
-			//Class.forName("org.h2.Driver");
+        	Class.forName("org.h2.Driver");
 
     		//データベースに接続
         	Connection conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B1/DB/B1","B1","");
