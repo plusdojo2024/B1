@@ -9,57 +9,40 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FoodSeasDAO {
-	public List<String> getRandomFoodSeasNames() {
-        List<String> result = new ArrayList<>();
-        Connection conn = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
+    public List<String> getRandomFoodSeasNamesByGenreAndStock() {
+        List<String> foodSeasNames = new ArrayList<>();
 
+        String sqlMeat = "SELECT food_seas_name FROM food_seas WHERE food_seas_genre = '肉' AND food_seas_stock = TRUE ORDER BY RANDOM() LIMIT 1";
+        String sqlVegetable = "SELECT food_seas_name FROM food_seas WHERE food_seas_genre = '野菜' AND food_seas_stock = TRUE ORDER BY RANDOM() LIMIT 2";
 
-
-        try {
+        try (
         	//データベース読み込み
-			Class.forName("org.h2.Driver");
+			//Class.forName("org.h2.Driver");
 
-			//データベースに接続
-			conn = DriverManager.getConnection(
-					"jdbc:h2:file:C:/pleiades/workspace/B1/DB/B1","B1","food_seas");
+    		//データベースに接続
+        	Connection conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B1/DB/B1","B1","");
+            PreparedStatement pstmtMeat = conn.prepareStatement(sqlMeat);
+            PreparedStatement pstmtVegetable = conn.prepareStatement(sqlVegetable)) {
 
-            // 肉の1つをランダムに取得
-            String sqlMeat = "SELECT food_seas_name FROM food_seas WHERE food_seas_genre = '肉' ORDER BY RAND() LIMIT 1";
-            ps = conn.prepareStatement(sqlMeat);
-            rs = ps.executeQuery();
-            if (rs.next()) {
-                result.add(rs.getString("food_seas_name"));
+            // 肉の食材を1つ取得
+            try (ResultSet rsMeat = pstmtMeat.executeQuery()) {
+                if (rsMeat.next()) {
+                    foodSeasNames.add(rsMeat.getString("food_seas_name"));
+                }
             }
 
-            // リソースをクローズして再利用
-            rs.close();
-            ps.close();
-
-            // 野菜の2つをランダムに取得
-            String sqlVeg = "SELECT food_seas_name FROM food_seas WHERE food_seas_genre = '野菜' ORDER BY RAND() LIMIT 2";
-            ps = conn.prepareStatement(sqlVeg);
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                result.add(rs.getString("food_seas_name"));
+            // 野菜の食材を2つ取得
+            try (ResultSet rsVegetable = pstmtVegetable.executeQuery()) {
+                while (rsVegetable.next()) {
+                    foodSeasNames.add(rsVegetable.getString("food_seas_name"));
+                }
             }
 
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            // リソースのクローズ
-            if (rs != null) {
-                try { rs.close(); } catch (SQLException e) { e.printStackTrace(); }
-            }
-            if (ps != null) {
-                try { ps.close(); } catch (SQLException e) { e.printStackTrace(); }
-            }
-            if (conn != null) {
-                try { conn.close(); } catch (SQLException e) { e.printStackTrace(); }
-            }
         }
 
-        return result;
+        return foodSeasNames;
     }
 }
+

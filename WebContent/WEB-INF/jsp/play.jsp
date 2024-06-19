@@ -10,7 +10,7 @@
 
     <ul>
         <c:forEach var="name" items="${sessionScope.foodSeasNames}">
-            <li>${sessionScope.name}</li>
+            <li>${name}</li>
         </c:forEach>
     </ul>
 
