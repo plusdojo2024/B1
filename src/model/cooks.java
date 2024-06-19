@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class cooks implements Serializable {
 	private int cook_num ; /* 番号 */
-	private int cook_date  ; /* 日付 */
+	private String cook_date  ; /* 日付 */
 	private String cook_img ;  /* 画像 */
 	private String cook_name ; /* 料理名 */
 	private String cook_time;/* 調理時間 */
@@ -24,7 +24,7 @@ public class cooks implements Serializable {
 
 	}
     //引数があるコンストラクタ
-	public cooks( int cook_num ,int cook_date,String cook_img, String cook_name, String cook_time,String  cook_sta,
+	public cooks( int cook_num ,String cook_date,String cook_img, String cook_name, String cook_time,String  cook_sta,
 			String  cook_fin, String  food_con,String food_used,String seas_con,String seas_used,String cook_satis,String aji_satis,String cook_fav,String cook_com ) {
 		super();
 		this.cook_num=cook_num;
@@ -52,10 +52,10 @@ public class cooks implements Serializable {
 	public void setCook_num(int cook_num) {
 		this.cook_num = cook_num;
 	}
-	public int getCook_date() {
+	public String getCook_date() {
 		return cook_date;
 	}
-	public void setCook_date(int cook_date) {
+	public void setCook_date(String cook_date) {
 		this.cook_date = cook_date;
 	}
 	public String getCook_img() {
