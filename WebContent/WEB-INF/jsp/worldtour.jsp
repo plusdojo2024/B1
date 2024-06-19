@@ -8,5 +8,18 @@
 </head>
 <body>
 ワールドツアー
+<h1>
+	<a href = "/B1/SetPlayingConditions">
+		国内
+	</a>
+</h1>
+
+
+
+
+<h2></h2>
+<h3></h3>
+
+
 </body>
 </html>

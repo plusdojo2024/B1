@@ -23,7 +23,7 @@ public class FoodSeasDAO {
 
 			//データベースに接続
 			conn = DriverManager.getConnection(
-					"jdbc:h2:file:C:/pleiades/workspace/B1/DB/B1","B1","");
+					"jdbc:h2:file:C:/pleiades/workspace/B1/DB/B1","B1","food_seas");
 
             // 肉の1つをランダムに取得
             String sqlMeat = "SELECT food_seas_name FROM food_seas WHERE food_seas_genre = '肉' ORDER BY RAND() LIMIT 1";

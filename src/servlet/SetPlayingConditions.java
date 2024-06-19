@@ -42,7 +42,7 @@ public class SetPlayingConditions extends HttpServlet {
         List<String> foodSeasNames = fcDao.getRandomFoodSeasNames();
 
         request.setAttribute("foodSeasNames", foodSeasNames);
-        request.getRequestDispatcher("/food_seas_display.jsp").forward(request, response);
+        request.getRequestDispatcher("/play.jsp").forward(request, response);
 
         // webブラウザからのリクエスト（国内か海外かランダムか）を受け取り、それに応じて調味料を返す。
 		//
