@@ -12,7 +12,7 @@ import model.cooks;
 
 public class cooksDAO {
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
-	public List<cooks> select(int cook_num) {
+	public List<cooks> select(int user_num) {
 		Connection conn = null;
 		List<cooks> cardList = new ArrayList<cooks>();
 
@@ -24,10 +24,10 @@ public class cooksDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B1/B1", "B1", "");
 
 			// SQL文を準備する
-			String sql = "SELECT * FROM cooks WHERE cook_num =? ORDER BY cook_num ";
+			String sql = "SELECT * FROM COOKS WHERE USER_NUM = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
-			pStmt.setInt(1, cook_num);
+			pStmt.setInt(1, user_num);
 
 
 
@@ -51,7 +51,8 @@ public class cooksDAO {
 				rs.getString("cook_satis"),
 				rs.getString("aji_satis"),
 				rs.getString("cook_fav"),
-				rs.getString("cook_com")
+				rs.getString("cook_com"),
+				rs.getInt("user_num")
 						);
 						cardList.add(record);
 			}
