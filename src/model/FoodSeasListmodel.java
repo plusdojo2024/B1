@@ -14,19 +14,11 @@ public class FoodSeasListmodel implements Serializable {
 
 
 	//引数がないコンストラクタ
-<<<<<<< Updated upstream
 //	public fsl() {
 //	}
     //引数があるコンストラクタ
 	public FoodSeasListmodel(int food_seas_num ,String food_seas_name, String food_seas_genre, boolean food_seas_stock) {
 //		super();
-=======
-	public FoodSeasListmodel() {
-	}
-    //引数があるコンストラクタ
-	public FoodSeasListmodel( int food_seas_num ,String food_seas_name, String food_seas_genre, boolean food_seas_stock) {
-		super();
->>>>>>> Stashed changes
 		this.food_seas_num = food_seas_num;
 		this.food_seas_name = food_seas_name;
 		this.food_seas_genre = food_seas_genre;
