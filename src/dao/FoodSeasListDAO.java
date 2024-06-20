@@ -72,4 +72,6 @@ public class FoodSeasListDAO {
 		// 結果を返す
 		return fslList;
 	}
+
+//削除を行う
 }
