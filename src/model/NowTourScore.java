@@ -2,7 +2,7 @@ package model;
 
 import java.io.Serializable;
 
-public class score implements Serializable {
+public class NowTourScore implements Serializable {
 	private int scores_num ; /* スコア管理番号 */
 	private int par  ; /* パー数 */
 	private int time_scores ;  /* 調理時間スコア */
@@ -13,11 +13,11 @@ public class score implements Serializable {
 	private int total_score ;   /* 	今回のスコア */
 
 	//引数がないコンストラクタ
-	public score() {
+	public NowTourScore() {
 
 	}
     //引数があるコンストラクタ
-	public score( int scores_num ,int par,int time_scores,int food_scores,int seas_scores,
+	public NowTourScore( int scores_num ,int par,int time_scores,int food_scores,int seas_scores,
 					int cook_scores,int taste_scores,int total_score ) {
 		super();
 		this.scores_num=scores_num;
