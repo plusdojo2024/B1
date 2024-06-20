@@ -10,8 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.BcDAO;
 import dao.FoodSeasListDAO;
+import model.Bc;
 import model.FoodSeasListmodel;
+import model.Result;
 
 /**
  * Servlet implementation class foodSeasList
@@ -46,24 +49,38 @@ public class FoodSeasListServlet extends HttpServlet {
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("helpList",fslList);
 
+		food_seas_genre = "myse";
+		 fslList = fDao.select(food_seas_genre);
+
+		// 検索結果をリクエストスコープに格納する
+		request.setAttribute("myseList",fslList);
+
 //food_seas_genreの中身がmeat、vege、help,seasで、fs
 
-		// メニューページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/food_seas_list.jsp");
-		dispatcher.forward (request, response);
 
 	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+//チェックボックスがチェックされたら削除する
+	// 更新または削除を行う
+	FoodSeasListDAO fDao = new FoodSeasListDAO();
+	if (request.getParameter("meatdel").equals("在庫の削除")){
+		if(meatdel.checked) {
+
+		}
+	}
 
 
-		// メニューページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/food_seas_list.jsp");
-		dispatcher.forward (request, response);
 
+	// 結果ページにフォワードする
+	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/food_seas_list.jsp");
+	dispatcher.forward(request, response);
+}
 
 	}
+
+
 
 		}
