@@ -8,13 +8,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.score;
+import model.NowTourScore;
 
 public class ScoreDAO{
 
-	public static List<score> select(int scores_num) {
+	public static List<NowTourScore> select(int scores_num) {
 		Connection conn = null;
-		List<score> cardList = new ArrayList<score>();
+		List<NowTourScore> cardList = new ArrayList<NowTourScore>();
 
 		try {
 			//データベース読み込み
@@ -36,7 +36,7 @@ public class ScoreDAO{
 
 						// 結果表をコレクションにコピーする
 						while (rs.next()) {
-							score record = new score(
+							NowTourScore record = new NowTourScore(
 							rs.getInt("scores_num"),
 							rs.getInt("par"),
 							rs.getInt("time_scores"),
