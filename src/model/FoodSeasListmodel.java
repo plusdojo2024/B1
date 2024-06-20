@@ -8,19 +8,34 @@ public class FoodSeasListmodel implements Serializable {
 	private String food_seas_genre ;	/* 食材のジャンル */
 	private boolean food_seas_stock;	/* 在庫の有無 */
 
+//ここまででやってること
+//FoodSeasListmodelクラスを作成して、中身を決める
+//私の場合はこの4つ
+
+
 	//引数がないコンストラクタ
-	public fsl() {
+<<<<<<< Updated upstream
+//	public fsl() {
+//	}
+    //引数があるコンストラクタ
+	public FoodSeasListmodel(int food_seas_num ,String food_seas_name, String food_seas_genre, boolean food_seas_stock) {
+//		super();
+=======
+	public FoodSeasListmodel() {
 	}
     //引数があるコンストラクタ
-	public void fsl( int food_seas_num ,String food_seas_name, String food_seas_genre, boolean food_seas_stock) {
+	public FoodSeasListmodel( int food_seas_num ,String food_seas_name, String food_seas_genre, boolean food_seas_stock) {
 		super();
+>>>>>>> Stashed changes
 		this.food_seas_num = food_seas_num;
 		this.food_seas_name = food_seas_name;
 		this.food_seas_genre = food_seas_genre;
 		this.food_seas_stock = food_seas_stock;
 
 	}
-
+//ここまででしてること
+//コンストラクタは実体かするときに使うやつ
+//ここに入るのはmodel
 
 	public int getFood_seas_num() {
 		return food_seas_num;
@@ -28,7 +43,6 @@ public class FoodSeasListmodel implements Serializable {
 	public void setFood_seas_num(int food_seas_num) {
 		this.food_seas_num = food_seas_num;
 	}
-
 
 	public String getFood_seas_name() {
 		return food_seas_name;
