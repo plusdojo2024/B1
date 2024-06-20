@@ -18,6 +18,7 @@ public class cooks implements Serializable {
 	private String  aji_satis ;   /* 味の満足度 */
 	private String cook_fav;   /* お気に入り */
 	private String cook_com; /* コメント */
+	private int user_num;/*ユーザーナンバー*/
 
 	//引数がないコンストラクタ
 	public cooks() {
@@ -25,7 +26,7 @@ public class cooks implements Serializable {
 	}
     //引数があるコンストラクタ
 	public cooks( int cook_num ,String cook_date,String cook_img, String cook_name, String cook_time,String  cook_sta,
-			String  cook_fin, String  food_con,String food_used,String seas_con,String seas_used,String cook_satis,String aji_satis,String cook_fav,String cook_com ) {
+			String  cook_fin, String  food_con,String food_used,String seas_con,String seas_used,String cook_satis,String aji_satis,String cook_fav,String cook_com,int user_num) {
 		super();
 		this.cook_num=cook_num;
 		this.cook_date=cook_date;
@@ -42,6 +43,7 @@ public class cooks implements Serializable {
 		this.aji_satis = aji_satis;
 		this.cook_fav = cook_fav;
 		this.cook_com  = cook_com ;
+		this.user_num = user_num;
 
 	}
 
@@ -135,6 +137,12 @@ public class cooks implements Serializable {
 	}
 	public void setCook_com(String cook_com) {
 		this.cook_com = cook_com;
+	}
+	public int getUser_num() {
+		return user_num;
+	}
+	public void setUser_num(int user_num) {
+		this.user_num = user_num;
 	}
 }
 

@@ -13,11 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import dao.cooksDAO;
 import model.cooks;
 
-/**
- * Servlet implementation class MenuServlet
- */
-@WebServlet("/favorite")
-public class favorite extends HttpServlet {
+
+@WebServlet("/FavoriteServlet")
+public class FavoriteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -37,8 +35,8 @@ public class favorite extends HttpServlet {
 		// 検索処理を行う
 		cooksDAO bDao = new cooksDAO();
 		// ここを改造しました
-		int cook_num=1;
-		List<cooks> cardList = bDao.select(cook_num);
+		int user_num=1;
+		List<cooks> cardList = bDao.select(user_num);
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("cardList", cardList);

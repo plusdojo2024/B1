@@ -12,11 +12,11 @@ import javax.servlet.http.HttpSession;
 
 import dao.FoodSeasDAO;
 
-@WebServlet("/SetPlayingConditions")
-public class SetPlayingConditions extends HttpServlet {
+@WebServlet("/SetPlayingConditionsServlet")
+public class SetPlayingConditionsServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    public SetPlayingConditions() {
+    public SetPlayingConditionsServlet() {
         super();
     }
 
