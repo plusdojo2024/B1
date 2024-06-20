@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class SaveTemporaryRegistration
  */
-@WebServlet("/SaveTemporaryRegistration")
+@WebServlet("/SaveTemporaryRegistrationServlet")
 public class SaveTemporaryRegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

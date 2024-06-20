@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>仮登録</title>
 </head>
 <body>
 仮登録画面
