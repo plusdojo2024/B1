@@ -14,7 +14,7 @@ public class ScoreDAO{
 
 	public static List<NowTourScore> select(int scores_num) {
 		Connection conn = null;
-		List<NowTourScore> cardList = new ArrayList<NowTourScore>();
+		List<NowTourScore> scoreList = new ArrayList<NowTourScore>();
 
 		try {
 			//データベース読み込み
@@ -46,16 +46,16 @@ public class ScoreDAO{
 							rs.getInt("taste_scores"),
 							rs.getInt("total_score")
 									);
-									cardList.add(record);
+									scoreList.add(record);
 						}
 					}
 					catch (SQLException e) {
 						e.printStackTrace();
-						cardList = null;
+						scoreList = null;
 					}
 					catch (ClassNotFoundException e) {
 						e.printStackTrace();
-						cardList = null;
+						scoreList = null;
 					}
 					finally {
 						// データベースを切断

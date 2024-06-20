@@ -8,7 +8,7 @@
 </head>
 <body>
 参加中のツアー
-<c:forEach var="e" items="${cardList}">
+<c:forEach var="e" items="${scoreList}">
 ${e.scores_num}<br>
 ${e.par}<br>
 ${e.time_scores}<br>
