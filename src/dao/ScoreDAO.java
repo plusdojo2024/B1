@@ -71,6 +71,6 @@ public class ScoreDAO{
 					}
 
 					// 結果を返す
-					return cardList;
+					return scoreList;
 	}
 }
