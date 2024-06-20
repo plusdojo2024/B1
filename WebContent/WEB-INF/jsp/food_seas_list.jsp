@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +15,12 @@
         <h3 class="title">肉</h3>
         <div class="box">
           <p>肉一覧</p>
+            <c:forEach var="e" items="${meatList}" >
+
+				${e.food_seas_num },${e.food_seas_name },${e.food_seas_genre },	${e.food_seas_stock }
+				<hr>
+			</c:forEach>
+
         </div>
       </section>
     </li>
@@ -22,6 +29,14 @@
         <h3 class="title">野菜</h3>
         <div class="box">
           <p>野菜一覧</p>
+         	 <c:forEach var="e" items="${vegeList}" >
+
+				${e.food_seas_num },${e.food_seas_name },${e.food_seas_genre },	${e.food_seas_stock }
+				<hr>
+			</c:forEach>
+
+
+
         </div>
       </section>
     </li>
@@ -30,6 +45,11 @@
         <h3 class="title">お助け</h3>
         <div class="box">
           <p>お助け一覧</p>
+            <c:forEach var="e" items="${helpList}" >
+
+				${e.food_seas_num },${e.food_seas_name },${e.food_seas_genre },	${e.food_seas_stock }
+				<hr>
+			</c:forEach>
         </div>
       </section>
 
