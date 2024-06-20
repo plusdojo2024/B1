@@ -9,19 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.UsersDAO;
+import dao.StatusDAO;
 
 /**
- * Servlet implementation class login
+ * Servlet implementation class StatesCheck
  */
-@WebServlet("/login")
-public class login extends HttpServlet {
+@WebServlet("/StatusCheck")
+public class StatusCheck extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public login() {
+    public StatusCheck() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,8 +30,26 @@ public class login extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
-		dispatcher.forward(request,response);
+
+		String[] Status = StatusDAO.getStatus(1);
+
+		if(Status != null) {
+
+			// 検索結果をリクエストスコープに格納する
+						request.setAttribute("Status", Status);
+
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
+			dispatcher.forward(request,response);
+
+
+
+		}else {
+
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+			dispatcher.forward(request,response);
+
+		}
+
 	}
 
 	/**
@@ -39,25 +57,7 @@ public class login extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String user_name = request.getParameter("user_name");
-		String user_pass = request.getParameter("user_pass");
-
-		if(user_name.length() == 0) {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/test.jsp");
-		dispatcher.forward(request,response);
-		}else {
-
-		boolean LoginTicket = UsersDAO.getLoginTicket(user_name,user_pass);
-
-		if(LoginTicket){
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
-			dispatcher.forward(request,response);
-		}else {
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
-			dispatcher.forward(request,response);
-
-		}
-		}
+		doGet(request, response);
 	}
 
 }
