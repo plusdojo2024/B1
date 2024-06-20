@@ -8,21 +8,12 @@
 </head>
 <body>
     <h1>調理条件</h1>
-   	<c:if test="${empty foodSeasNames}">
-		<p>一致するデータはありません。</p>
-	</c:if>
-<c:forEach var="e" items="${foodSeasNames}">
-		<p>${name}</p>
-</c:forEach>
 
-
-
-
-
-   	<!--   <c:forEach var="name" items="${foodSeasNames}">
-        		<li>${e.name}</li>
-    </c:forEach>
-	-->
+    <ul>
+     	<c:forEach var="name" items="${sessionScope.foodSeasNames}">
+            <li>${e.food_seas_name}</li>
+        </c:forEach>
+    </ul>
 
     <!-- ここに他のコンテンツや機能を追加 -->
 

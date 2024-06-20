@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -12,14 +13,24 @@ import javax.servlet.http.HttpSession;
 
 import dao.FoodSeasDAO;
 
+/**
+ * Servlet implementation class SetPlayingConditions
+ */
 @WebServlet("/SetPlayingConditionsServlet")
 public class SetPlayingConditionsServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
     public SetPlayingConditionsServlet() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
+    /**
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // ログインセッションが切れていたらログイン画面に戻す
         HttpSession session = request.getSession();
@@ -30,23 +41,28 @@ public class SetPlayingConditionsServlet extends HttpServlet {
 
         // 食材の提示
         FoodSeasDAO fcDao = new FoodSeasDAO();
-        List<String> foodSeasNames = fcDao.getRandomFoodSeasNamesByGenreAndStock();
+        try {
+            List<String> foodSeasNames = fcDao.getRandomFoodSeasNamesByGenreAndStock();
 
-        // 調味料とお助けの表示も。
+            // セッションスコープにfoodSeasNamesを保存
+            session.setAttribute("foodSeasNames", foodSeasNames);
 
-
-
-        // セッションスコープにfoodSeasNamesを保存
-        session.setAttribute("foodSeasNames", foodSeasNames);
-
-        // play.jspにフォワード
-        request.getRequestDispatcher("/play.jsp").forward(request, response);
+            request.getRequestDispatcher("/play.jsp").forward(request, response);
+        } catch (SQLException e) {
+            request.setAttribute("errorMessage", "必要な食材が見つかりませんでした。");
+            request.getRequestDispatcher("/error.jsp").forward(request, response);
+        }
 
         // TODO Auto-generated method stub
         response.getWriter().append("Served at: ").append(request.getContextPath());
     }
 
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // TODO Auto-generated method stub
         doGet(request, response);
     }
+
 }
