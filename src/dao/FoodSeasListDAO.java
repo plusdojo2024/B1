@@ -8,47 +8,53 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.fsl;
+import model.FoodSeasListmodel;
 
 public class FoodSeasListDAO {
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
-	public List<fsl> select(String food_seas_genre) {
+	public List<FoodSeasListmodel> select(String food_seas_genre) {
 		Connection conn = null;
-		List<fsl> fslList = new ArrayList<fsl>();
-
+		List<FoodSeasListmodel> fslList = new ArrayList<FoodSeasListmodel>();
+//ここでしてること
+//modelで作った物にDBの内容を入れてくる
+// fslList = new ArrayList<FoodSeasListmodel>の()内のものを、List<FoodSeasListmodel>型の、fslリストに代入する！
 		try {
 			// JDBCドライバを読み込む
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B1/DB/B1", "B1", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B1/B1", "B1", "");
 
 			// SQL文を準備する
-			String sql = "SELECT * FROM food_seas WHERE ?;";
+			String sql = "SELECT * FROM food_seas WHERE food_seas_genre = ?;";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
+			pStmt.setString(1, food_seas_genre);
+//ここで、SQL文を作って、？１番目に入るのはfood_seas_genreの４つのどれか
 
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
-				fsl record = new fsl(
-				rs.getInt("food_seas_num"),
-				rs.getString("food_seas_name"),
-				rs.getString("food_seas_genre"),
-				rs.getBoolean("food_seas_stock")
+				FoodSeasListmodel record = new FoodSeasListmodel(
+//FoodSeasListmodelは、modelファイル内で決めた、６～９行目
+				rs.getInt("food_seas_num"),	//1
+				rs.getString("food_seas_name"),//もやし
+				rs.getString("food_seas_genre"),//vege
+				rs.getBoolean("food_seas_stock")//TRUE
 						);
-						fslList.add(record);
+				fslList.add(record);
+//fslListにrecordの内容を追加していく指示をしてる
 			}
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
-			cardList = null;
+			fslList = null;
 		}
 		catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			cardList = null;
+			fslList = null;
 		}
 		finally {
 			// データベースを切断
@@ -58,7 +64,7 @@ public class FoodSeasListDAO {
 				}
 				catch (SQLException e) {
 					e.printStackTrace();
-					cardList = null;
+					fslList = null;
 				}
 			}
 		}
@@ -66,4 +72,6 @@ public class FoodSeasListDAO {
 		// 結果を返す
 		return fslList;
 	}
+
+//削除を行う
 }
