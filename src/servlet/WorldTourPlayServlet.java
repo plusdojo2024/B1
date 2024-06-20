@@ -12,14 +12,14 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class WorldTourPlay
  */
-@WebServlet("/WorldTourPlay")
-public class WorldTourPlay extends HttpServlet {
+@WebServlet("/WorldTourPlayServlet")
+public class WorldTourPlayServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public WorldTourPlay() {
+    public WorldTourPlayServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

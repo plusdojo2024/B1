@@ -13,13 +13,13 @@ import javax.servlet.http.HttpSession;
  * Servlet implementation class SaveTemporaryRegistration
  */
 @WebServlet("/SaveTemporaryRegistration")
-public class SaveTemporaryRegistration extends HttpServlet {
+public class SaveTemporaryRegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SaveTemporaryRegistration() {
+    public SaveTemporaryRegistrationServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
