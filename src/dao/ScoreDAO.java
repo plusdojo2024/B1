@@ -8,13 +8,17 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.NowTourScore;
+import model.score;
 
 public class ScoreDAO{
 
+<<<<<<< HEAD
 	public static List<NowTourScore> select(NowTourScore score) {
+=======
+	public static List<score> select(int scores_num) {
+>>>>>>> 640fa20bebea0e13c76d5e32dbb5de24549b4522
 		Connection conn = null;
-		List<NowTourScore> scoreList = new ArrayList<NowTourScore>();
+		List<score> cardList = new ArrayList<score>();
 
 		try {
 			//データベース読み込み
@@ -30,6 +34,7 @@ public class ScoreDAO{
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 
+<<<<<<< HEAD
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
 				NowTourScore record = new NowTourScore(
@@ -65,5 +70,50 @@ public class ScoreDAO{
 		}
 		// 結果を返す
 		return scoreList;
+=======
+
+
+						// SQL文を実行し、結果表を取得する
+						ResultSet rs = pStmt.executeQuery();
+
+						// 結果表をコレクションにコピーする
+						while (rs.next()) {
+							score record = new score(
+							rs.getInt("scores_num"),
+							rs.getInt("par"),
+							rs.getInt("time_scores"),
+							rs.getInt("food_scores"),
+							rs.getInt("seas_scores"),
+							rs.getInt("cook_scores"),
+							rs.getInt("taste_scores"),
+							rs.getInt("total_score")
+									);
+									cardList.add(record);
+						}
+					}
+					catch (SQLException e) {
+						e.printStackTrace();
+						cardList = null;
+					}
+					catch (ClassNotFoundException e) {
+						e.printStackTrace();
+						cardList = null;
+					}
+					finally {
+						// データベースを切断
+						if (conn != null) {
+							try {
+								conn.close();
+							}
+							catch (SQLException e) {
+								e.printStackTrace();
+								cardList = null;
+							}
+						}
+					}
+
+					// 結果を返す
+					return cardList;
+>>>>>>> 640fa20bebea0e13c76d5e32dbb5de24549b4522
 	}
 }
