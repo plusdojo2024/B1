@@ -8,6 +8,7 @@
 </head>
 <body>
 参加中のツアー
+<form method="get" action="ScoreServlet">
 <c:forEach var="e" items="${scoreList}">
 ${e.scores_num}<br>
 ${e.par}<br>
@@ -18,5 +19,6 @@ ${e.cook_scores}<br>
 ${e.taste_scores}<br>
 ${e.total_score}<br>
 </c:forEach>
+</form>
 </body>
 </html>
