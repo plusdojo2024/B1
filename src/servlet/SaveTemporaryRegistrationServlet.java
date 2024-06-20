@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,19 +9,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.FoodSeasDAO;
-
 /**
- * Servlet implementation class SetPlayingConditions
+ * Servlet implementation class SaveTemporaryRegistration
  */
-@WebServlet("/SetPlayingConditions")
-public class SetPlayingConditions extends HttpServlet {
+@WebServlet("/SaveTemporaryRegistration")
+public class SaveTemporaryRegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SetPlayingConditions() {
+    public SaveTemporaryRegistrationServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,18 +34,6 @@ public class SetPlayingConditions extends HttpServlet {
             response.sendRedirect("/B1/login");
             return;
         }
-        // 食材の提示
-        FoodSeasDAO fcDao = new FoodSeasDAO();
-        List<String> foodSeasNames = fcDao.getRandomFoodSeasNamesByGenreAndStock();
-
-        // セッションスコープにfoodSeasNamesを保存
-        session.setAttribute("foodSeasNames", foodSeasNames);
-
-        // request.setAttribute("foodSeasNames", foodSeasNames);
-        request.getRequestDispatcher("/play.jsp").forward(request, response);
-
-        // webブラウザからのリクエスト（国内か海外かランダムか）を受け取り、それに応じて調味料を返す。
-		//
 
 
 		// TODO Auto-generated method stub

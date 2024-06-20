@@ -7,19 +7,18 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class SaveTemporaryRegistration
+ * Servlet implementation class Current
  */
-@WebServlet("/SaveTemporaryRegistration")
-public class SaveTemporaryRegistration extends HttpServlet {
+@WebServlet("/CurrentServlet")
+public class CurrentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SaveTemporaryRegistration() {
+    public CurrentServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,14 +27,6 @@ public class SaveTemporaryRegistration extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// ログインセッションが切れていたらログイン画面に戻す
-		HttpSession session = request.getSession();
-        if (session.getAttribute("id") == null) {
-            response.sendRedirect("/B1/login");
-            return;
-        }
-
-
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
