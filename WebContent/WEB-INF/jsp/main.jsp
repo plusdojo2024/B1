@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,10 +10,9 @@
 <body>
 メイン画面
 
+<a href="/B1/StatusCheck?action="><img></a>
 
-<!--	<div>
-	<a href = "/B1/WorldTourPlay" class=""></a>
-	</div>
--->
+
+
 </body>
 </html>

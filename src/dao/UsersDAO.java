@@ -10,12 +10,12 @@ import java.sql.ResultSet;
 
 public class UsersDAO{
 
-	public static boolean getLoginTicket(String user_name,String user_pass) {
+	public  String getLoginTicket(String user_name,String user_pass) {
 
 		//DBアクセス権
 		Connection conn = null;
 
-		boolean loginResult = false;
+		String user_num = null;
 
 		try {
 
@@ -24,10 +24,10 @@ public class UsersDAO{
 
 			//データベースに接続
 			conn = DriverManager.getConnection(
-					"jdbc:h2:file:C:/pleiades/workspace/B1/DB/B1","B1","");
+					"jdbc:h2:file:C:/pleiades/workspace/B1/B1","B1","");
 
 			//SQL準備
-			String StatusCheckSQL = "SELECT COUNT(*) FROM USERS "
+			String StatusCheckSQL = "SELECT user_num ,COUNT(*) FROM USERS "
 				+ "WHERE user_name=? AND user_pass=?;";
 
 			PreparedStatement EmbedSQL = conn.prepareStatement(StatusCheckSQL);
@@ -38,7 +38,9 @@ public class UsersDAO{
 
 			result.next();
 			if(result.getInt("COUNT(*)") == 1) {
-				loginResult = true;
+				user_num = result.getString("user_num");
+			}else {
+				user_num = null;
 			}
 
 
@@ -46,7 +48,7 @@ public class UsersDAO{
 
 		catch	(Exception e){
 			e.printStackTrace();
-			loginResult = false;
+			user_num = null;
 		}
 
 		finally{
@@ -57,11 +59,11 @@ public class UsersDAO{
 				}
 				catch(Exception e) {
 					e.printStackTrace();
-					loginResult = false;
+					user_num = null;
 				}
 			}
 		};
 
-		return loginResult;
+		return user_num;
 	};
 };
