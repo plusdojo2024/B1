@@ -10,23 +10,23 @@
 <p>料理の一覧</p>
 </head>
 <body>
-  <!-- モーダルを開くボタン -->
-<button class="modal-open js-modal-open">モーダルを開く</button>
-
-<!-- モーダル本体 -->
-<div class="modal js-modal">
-  <div class="modal-container">
-    <!-- モーダルを閉じるボタン -->
-    <div class="modal-close js-modal-close">×</div>
-    <!-- モーダル内部のコンテンツ -->
-    <div class="modal-content">
-      <p>開きました。</p>
-    </div>
-  </div>
-</div>
 <c:forEach var="e" items="${cardList}">
+<img id="mw" class="img-pc" src="/B1/img/cook.png">
+${e.cook_num}
+${e.cook_name}<br>
 
-<!--  ${e.cook_img}<br>-->
+<dialog id="dmw">
+text
+</dialog>
+</c:forEach>
+<script>
+const btn = document.getElementById("mw");
+btn.addEventListener("click",()=>{
+	dmw.showModal();
+});
+</script>
+
+<!--<c:forEach var="e" items="${cardList}">
 <img class="img-pc" src="/B1/img/cook.png"><br>
 ${e.cook_num}
 ${e.cook_name}<br>
@@ -42,29 +42,7 @@ ${e.aji_satis}<br>
 ${e.cook_fav}<br>
 ${e.cook_com}<br>
 
-</c:forEach>
- <script src="cooklist.js">const buttonOpen = document.getElementById('modalOpen');
- const modal = document.getElementById('easyModal');
- const buttonClose = document.getElementsByClassName('modalClose')[0];
+</c:forEach>-->
 
- // ボタンがクリックされた時
- buttonOpen.addEventListener('click', modalOpen);
- function modalOpen() {
-   modal.style.display = 'block';
- }
-
- // バツ印がクリックされた時
- buttonClose.addEventListener('click', modalClose);
- function modalClose() {
-   modal.style.display = 'none';
- }
-
- // モーダルコンテンツ以外がクリックされた時
- addEventListener('click', outsideClose);
- function outsideClose(e) {
-   if (e.target == modal) {
-     modal.style.display = 'none';
-   }
- }</script>
 </body>
 </html>
