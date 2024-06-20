@@ -24,7 +24,7 @@ public class UsersDAO{
 
 			//データベースに接続
 			conn = DriverManager.getConnection(
-					"jdbc:h2:file:C:/pleiades/workspace/B1/DB/B1","B1","");
+					"jdbc:h2:file:C:/pleiades/workspace/B1/B1","B1","");
 
 			//SQL準備
 			String StatusCheckSQL = "SELECT COUNT(*) FROM USERS "
