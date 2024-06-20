@@ -65,7 +65,7 @@ public class ScoreDAO{
 							}
 							catch (SQLException e) {
 								e.printStackTrace();
-								cardList = null;
+								scoreList = null;
 							}
 						}
 					}
