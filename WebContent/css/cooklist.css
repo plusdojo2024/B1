@@ -1,6 +1,6 @@
 @charset "UTF-8";
 .img-pc{
-	height : 100px;
+	height : 200px;
 
 }
 ul {
@@ -10,9 +10,27 @@ ul {
 }
 p{
   font-family:serif;
-color:#45a049;
-text-bottom: 100;
- font-size:20px;
+color:rgb(0, 0, 0);
+ font-size:50px;
  font-weight:500;
 }
+#hero {
+  /* 画像ファイルの指定 */
+  background-image: url(/B1/img/bg.png);
 
+  /* 画像を常に天地左右の中央に配置 */
+  background-position: center center ;
+
+  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+  background-size: cover;
+
+  background-repeat: no-repeat;
+
+  height: 2500px;
+
+  border-radius: 30px;
+
+
+
+
+}

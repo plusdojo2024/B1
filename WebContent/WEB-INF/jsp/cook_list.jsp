@@ -9,14 +9,17 @@
 <link rel="stylesheet" href="/B1/css/cooklist.css">
 </head>
 <body>
+<section id="hero">
 <ul>
+
 <c:forEach var="e" items="${cardList}">
  <img id="mw" class="img-pc" src="/B1/img/cook.png"><br>
-
 <p>${e.cook_num}</p>
 <p>${e.cook_name}</p>
 </c:forEach>
 </ul>
+</section>
+
 <!--  ${e.cook_time}<br>
 ${e.cook_sta}<br>
 ${e.cook_fin}<br>
