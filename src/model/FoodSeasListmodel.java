@@ -15,12 +15,31 @@ public class FoodSeasListmodel implements Serializable {
 
 
 	//引数がないコンストラクタ
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> c9a04ddefa698d755425ee7c6cb7a9c2fc3a75eb
+//	public fsl() {
+//	}
+    //引数があるコンストラクタ
+	//public FoodSeasListmodel(int food_seas_num ,String food_seas_name, String food_seas_genre, boolean food_seas_stock) {
+//		super();
+<<<<<<< HEAD
+
+>>>>>>> cf96dc07c26f7d8d7d49c299092d0859b7560e0b
 	public FoodSeasListmodel() {
 	}
     //引数があるコンストラクタ
 	public FoodSeasListmodel( int food_seas_num ,String food_seas_name, String food_seas_genre, boolean food_seas_stock, int food_box_num, int user_num) {
 		super();
+<<<<<<< HEAD
 
+=======
+=======
+>>>>>>> c9a04ddefa698d755425ee7c6cb7a9c2fc3a75eb
+>>>>>>> cf96dc07c26f7d8d7d49c299092d0859b7560e0b
 		this.food_seas_num = food_seas_num;
 		this.food_seas_name = food_seas_name;
 		this.food_seas_genre = food_seas_genre;
@@ -64,6 +83,7 @@ public class FoodSeasListmodel implements Serializable {
 		this.food_seas_stock = food_seas_stock;
 	}
 
+<<<<<<< HEAD
 	public int getFood_box_num() {
 		return food_box_num;
 	}
@@ -78,5 +98,7 @@ public class FoodSeasListmodel implements Serializable {
 		this.user_num = user_num;
 	}
 
+=======
+>>>>>>> cf96dc07c26f7d8d7d49c299092d0859b7560e0b
 
 }
