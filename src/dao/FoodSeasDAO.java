@@ -18,7 +18,7 @@ public class FoodSeasDAO {
             throw new RuntimeException("H2ドライバの読み込みに失敗しました", e);
         }
     }
-    public List<String> getRandomFoodSeasNamesByGenreAndStock() {
+    public List<String> getRandomFoodSeasNamesByGenreAndStock(int user_num) {
         List<String> foodSeasNames = new ArrayList<>();
         String sqlMeat = "SELECT food_seas_name FROM food_seas WHERE food_seas_genre = 'meat' AND food_seas_stock = TRUE ORDER BY RANDOM() LIMIT 1";
         String sqlVegetable = "SELECT food_seas_name FROM food_seas WHERE food_seas_genre = 'vege' AND food_seas_stock = TRUE ORDER BY RANDOM() LIMIT 2";

@@ -14,23 +14,24 @@ public class FoodSeasListmodel implements Serializable {
 
 
 	//引数がないコンストラクタ
+<<<<<<< HEAD
 
-
-
+=======
+>>>>>>> c9a04ddefa698d755425ee7c6cb7a9c2fc3a75eb
 //	public fsl() {
 //	}
     //引数があるコンストラクタ
 	//public FoodSeasListmodel(int food_seas_num ,String food_seas_name, String food_seas_genre, boolean food_seas_stock) {
 //		super();
-
+<<<<<<< HEAD
 
 	public FoodSeasListmodel() {
 	}
     //引数があるコンストラクタ
 	public FoodSeasListmodel( int food_seas_num ,String food_seas_name, String food_seas_genre, boolean food_seas_stock) {
 		super();
-
-
+=======
+>>>>>>> c9a04ddefa698d755425ee7c6cb7a9c2fc3a75eb
 		this.food_seas_num = food_seas_num;
 		this.food_seas_name = food_seas_name;
 		this.food_seas_genre = food_seas_genre;
@@ -70,5 +71,6 @@ public class FoodSeasListmodel implements Serializable {
 	public void setFood_seas_stock(boolean food_seas_stock) {
 		this.food_seas_stock = food_seas_stock;
 	}
+
 
 }
