@@ -9,15 +9,24 @@ ul {
 
 }
 p{
+<<<<<<< HEAD
   font-family:serif;
 color:rgb(0, 0, 0);
  font-size:50px;
  font-weight:500;
+=======
+	font-family:serif;
+	color:#45a049;
+	text-bottom: 100;
+	font-size:20px;
+	font-weight:500;
+>>>>>>> 6024936d52bc4a3d136c8cec11c0f5c237c8245f
 }
 #hero {
   /* 画像ファイルの指定 */
   background-image: url(/B1/img/bg.png);
 
+<<<<<<< HEAD
   /* 画像を常に天地左右の中央に配置 */
   background-position: center center ;
 
@@ -33,4 +42,10 @@ color:rgb(0, 0, 0);
 
 
 
+=======
+.favorite {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 20px;
+>>>>>>> 6024936d52bc4a3d136c8cec11c0f5c237c8245f
 }
