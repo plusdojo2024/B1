@@ -1,0 +1,18 @@
+@charset "UTF-8";
+.img-pc{
+	height : 100px;
+
+}
+ul {
+    display: flex;
+
+
+}
+p{
+  font-family:serif;
+color:#45a049;
+text-bottom: 100;
+ font-size:20px;
+ font-weight:500;
+}
+
