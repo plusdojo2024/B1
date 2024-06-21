@@ -1,0 +1,44 @@
+2024-06-19 15:46:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "COOKS" が見つかりません
+Table "COOKS" not found; SQL statement:
+SELECT * FROM cooks WHERE cook_num =? ORDER BY cook_num  [42102-199]
+2024-06-19 15:57:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "COOKS" が見つかりません
+Table "COOKS" not found; SQL statement:
+SELECT * FROM cooks WHERE cook_num =? ORDER BY cook_num  [42102-199]
+2024-06-19 15:57:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "COOKS" が見つかりません
+Table "COOKS" not found; SQL statement:
+SELECT * FROM cooks WHERE cook_num =? ORDER BY cook_num  [42102-199]
+2024-06-19 15:57:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "COOKS" が見つかりません
+Table "COOKS" not found; SQL statement:
+SELECT * FROM cooks WHERE cook_num =? ORDER BY cook_num  [42102-199]
+2024-06-19 15:57:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "COOKS" が見つかりません
+Table "COOKS" not found; SQL statement:
+SELECT * FROM cooks WHERE cook_num =? ORDER BY cook_num  [42102-199]
+2024-06-19 15:57:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "COOKS" が見つかりません
+Table "COOKS" not found; SQL statement:
+SELECT * FROM cooks WHERE cook_num =? ORDER BY cook_num  [42102-199]
+2024-06-19 16:02:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "COOKS" が見つかりません
+Table "COOKS" not found; SQL statement:
+SELECT * FROM cooks WHERE cook_num =? ORDER BY cook_num  [42102-199]
+2024-06-19 16:13:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "COOKS" が見つかりません
+Table "COOKS" not found; SQL statement:
+SELECT * FROM cooks WHERE cook_num =? ORDER BY cook_num  [42102-199]
+2024-06-19 16:13:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "COOKS" が見つかりません
+Table "COOKS" not found; SQL statement:
+SELECT * FROM cooks WHERE cook_num =? ORDER BY cook_num  [42102-199]
+2024-06-19 16:13:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "COOKS" が見つかりません
+Table "COOKS" not found; SQL statement:
+SELECT * FROM cooks WHERE cook_num =? ORDER BY cook_num  [42102-199]
+2024-06-19 16:13:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "COOKS" が見つかりません
+Table "COOKS" not found; SQL statement:
+SELECT * FROM cooks WHERE cook_num =? ORDER BY cook_num  [42102-199]
