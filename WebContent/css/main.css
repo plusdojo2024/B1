@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+#Flex{
+	display: flex;
+	width:100%;
+	flex-direction: column;
+	justify-content:center;
+	align-items: center;
+}
+
+#test{
+	background-color:#000000;
+}
+
+
+.RowBox{
+	display: flex;
+	flex-direction: row;
+	justify-content:center;
+	background-color:#000000;
+}
+
+#playImg{
+	width: 10%;
+}
+
