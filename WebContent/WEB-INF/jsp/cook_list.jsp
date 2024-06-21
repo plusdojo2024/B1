@@ -10,13 +10,25 @@
 </head>
 <body>
 <ul>
-<c:forEach var="e" items="${cardList}">
- <img id="mw" class="img-pc" src="/B1/img/cook.png"><br>
+	<c:forEach var="e" items="${cardList}">
+ 		<img id="mw" class="img-pc" src="/B1/img/cook.png"><br>
+			<p>${e.cook_num}</p><br>
+			<p>${e.cook_name}</p>
+	</c:forEach>
 
-<p>${e.cook_num}</p>
-<p>${e.cook_name}</p>
-</c:forEach>
 </ul>
+
+<main>
+	<div class = "favorite">
+		<c:forEach var="e" items="${cardList}">
+	 	<div>
+	 		<img id="mw" class="img-pc" src="/B1/img/cook.png">
+			<p>${e.cook_num}.${e.cook_name}</p>
+	 	</div>
+		</c:forEach>
+	</div>
+</main>
+
 <!--  ${e.cook_time}<br>
 ${e.cook_sta}<br>
 ${e.cook_fin}<br>
