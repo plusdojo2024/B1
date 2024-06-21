@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.StatusDAO;
 
@@ -31,7 +32,15 @@ public class StatusCheck extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String[] Status = StatusDAO.getStatus(1);
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+				HttpSession session = request.getSession();
+				if (session.getAttribute("user_num") == null) {
+					response.sendRedirect("/B1/LoginServlet");
+					return;
+				}else {
+
+
+		String[] Status = StatusDAO.getStatus("user_num");
 
 		if(Status != null) {
 
@@ -49,6 +58,7 @@ public class StatusCheck extends HttpServlet {
 			dispatcher.forward(request,response);
 
 		}
+				}
 
 	}
 
