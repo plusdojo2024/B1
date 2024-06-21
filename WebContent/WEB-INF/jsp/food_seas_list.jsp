@@ -41,15 +41,14 @@
 				${e.food_seas_stock }
 				在庫
 				<form action="vegedel" method="get">
-				<% for(int i = 0; i < vegeList.size(); i++) { %>
+				<% for(int i = 0; i < fsllist.size(); i++) { %>
 				<%out.print(i+1); %>
-				<%= vegeList.get(i).getName()%>
+				<%= fslList.get(i).getName()%>
 				<input type="checkbox" name="check" value="<%=i%>"><br>
 
 				<% } %>
 				<input type="submit" value="在庫の削除">
 				</form>
-
 				<hr>
 			</c:forEach>
         </div>
