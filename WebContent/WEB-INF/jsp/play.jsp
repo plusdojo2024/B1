@@ -12,7 +12,7 @@
 		<p>一致するデータはありません。</p>
 	</c:if>
 <c:forEach var="e" items="${foodSeasNames}">
-		<p>${name}</p>
+		<p>${e.name}</p>
 </c:forEach>
 
 
