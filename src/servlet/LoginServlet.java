@@ -11,12 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.UsersDAO;
-import model.LoginUser;
 
 /**
  * Servlet implementation class login
  */
-@WebServlet("/login")
+@WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -45,24 +44,18 @@ public class LoginServlet extends HttpServlet {
 		String user_name = request.getParameter("user_name");
 		String user_pass = request.getParameter("user_pass");
 
-		if(user_name.length() == 0) {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/test.jsp");
-		dispatcher.forward(request,response);
-		}else {
-
 		UsersDAO myDAO  = new UsersDAO();
 
-		String Check_user_num = myDAO.getLoginTicket(user_name,user_pass);
+		String user_num = myDAO.getLoginTicket(user_name,user_pass);
 
-		if(Check_user_num != null){
-
-			int user_num = Integer.parseInt(Check_user_num);
+		if(user_num != null){
 
 			HttpSession session = request.getSession();
-			session.setAttribute("user_num", new LoginUser(user_num));
+			session.setAttribute("user_num", user_num);
 
-			RequestDispatcher dispatcher = request.getRequestDispatcher("StatusCheck");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
 			dispatcher.forward(request,response);
+
 		}else {
 
 			String[] Message = {"ログイン失敗","やり直してね！！"};
@@ -74,7 +67,5 @@ public class LoginServlet extends HttpServlet {
 			dispatcher.forward(request,response);
 
 		};
-		};
 	};
-
 };
