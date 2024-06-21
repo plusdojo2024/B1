@@ -14,10 +14,12 @@
 メイン画面
 
 	<!-- プレイボタン -->
-	<div class="box_" id="test">
-		<a href="/B1/StatusCheckServlet?page=Play">
-		<img src="/B1/img/cook.png" id="playImg">
-		</a>
+	<div class="box_ RowBox">
+		<div class="imgBox">
+			<a href="/B1/StatusCheckServlet?page=Play" >
+				<img src="/B1/img/cook.png" class="img">
+			</a>
+		</div>
 	</div>
 
 	<!-- 料理、スコア、食材 -->
