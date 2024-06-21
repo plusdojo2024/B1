@@ -11,9 +11,9 @@
    	<c:if test="${empty foodSeasNames}">
 		<p>一致するデータはありません。</p>
 	</c:if>
-	<c:forEach var="e" items="${foodSeasNames}">
-		<p>${e.name}</p>
-	</c:forEach>
+<c:forEach var="e" items="${foodSeasNames}">
+		<p>${name}</p>
+</c:forEach>
 
 
 

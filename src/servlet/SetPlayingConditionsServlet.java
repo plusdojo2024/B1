@@ -3,7 +3,6 @@ package servlet;
 import java.io.IOException;
 import java.util.List;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,31 +28,25 @@ public class SetPlayingConditionsServlet extends HttpServlet {
             return;
         }
 
-        // TODO Auto-generated method stub
-        response.getWriter().append("Served at: ").append(request.getContextPath());
-    }
-
-
-
-
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	// request.setCharacterEncoding("UTF-8");
-    	// 食材の提示
+        // 食材の提示
         FoodSeasDAO fcDao = new FoodSeasDAO();
         List<String> foodSeasNames = fcDao.getRandomFoodSeasNamesByGenreAndStock();
 
         // 調味料とお助けの表示も。
 
 
+
         // セッションスコープにfoodSeasNamesを保存
-        HttpSession session = request.getSession();
         session.setAttribute("foodSeasNames", foodSeasNames);
 
-        // 料理ページにフォワードする
-     	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/play.jsp");
-		dispatcher.forward(request, response);
+        // play.jspにフォワード
+        request.getRequestDispatcher("/play.jsp").forward(request, response);
 
+        // TODO Auto-generated method stub
+        response.getWriter().append("Served at: ").append(request.getContextPath());
+    }
 
-
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doGet(request, response);
     }
 }

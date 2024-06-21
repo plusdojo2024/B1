@@ -7,10 +7,10 @@
 <head>
 
 <meta charset="UTF-8">
-<title>料理の一覧</title>
-<link rel="stylesheet" href="/B1/css/cooklist.css">
+<title>Insert title here</title>
 </head>
 <body>
+<<<<<<< HEAD
 
 
 <main>
@@ -64,7 +64,26 @@ btn.addEventListener("click",()=>{
 
 </footer>
 
+=======
+<c:forEach var="e" items="${cardList}">
+${e.cook_img}<br>
+${e.cook_num}<br>
+${e.cook_name}<br>
+${e.cook_time}<br>
+${e.cook_sta}<br>
+${e.cook_fin}<br>
+${e.food_con}<br>
+${e.food_used}<br>
+${e.seas_con}<br>
+${e.seas_used}<br>
+${e.cook_satis}<br>
+${e.aji_satis}<br>
+${e.cook_fav}<br>
+${e.cook_com}<br>
+>>>>>>> a384fdc0c90a1f148a00f935d9c3fa39660df7c3
 
+</c:forEach>
+料理の一覧
 </body>
 </section>
 </html>

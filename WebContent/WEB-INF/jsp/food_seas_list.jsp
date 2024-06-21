@@ -32,29 +32,13 @@
       <section>
         <h3 class="title">野菜</h3>
         <div class="box">
-         	 <c:forEach var="e" items="${vegeList}" >
+ 			 <c:forEach var="e" items="${vegeList}" >
 				${e.food_seas_num },
 				${e.food_seas_name },
 				${e.food_seas_genre },
 				${e.food_seas_stock }
-<<<<<<< HEAD
-				在庫
-				<form action="vegedel" method="get">
-				<% for(int i = 0; i < fsllist.size(); i++) { %>
-				<%out.print(i+1); %>
-				<%= fslList.get(i).getName()%>
-				<input type="checkbox" name="check" value="<%=i%>"><br>
-
-				<% } %>
-				<input type="submit" value="在庫の削除">
-				</form>
-=======
-				<input type="checkbox" class="vegestock" value="delete" name="vegedel">
->>>>>>> c9a04ddefa698d755425ee7c6cb7a9c2fc3a75eb
-				<hr>
 			</c:forEach>
-			<button type="button" >在庫の削除</button>
-        </div>
+      </div>
       </section>
     </li>
     <li>
