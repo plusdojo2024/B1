@@ -5,24 +5,71 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link href="./css/main.css" rel="stylesheet" type="text/css">
+<title>ＴＯＰ</title>
 </head>
 <body>
+
+<div id="Flex">
 メイン画面
-<div>
-user_numは${Status[0]}<br>
-tour_numは${Status[1]}<br>
-round_numは${Status[2]}<br>
-hole_numは${Status[3]}<br>
-round_statusは${Status[4]}<br>
-play_statusは${Status[5]}<br>
+
+	<!-- プレイボタン -->
+	<div class="box_" id="test">
+		<a href="/B1/StatusCheckServlet?page=Play">
+		<img src="/B1/img/cook.png" id="playImg">
+		</a>
+	</div>
+
+	<!-- 料理、スコア、食材 -->
+	<div class="box_ RowBox">
+		<div class="box">
+			<a href="/B1/StatusCheckServlet?page=Cooks">
+				<div class="SelectBlock">
+					<h1>料理</h1>
+				</div>
+
+			</a>
+		</div>
+
+		<div class="box">
+			<a href="/B1/StatusCheckServlet?page=Foods">
+				<div class="SelectBlock">
+					<h1>食材</h1>
+				</div>
+			</a>
+		</div>
+
+		<div class="box">
+			<a href="/B1/StatusCheckServlet?page=Score">
+				<div class="SelectBlock">
+					<h1>スコア</h1>
+				</div>
+			</a>
+		</div>
+	</div>
+
+	<div class="box_">
+		<div id="box_regist">
+			<a href="/B1/StatusCheckServlet?page=Regist">
+				<div class="SelectBlock">
+					<h1>スコア</h1>
+				</div>
+			</a>
+		</div>
+	</div>
+
+		<dialog>
+			<div>${Message[0]}</div>
+			<div>${Message[1]}</div>
+			<button>ＯＫ</button>
+		</dialog>
+		<script>
+			window.addEventListener("load",(event)=>){
+				const MessageDialog = document.getElementById("");
+			}
+		</script>
 
 </div>
-
-
-<a href="/B1/StatusCheck?action="><img></a>
-
-
 
 </body>
 </html>
