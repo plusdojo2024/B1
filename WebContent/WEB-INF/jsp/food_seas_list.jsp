@@ -30,14 +30,17 @@
       <section>
         <h3 class="title">野菜</h3>
         <div class="box">
+        	<form method="post" action="/B1/FoodSeasListServlet" name="form">
          	 <c:forEach var="e" items="${vegeList}" >
+         	 	<input type="checkbox" name="checkbox" nalue="${e.food_seas_num }">
 				${e.food_seas_num },
 				${e.food_seas_name },
 				${e.food_seas_genre },
 				${e.food_seas_stock },
-				<button type="button" id="${e.food_seas_num }">在庫の削除</button>
 				<hr>
 			</c:forEach>
+			<input type="submit" value="チェックボックスの削除">
+			</form>
         </div>
       </section>
     </li>

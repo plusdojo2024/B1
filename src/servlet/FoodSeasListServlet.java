@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.FoodSeasListDAO;
 import model.FoodSeasListmodel;
-import model.Result;
 
 /**
  * Servlet implementation class foodSeasList
@@ -56,43 +55,9 @@ public class FoodSeasListServlet extends HttpServlet {
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/food_seas_list.jsp");
 		dispatcher.forward(request, response);
-
-	}
-
-
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-//各食材ごとに削除できるようにする
-		public String delList(Int food_seas_num, String food_seas_name, String food_seas_genre, food_seas_stock) {
-			service.delete()
-
-		}
-
-//		FoodSeasListDAO fDAO = new FoodSeasListDAO();
-//		if(request.getParameter("submit").equals("削除")) {
-//			request.setAttribute("result",
-//			new Result("削除成功！", "食材を削除しました。", "/B1//FoodSeasListServlet"));
-//		}
-//		else {						// 削除失敗
-//			request.setAttribute("result",
-//			new Result("削除失敗！", "食材を削除できませんでした。", "/B1//FoodSeasListServlet"));
-//		}
-
-		////チェックボックスがチェックされたら削除する
-		//	// 更新または削除を行う
-		//	FoodSeasListDAO fDao = new FoodSeasListDAO();
-		//	if (request.getParameter("meatdel").equals("在庫の削除")){
-		//		if(meatdel.checked) {
-		//
-		//		}
-		//	}
-
-		// 結果ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/food_seas_list.jsp");
-		dispatcher.forward(request, response);
-
 	}
 
 }
+
+
+
