@@ -32,7 +32,7 @@
         <div class="box">
         	<form method="post" action="/B1/FoodSeasListServlet" name="form">
          	 <c:forEach var="e" items="${vegeList}" >
-         	 	<input type="checkbox" name="checkbox" nalue="${e.food_seas_num }">
+         	 	<input type="checkbox" name="checkbox" value="${e.food_seas_num }">
 				${e.food_seas_num },
 				${e.food_seas_name },
 				${e.food_seas_genre },

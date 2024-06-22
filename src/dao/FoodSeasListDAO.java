@@ -38,14 +38,15 @@ public class FoodSeasListDAO {
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
 				FoodSeasListmodel record = new FoodSeasListmodel(
-//FoodSeasListmodelは、modelファイル内で決めた、６～９行目
 				rs.getInt("food_seas_num"),	//1
 				rs.getString("food_seas_name"),//もやし
 				rs.getString("food_seas_genre"),//vege
 				rs.getBoolean("food_seas_stock")//TRUE
+//				rs.getInt ("food_box_num"),
+//				rs. getInt ("user_num")
 						);
 				fslList.add(record);
-//fslListにrecordの内容を追加していく指示をしてる
+
 			}
 		}
 		catch (SQLException e) {
@@ -71,49 +72,109 @@ public class FoodSeasListDAO {
 		// 結果を返す
 		return fslList;
 	}
-public boolean delete(int food_seas_num) {
-	Connection conn = null;
-	boolean result = false;
 
-	try {
-		// JDBCドライバを読み込む
-		Class.forName("org.h2.Driver");
+//データを削除する
+	//すべてのデータを取得するメソッド
+		public List<FoodSeasListmodel> selectAll() {
+			Connection conn = null;
+			List<FoodSeasListmodel> fslList = new ArrayList<FoodSeasListmodel>();
 
-		// データベースに接続する
-		conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B1/B1", "B1", "");
-
-		// SQL文を準備する";
-		String sql = "DELETE FROM food_seas WHERE food_seas_num=?";
-		PreparedStatement pStmt = conn.prepareStatement(sql);
-
-		// SQL文を完成させる
-		pStmt.setInt(1, food_seas_num);
-
-		// SQL文を実行する
-		if (pStmt.executeUpdate() == 1) {
-			result = true;
-		}
-	}
-	catch (SQLException e) {
-		e.printStackTrace();
-	}
-	catch (ClassNotFoundException e) {
-		e.printStackTrace();
-	}
-	finally {
-		// データベースを切断
-		if (conn != null) {
 			try {
-				conn.close();
-			}
-			catch (SQLException e) {
+				// JDBCドライバを読み込む
+				Class.forName("org.h2.Driver");
+
+				// データベースに接続する
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B1/B1", "B1", "");
+
+				// SQL文を準備する
+				String sql = "SELECT * FROM food_seas";
+				PreparedStatement pStmt = conn.prepareStatement(sql);
+
+				// SQL文を実行し、結果表を取得する
+				ResultSet rs = pStmt.executeQuery();
+
+				// 結果表をコレクションにコピーする
+				while (rs.next()) {
+					FoodSeasListmodel record = new FoodSeasListmodel(
+					rs.getInt("food_seas_num"),	//1
+					rs.getString("food_seas_name"),//もやし
+					rs.getString("food_seas_genre"),//vege
+					rs.getBoolean("food_seas_stock")//TRUE
+//					rs.getInt ("food_box_num"),
+//					rs. getInt ("user_num")
+							);
+					fslList.add(record);
+				}
+			} catch (SQLException e) {
 				e.printStackTrace();
+				fslList = null;
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+				fslList = null;
+			} finally {
+				// データベースを切断
+				if (conn != null) {
+					try {
+						conn.close();
+					} catch (SQLException e) {
+						e.printStackTrace();
+						fslList = null;
+					}
+				}
 			}
+			// 結果を返す
+			return fslList;
 		}
-	}
 
-	// 結果を返す
-	return result;
-}
-}
+//チェックが入っているIDの一覧から該当データを削除
 
+		public boolean delete(String[] checkedId) {
+			Connection conn = null;
+			boolean result = false;
+
+			try {
+				// JDBCドライバを読み込む
+				Class.forName("org.h2.Driver");
+
+				// データベースに接続する
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B1/B1", "B1", "");
+
+				// SQL文を準備する
+				String sql = "DELETE FROM food_seas WHERE food_seas_num = ?";
+				PreparedStatement pStmt = conn.prepareStatement(sql);
+
+				//チェックの入っているデータを削除
+				for(String idS :checkedId) {
+					int id = Integer.parseInt(idS);
+
+					//SQL文に入力
+					pStmt.setInt(1,id);
+
+					// SQL文を実行し、結果を取得する
+					if(pStmt.executeUpdate()== 1) {
+						result = true;
+					}
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+				result = false;
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+				result = false;
+			} finally {
+				// データベースを切断
+				if (conn != null) {
+					try {
+						conn.close();
+					} catch (SQLException e) {
+						e.printStackTrace();
+						result = false;
+					}
+				}
+			}
+
+			// 結果を返す
+			return result;
+		}
+}
