@@ -9,6 +9,15 @@
 <link rel="stylesheet" href="/B1/css/cooklist.css">
 </head>
 <body>
+<<<<<<< HEAD
+<ul>
+	<c:forEach var="e" items="${cardList}">
+ 		<img id="mw" class="img-pc" src="/B1/img/cook.png"><br>
+			<p>${e.cook_num}</p><br>
+			<p>${e.cook_name}</p>
+	</c:forEach>
+
+=======
 <section id="hero">
 <ul>
 <<<<<<< HEAD
@@ -27,6 +36,7 @@
 			<p>${e.cook_name}</p>
 	</c:forEach>
 
+>>>>>>> cf96dc07c26f7d8d7d49c299092d0859b7560e0b
 </ul>
 
 <main>
@@ -39,7 +49,10 @@
 		</c:forEach>
 	</div>
 </main>
+<<<<<<< HEAD
+=======
 >>>>>>> 6024936d52bc4a3d136c8cec11c0f5c237c8245f
+>>>>>>> cf96dc07c26f7d8d7d49c299092d0859b7560e0b
 
 <!--  ${e.cook_time}<br>
 ${e.cook_sta}<br>
