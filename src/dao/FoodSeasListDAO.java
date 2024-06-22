@@ -26,7 +26,7 @@ public class FoodSeasListDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B1/B1", "B1", "");
 
 			// SQL文を準備する
-			String sql = "SELECT * FROM food_seas WHERE food_seas_genre = ?;";
+			String sql = "SELECT * FROM food_seas WHERE food_seas_genre = ? AND food_seas_stock = true;";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			pStmt.setString(1, food_seas_genre);
@@ -141,6 +141,58 @@ public class FoodSeasListDAO {
 
 				// SQL文を準備する
 				String sql = "DELETE FROM food_seas WHERE food_seas_num = ?";
+				PreparedStatement pStmt = conn.prepareStatement(sql);
+
+				//チェックの入っているデータを削除
+				for(String idS :checkedId) {
+					int id = Integer.parseInt(idS);
+
+					//SQL文に入力
+					pStmt.setInt(1,id);
+
+					// SQL文を実行し、結果を取得する
+					if(pStmt.executeUpdate()== 1) {
+						result = true;
+					}
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+				result = false;
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+				result = false;
+			} finally {
+				// データベースを切断
+				if (conn != null) {
+					try {
+						conn.close();
+					} catch (SQLException e) {
+						e.printStackTrace();
+						result = false;
+					}
+				}
+			}
+
+			// 結果を返す
+			return result;
+		}
+
+		//引数で渡されたfood_seas_numの配列を元に合致するデータのfood_seas_stockを
+		//FALSEに変更する
+		public boolean change(String[] checkedId) {
+			Connection conn = null;
+			boolean result = false;
+
+			try {
+				// JDBCドライバを読み込む
+				Class.forName("org.h2.Driver");
+
+				// データベースに接続する
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B1/B1", "B1", "");
+
+				// SQL文を準備する
+				String sql = "UPDATE food_seas SET food_seas_stock = false WHERE food_seas_num = ?";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				//チェックの入っているデータを削除

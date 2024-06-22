@@ -32,6 +32,7 @@ public class FoodSeasListServlet extends HttpServlet {
 		String food_seas_genre = "vege";
 		List<FoodSeasListmodel> fslList = fDao.select(food_seas_genre);
 
+		//すべてfood_seas_stockがtrueのもののみとした。
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("vegeList", fslList);
 
@@ -56,6 +57,26 @@ public class FoodSeasListServlet extends HttpServlet {
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/food_seas_list.jsp");
 		dispatcher.forward(request, response);
 	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+
+		//チェックボックスがチェックされているidの一覧を配列に保存
+		String[] checkedId = request.getParameterValues("checkbox");
+
+
+
+        //チェックボックスにチェックが入っているデータのfood_seas_stockを「false」に変更
+		FoodSeasListDAO cbdao = new FoodSeasListDAO();
+
+		cbdao.change(checkedId);
+
+		response.sendRedirect("/B1/FoodSeasListServlet");
+
+
+	}
+
+
 
 }
 
