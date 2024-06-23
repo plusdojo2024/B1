@@ -39,9 +39,9 @@ public class FoodSeasDAO {
                 		rs.getInt("food_seas_num"),
                 		rs.getString("food_seas_name"),
                 		rs.getString("food_seas_genre"),
-                		rs.getBoolean("food_seas_stock")
-                		// rs.
-                		// rs.
+                		rs.getBoolean("food_seas_stock"),
+                		rs.getInt("food_box_num"),
+                		rs.getInt("user_num")
                 			);
                 	foodSeasRecord.add(record);
                 }
@@ -52,5 +52,7 @@ public class FoodSeasDAO {
         }
         return foodSeasRecord;
     }
+
+
 
 }

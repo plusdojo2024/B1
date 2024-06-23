@@ -7,42 +7,28 @@ public class FoodSeasListmodel implements Serializable {
 	private String food_seas_name;		/* 食材名 */
 	private String food_seas_genre;	/* 食材のジャンル */
 	private boolean food_seas_stock;	/* 在庫の有無 */
-//	private int food_box_num;
-//	private int user_num;
+	private int food_box_num;
+	private int user_num;
 //ここまででやってること
 //FoodSeasListmodelクラスを作成して、中身を決める
 //私の場合はこの4つ
 
 
 	//引数がないコンストラクタ
-
-
-
-
-//	public fsl() {
-//	}
-    //引数があるコンストラクタ
-	//public FoodSeasListmodel(int food_seas_num ,String food_seas_name, String food_seas_genre, boolean food_seas_stock) {
-//		super();
-
-
-
 	public FoodSeasListmodel() {
 	}
+
+
     //引数があるコンストラクタ
 	public FoodSeasListmodel( int food_seas_num ,String food_seas_name, String food_seas_genre, boolean food_seas_stock
-//			int food_box_num, int user_num
-			) {
+			,int food_box_num, int user_num) {
 		super();
-
-
-
 		this.food_seas_num = food_seas_num;
 		this.food_seas_name = food_seas_name;
 		this.food_seas_genre = food_seas_genre;
 		this.food_seas_stock = food_seas_stock;
-//		this.food_box_num = food_box_num;
-//		this.user_num = user_num;
+		this.food_box_num = food_box_num;
+		this.user_num = user_num;
 
 
 	}
@@ -81,18 +67,18 @@ public class FoodSeasListmodel implements Serializable {
 	}
 
 
-//	public int getFood_box_num() {
-//		return food_box_num;
-//	}
-//	public void setFood_box_num(int food_box_num) {
-//		this.food_box_num = food_box_num;
-//	}
-//
-//	public int getUser_num() {
-//		return user_num;
-//	}
-//	public void setUser_num(int user_num) {
-//		this.user_num = user_num;
-//	}
+	public int getFood_box_num() {
+		return food_box_num;
+	}
+	public void setFood_box_num(int food_box_num) {
+		this.food_box_num = food_box_num;
+	}
+
+	public int getUser_num() {
+		return user_num;
+	}
+	public void setUser_num(int user_num) {
+		this.user_num = user_num;
+	}
 
 }
