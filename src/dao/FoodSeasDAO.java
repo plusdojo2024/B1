@@ -11,9 +11,9 @@ import java.util.List;
 import model.FoodSeasListmodel;
 
 public class FoodSeasDAO {
-	public List<String> getRandomFoodSeasNamesByGenreAndStock(int user_num) {
+	public List<FoodSeasListmodel> select(int user_num) {
 		Connection conn = null;
-		List<String> foodSeasNames = new ArrayList<>();
+		List<FoodSeasListmodel> foodSeasRecord = new ArrayList<>();
         int foodBoxNum = 0;
         try {
         	Class.forName("org.h2.Driver");
@@ -35,29 +35,22 @@ public class FoodSeasDAO {
                 rs = pStmt.executeQuery();
 
                 while (rs.next()) {
-                	FoodSeasListmodel fslModel = new FoodSeasListmodel(
-                		rs.food_seas_num  = rs.getInt("food_seas_num"),
-                		rs.food_seas_name = rs.getString("food_seas_name"),
-                		rs.food_seas_genre = rs.getString("food_seas_genre")
-                		rs.food_seas_stock = rs.getBoolean("food_seas_stock")
-                		rs.
-                		rs.
-                			)
-
-                	int food_seas_num  = rs.getInt("food_seas_num");
-                	String food_seas_name = rs.getString("food_seas_name");
-                	String food_seas_genre = rs.getString("food_seas_genre");
-                	Boolean food_seas_stock = rs.getBoolean("food_seas_stock");
-                	int food_box_nu = rs.getInt("food_box_num");
-                	int user_num = rs.getInt("user_num");
-                	 // foodseas型の配列に格納？わからない。iki
+                	FoodSeasListmodel record = new FoodSeasListmodel(
+                		rs.getInt("food_seas_num"),
+                		rs.getString("food_seas_name"),
+                		rs.getString("food_seas_genre"),
+                		rs.getBoolean("food_seas_stock")
+                		// rs.
+                		// rs.
+                			);
+                	foodSeasRecord.add(record);
                 }
             }
 
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        return foodSeasNames;
+        return foodSeasRecord;
     }
 
 }
