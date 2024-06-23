@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +11,17 @@
 <body>
 
 <div id="Flex">
+
+<div>
+ユーザ番号は ${Status[0]} <br>
+ツアー番号は「${Status[1]}」<br>
+ラウンド番号は「${Status[2]}」<br>
+ホール数は「${Status[3]}」<br>
+ラウンドステータスは「${Status[4]}」<br>
+プレイステータスは「${Status[5]}」<br>
+</div>
+
+
 メイン画面
 
 	<!-- プレイボタン -->
