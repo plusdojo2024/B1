@@ -5,7 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>表彰一覧</title>
+<link rel="stylesheet" href="/B1/css/cooklist.css">
 </head>
 <body>
 	<c:if test="${empty cardList}">
@@ -14,6 +15,6 @@
 <c:forEach var="e" items="${cardList}">
 		<p>${e.cook_img}</p>
 </c:forEach>
-お気に入り一覧
+	<a href="/B1/HyousyouServlet" class="btn">表彰一覧へ</a>
 </body>
 </html>
