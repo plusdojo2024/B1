@@ -41,9 +41,9 @@ public class FoodSeasListDAO {
 				rs.getInt("food_seas_num"),	//1
 				rs.getString("food_seas_name"),//もやし
 				rs.getString("food_seas_genre"),//vege
-				rs.getBoolean("food_seas_stock")//TRUE
-//				rs.getInt ("food_box_num"),
-//				rs. getInt ("user_num")
+				rs.getBoolean("food_seas_stock"),//TRUE
+				rs.getInt ("food_box_num"),
+				rs. getInt ("user_num")
 						);
 				fslList.add(record);
 
@@ -99,9 +99,9 @@ public class FoodSeasListDAO {
 					rs.getInt("food_seas_num"),	//1
 					rs.getString("food_seas_name"),//もやし
 					rs.getString("food_seas_genre"),//vege
-					rs.getBoolean("food_seas_stock")//TRUE
-//					rs.getInt ("food_box_num"),
-//					rs. getInt ("user_num")
+					rs.getBoolean("food_seas_stock"),//TRUE
+					rs.getInt ("food_box_num"),
+					rs. getInt ("user_num")
 							);
 					fslList.add(record);
 				}
