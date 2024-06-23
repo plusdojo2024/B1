@@ -8,15 +8,12 @@
 </head>
 <body>
     <h1>調理条件</h1>
-   	<c:if test="${empty foodSeasNames}">
+   	<c:if test="${empty foodSeasRecord}">
 		<p>一致するデータはありません。</p>
 	</c:if>
-	<c:forEach var="e" items="${foodSeasNames}">
-<<<<<<< HEAD
+	<c:forEach var="e" items="${foodSeasRecord}">
 		<p>${e.food_seas_name}</p>
-=======
 		<p>${e.name}</p>
->>>>>>> cf96dc07c26f7d8d7d49c299092d0859b7560e0b
 	</c:forEach>
 
 

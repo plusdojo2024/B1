@@ -9,10 +9,6 @@ public class FoodSeasListmodel implements Serializable {
 	private boolean food_seas_stock;	/* 在庫の有無 */
 	private int food_box_num;
 	private int user_num;
-//ここまででやってること
-//FoodSeasListmodelクラスを作成して、中身を決める
-//私の場合はこの4つ
-
 
 	//引数がないコンストラクタ
 	public FoodSeasListmodel() {
