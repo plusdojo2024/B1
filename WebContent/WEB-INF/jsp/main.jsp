@@ -10,65 +10,53 @@
 </head>
 <body>
 
-<div id="Flex">
+<div  class="PageFlex">
 
-<div>
-ユーザ番号は ${Status[0]} <br>
-ツアー番号は「${Status[1]}」<br>
-ラウンド番号は「${Status[2]}」<br>
-ホール数は「${Status[3]}」<br>
-ラウンドステータスは「${Status[4]}」<br>
-プレイステータスは「${Status[5]}」<br>
-</div>
-
-
-メイン画面
+	<div class="PageFlexBox"></div>
 
 	<!-- プレイボタン -->
-	<div class="box_ RowBox">
+	<div class="PageFlexBox">
 		<div class="imgBox">
 			<a href="/B1/StatusCheckServlet?page=Play" >
-				<img src="/B1/img/cook.png" class="img">
+				<img src="/B1/img/golf_ball.png" class="img">
 			</a>
 		</div>
 	</div>
 
 	<!-- 料理、スコア、食材 -->
-	<div class="box_ RowBox">
-		<div class="box">
-			<a href="/B1/StatusCheckServlet?page=Cooks">
-				<div class="SelectBlock">
-					<h1>料理</h1>
-				</div>
-
-			</a>
-		</div>
-
-		<div class="box">
-			<a href="/B1/StatusCheckServlet?page=Foods">
-				<div class="SelectBlock">
-					<h1>食材</h1>
+	<div class="PageFlexBox">
+		<div class="SelectBlock PageFlexBox_1">
+			<a href="/B1/StatusCheckServlet?page=Cooks" class="ahref">
+				<div class="SelectBlockName">
+					<h1>料理の一覧</h1>
 				</div>
 			</a>
 		</div>
 
-		<div class="box">
-			<a href="/B1/StatusCheckServlet?page=Score">
-				<div class="SelectBlock">
-					<h1>スコア</h1>
+		<div class="SelectBlock PageFlexBox_1">
+			<a href="/B1/StatusCheckServlet?page=Foods" class="ahref">
+				<div class="SelectBlockName">
+					<h1>食材の一覧</h1>
 				</div>
 			</a>
 		</div>
-	</div>
 
-	<div class="box_">
-		<div id="box_regist">
-			<a href="/B1/StatusCheckServlet?page=Regist">
-				<div class="SelectBlock">
-					<h1>スコア</h1>
+		<div class="SelectBlock PageFlexBox_1">
+			<a href="/B1/StatusCheckServlet?page=Score" class="ahref">
+				<div class="SelectBlockName">
+					<h1>スコア記録</h1>
 				</div>
 			</a>
 		</div>
+
+		<div class="SelectBlock PageFlexBox_1">
+			<a href="/B1/StatusCheckServlet?page=Regist" class="ahref">
+				<div class="SelectBlockName">
+					<h1>本登録</h1>
+				</div>
+			</a>
+		</div>
+
 	</div>
 
 		<dialog>

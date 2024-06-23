@@ -1,19 +1,24 @@
 @charset "UTF-8";
 
-
-#Flex{
+.PageFlex{
 	display: flex;
 	width: 100%;
 	flex-direction: column;
-	justify-content:center;
+
 	align-items: center;
+	height:100vh;
+	gap:50px;
+
 }
-.box_{
+.PageFlexBox{
 	width:90%;
+	min-height:20%;
 	display: flex;
 	flex-direction: row;
 	justify-content:center;
-	gap:3%;
+	align-items:flex-start;
+	flex-wrap: wrap;
+	gap:20px;
 }
 
 .imgBox{
@@ -30,11 +35,37 @@
 .img{
 	width: 100%;
 	height: 100%;
-
 	border-radius: 50% 50% 50% 50%;
 }
 
-.box{
-	width:30%;
-	background-color:#000000;
+.PageFlexBox_1{
+	display:flex;
+	justify-content:center;
+	flex-direction: column;
+	text-align:center;
+	align-items:flex-start;
+	flex-wrap: wrap;
+	width:40%;
+	height: 40%;
+	text-align: center;
+	background-color:#ffa722;
+	gap:10px;
+}
+
+.ahref{
+	width:100%;
+	height:100%;
+	text-align:center;
+	line-height: 120px;
+
+}
+
+.ButtonArea{
+	height:40%;
+}
+
+a{
+	display: block;;
+	text-decoration:none;
+	color:#FFFFFF;
 }

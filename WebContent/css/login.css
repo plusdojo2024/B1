@@ -1,0 +1,53 @@
+.PageFlex{
+	display: flex;
+	justify-content:center;
+	align-items: center;
+	flex-direction: column;
+	height: 100vh;
+}
+
+.PageFlexBox {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column; /* 要素を縦方向に並べる */
+}
+
+.FormBox {
+    width: 70%;
+    padding: 20px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.FormTitle {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.TextForm {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.SubmitButton {
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .PageFlexBox {
+        width: 95%;
+        height: 80%;
+    }
+
+    .FormBox {
+        width: 95%;
+    }
+}
