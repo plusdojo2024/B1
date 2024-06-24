@@ -1,10 +1,11 @@
 package dao;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 public class StatusDAO{
-	public static String[] getStatus(int user_num) {
+	public String[] getStatus(int user_num) {
 		//DBアクセス権
 		Connection conn = null;
 		//ステータス配列を定義

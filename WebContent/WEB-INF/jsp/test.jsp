@@ -1,70 +1,67 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<<<<<<< HEAD
 <title>Insert title here</title>
 </head>
 <body>
-<form method="post" action="/B1/Test">
-	<input type="text" name="jsp">.jsp<br>
-	<input type="submit">
-</form>
-=======
-<title>開発用ページ</title>
-</head>
-<body>
+	<div>
+	<!--
+	 String[] play ={cook_time_,selectMeat,selectVege1,selectVege2,selectSeas,selectHelp,
+        		PlaySeasList[1],PlaySeasList[2],PlaySeasList[0]};
+	 -->
+
+	調理時間は「${play[0]}」<br>
+	必須の肉は「${play[1]}」<br>
+	必須の野菜は「${play[2]}」<br>
+	必須の野菜は「${play[3]}」<br>
+	お助け調味料は「${play[4]}」<br>
+	お助け食材はは「${play[5]}」<br>
+	FREE調味料は「${play[6]}」<br>
+	制限付き調味料は「${play[7]}」<br>
+	制限付き調味料は「${play[8]}」<br>
+	禁止調味料は「${play[9]}」<br>
+	禁止調味料は「${play[10]}」<br>
 
 
-開発用のページです
-送信を押すと選択したファイルに遷移します
-<form method="post" action="/B1/Test">
+	<form method="post" action="/B1/SetPlayingConditionsServlet" enctype="multipart/form-data">>
+		<input type="file" name="image"
+		accept="image/*" class="required" required>
+		<input type="submit" name="regist" value="登録"><br>
+	</form>
 
-	ＪＳＰ選択<br>
-	<input list="jsp" name="jsp">
-	<datalist id="jsp">
-		<option value="cook_list"/>
-		<option value="favorite"/>
-		<option value="login"/>
-		<option value="main_regist"/>
-		<option value="play"/>
-		<option value="temp_regist"/>
-		<option value="today_regist"/>
-		<option value="now_tour"/>
-		<option value="past_scores"/>
-		<option value="worldtour">
-		<option value="food_seas_list"/>
-		<option value="food_seas_regist"/>
-		<option value="main"/>
-	</datalist>.jsp<br>
-
-	サーブレット選択<br>
-	<input list="servlet" name="servlet">
-	<datalist id="servlet">
-		<option value="login"/>
-		<option value="StatesCheck"/>
-		<option value="WorldTourPlay"/>
-		<option value="SetPlayingConditions"/>
-		<option value="SaveTemporaryRegistration"/>
-		<option value="DefinitiveRegistration"/>
-		<option value="Current"/>
-		<option value="favorite"/>
-		<option value="foodSeasList"/>
-		<option value="foodSeasRegist"/>
-		<option value="score"/>
-	</datalist>.java<br>
 
 	<!--
-	<input type="text" name="jsp">.jsp<br>
-	<input type="text" name="servlet">.java<br>
-	-->
+	<c:forEach var="item" items="${FS}">
 
-	<input type="submit">
-</form>
+	 ${item.food_seas_num}<br>
+	 ${item.food_seas_name}<br>
+	 ${item.food_seas_genre}<br>
+	 ${item.food_box_num}<br>
+
+	 </c:forEach>
+	  -->
+
+<!--
+	${PlaySeasList[0]}<br>
+	${PlaySeasList[1]}<br>
+	${PlaySeasList[2]}<br>
+	${PlaySeasList[3]}<br>
+	${PlaySeasList[4]}<br>
+	 -->
 
 
->>>>>>> f6c9659f3d18b339c0717751cf3926bca605c108
+		<!--
+		ユーザ番号は ${Status[0]} <br>
+		ツアー番号は「${Status[1]}」<br>
+		ラウンド番号は「${Status[2]}」<br>
+		ホール数は「${Status[3]}」<br>
+		ラウンドステータスは「${Status[4]}」<br>
+		プレイステータスは「${Status[5]}」<br>
+	 -->
+	</div>
 </body>
 </html>

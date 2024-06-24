@@ -81,4 +81,171 @@ public class cooksDAO {
 		// 結果を返す
 		return cardList;
 	}
+
+	public int insertCook(int user_num, String food_con, String seas_con, int cook_time) {
+		Connection conn = null;
+		int cook_num = 0;
+
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B1/B1", "B1", "");
+
+			// SQL文を準備する
+			// 条件食材の登録
+			String sql = "INSERT INTO COOKS(COOK_TIME, FOOD_CON, SEAS_CON, USER_NUM) "
+					+ "VALUES (?, ?, ?, ?);";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			pStmt.setInt(1, cook_time);
+			pStmt.setString(2, food_con);
+			pStmt.setString(3, seas_con);
+			pStmt.setInt(4, user_num);
+
+			if(pStmt.executeUpdate() == 1) {
+				try {
+					sql = "SELECT cook_num "
+							+ "FROM COOKS "
+							+ "WHERE user_num = ? "
+							+ "ORDER BY cook_num desc limit 1";
+					pStmt = conn.prepareStatement(sql);
+
+					pStmt.setInt(1, user_num);
+
+					ResultSet Result = pStmt.executeQuery();
+					Result.next();
+					cook_num = Result.getInt("cook_num");
+				}
+				catch(Exception e){
+					e.printStackTrace();
+					}
+				finally {
+					if(conn != null) {
+						try {
+							conn.close();
+						}
+						catch(Exception e) {
+							e.printStackTrace();
+						}
+					}
+				}
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	return cook_num;
+	}
+
+	public boolean updateCook(int user_num, String column_name, String value) {
+		int cook_num = 0;
+		boolean result = false;
+		Connection conn = null;
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B1/B1", "B1", "");
+
+			String sql = "SELECT cook_num "
+					+ "FROM COOKS "
+					+ "WHERE user_num = ? "
+					+ "ORDER BY cook_num desc limit 1";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			pStmt.setInt(1, user_num);
+
+			ResultSet Result = pStmt.executeQuery();
+			Result.next();
+			cook_num = Result.getInt("cook_num");
+
+			try {
+
+
+				String UpdateCookSQL = null;
+
+				switch(column_name) {
+
+				case "COOK_DATE":
+				case "COOK_IMG":
+				case "COOK_NAME":
+				case "COOK_STA":
+				case "COOK_FIN":
+				case "FOOD_USED":
+				case "SEAS=USED":
+				case "COOK_SATIS":
+				case "AJI_SATIS":
+				case "COOK_FAV":
+				case "COOK_COM":
+
+				UpdateCookSQL =
+				"UPDATE cooks SET " + column_name +" = ? "
+				+ "WHERE COOK_NUM = ?";
+				break;
+				}
+
+				pStmt = conn.prepareStatement(UpdateCookSQL);
+				pStmt.setString(1, value);
+				pStmt.setInt(2, cook_num);
+
+
+				if(pStmt.executeUpdate() == 1) {
+					result = true;
+				}else {
+					result = false;
+				}
+
+			}catch(Exception e){
+				e.printStackTrace();
+				result = false;
+				}
+
+			finally {
+				if(conn != null) {
+					try {
+						conn.close();
+					}
+					catch(Exception e) {
+						e.printStackTrace();
+						result = false;
+					}
+				}
+			}
+
+		}
+		catch(Exception e){
+			e.printStackTrace();
+			}
+		finally {
+			if(conn != null) {
+				try {
+					conn.close();
+				}
+				catch(Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return result;
+	}
+
+
 }
