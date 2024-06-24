@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.FoodSeasDAO;
 import dao.HontourokuDAO;
+import model.FoodSeasListmodel;
 
 /**
  * Servlet implementation class SearchServlet
@@ -36,18 +38,20 @@ public class DefinitiveRegistrationServlet extends HttpServlet {
 				String[] cooks = hDao.select(user_num);
 
 			 FoodSeasDAO fDAO = new FoodSeasDAO();
-			    List<String> foodSeasNames = fDAO.getRandomFoodSeasNamesByGenreAndStock(new String());
+			    List<FoodSeasListmodel> foodSeasRecord = fDAO.select(user_num);
                 //String[] food = hDao.choose(user_num);
 
 		// 検索結果をリクエストスコープに格納する
 			request.setAttribute("cooks", cooks);
-			request.setAttribute("foodSeasNames", foodSeasNames);
+			request.setAttribute("foodSeasRecord", foodSeasRecord);
 			//request.setAttribute("food", food);
 
 
 		// 結果ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/main_regist.jsp");
 		dispatcher.forward(request, response);
+	}
+
 
 		/* 登録処理を行う
 		HontourokuDAO hDao = new HontourokuDAO();
@@ -64,6 +68,10 @@ public class DefinitiveRegistrationServlet extends HttpServlet {
 		// 結果ページにフォワードする
 	    RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/main_regist.jsp");
 		dispatcher.forward(request, response);*/
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String[] foods = request.getParameterValues("foods[]");
+		String[] used = request.getParameterValues("used[]");
 	}
 }
 

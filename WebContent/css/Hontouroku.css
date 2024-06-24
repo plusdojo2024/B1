@@ -1,0 +1,12 @@
+@charset "UTF-8";
+.syokuzai {
+display: flex;
+}
+
+div.botan {
+	width:109px;
+	height: 50px;
+}
+center {
+       background-image: url(img/grass.jpg);
+}

@@ -8,24 +8,31 @@
 <link rel="stylesheet" type="text/css" href="/b1/css/style.css">
 </head>
 <body>
+<center>
 <form method="post" action="/B1/DefinitiveRegistrationServlet">
-
+<div class = "cooks">
 ${cooks[0]}
 <br>
 <textarea>
 ${cooks[1]}
 </textarea>
-
+</div>
 <br>
 <h2>条件の中で使った食材</h2>
-<select name=${food[0]}>
-<option value="サンプル1">選択してください</option>
-</select>
+<div class = "syokuzai">
+<c:forEach var="e" items="${foodSeasRecord}">
+<input type="checkbox" name="foods[]" id="${e.food_seas_num}"  value="${e.food_seas_name}">
+<label for="${e.food_seas_num}">${e.food_seas_name}</label>
+</c:forEach>
+</div>
 <br>
 <h2>使い切ったものリスト</h2>
-<select name=${food[0]}>
-<option value="サンプル1">選択してください</option>
-</select>
+<div class = "syokuzai">
+<c:forEach var="e" items="${foodSeasRecord}">
+<input type="checkbox" name="used[]" id="${e.food_seas_num}"  value="${e.food_seas_name}"><label for="${e.food_seas_num}">${e.food_seas_name}</label>
+</c:forEach>
+</div>
+<div class = "self">
 <h2>味の評価</h2>
 <input type="radio" name="taste" value="bad"> ミスショット（不満）
 <input type="radio" name="taste" value="hutuu"> まあまあ
@@ -43,9 +50,12 @@ ${cooks[1]}
 <option value="サンプル3">早く作れました！</option>
 <option value="サンプル4">旨かったです！</option>
 </select>
-
+</div>
+<hr>
+<div class = "botan">
+<input type="submit" name="regist" value="本登録">
+</div>
 </form>
-
-本登録画面
+</center>
 </body>
 </html>
