@@ -161,7 +161,7 @@ public class RoundsDAO{
 
 			String AddRoundSQL =
 					"INSERT INTO rounds (round_num , hole_num , play_status , user_num) "
-					+ "VALUES  ( ? , ? , '食材不足', ? );" ;
+					+ "VALUES  ( ? , ? , '調理前', ? );" ;
 
 			PreparedStatement EmbedSQL = conn.prepareStatement(AddRoundSQL);
 			EmbedSQL.setInt(1, round_num);
