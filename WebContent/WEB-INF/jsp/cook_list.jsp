@@ -23,21 +23,22 @@
 		</c:forEach>
 	</div>
 	<c:forEach var="e" items="${cardList}">
-<dialog id="D${e.cook_num}">
+<dialog class="dia" id="D${e.cook_num}">
 
 <img class="img-pc" src="/B1/img/cook.png">
 <p>${e.cook_num}.${e.cook_name}</p>
-${e.cook_time}<br>
-${e.cook_sta}<br>
-${e.cook_fin}<br>
-${e.food_con}<br>
-${e.food_used}<br>
-${e.seas_con}<br>
-${e.seas_used}<br>
-${e.cook_satis}<br>
-${e.aji_satis}<br>
-${e.cook_fav}<br>
-${e.cook_com}<br>
+作った日付&ensp;${e.cook_date}<br>
+調理時間&ensp;${e.cook_time}分<br>
+開始時間&ensp;${e.cook_sta}<br>
+終了時間&ensp;${e.cook_fin}<br>
+提示された食材&ensp;${e.food_con}<br>
+使用した食材&ensp;${e.food_used}<br>
+提示された調味料&ensp;${e.seas_con}<br>
+使用した調味料&ensp;${e.seas_used}<br>
+調理満足度&ensp;${e.cook_satis}<br>
+味満足度&ensp;${e.aji_satis}<br>
+お気に入り(D=旨い)(E=努力)(F=早い)&ensp;${e.cook_fav}<br>
+コメント&ensp;${e.cook_com}<br>
 </c:forEach>
 </dialog>
 </main>
