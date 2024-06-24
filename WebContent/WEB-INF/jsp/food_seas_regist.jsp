@@ -55,18 +55,6 @@
 		<input type="checkbox" name="set" value="bbq">BBQソース<br>
 		<input type="checkbox" name="set" value="cheese">チーズ<br>
 	</form>
-	<script>
-	document.querySelector('button').addEventListener('click', () => {
-		  const newForm = document.createElement('input');
-		  newForm.type = 'text,select';
-
-		  const newLabel = document.createElement('label');
-		  newLabel.textContent = '食材名','ジャンル';
-
-		  newLabel.appendChild(newForm);
-		  document.querySelector('div').appendChild(newLabel);
-		});
-	</script>
 
 </body>
 </html>

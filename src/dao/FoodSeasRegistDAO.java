@@ -11,6 +11,7 @@ public class FoodSeasRegistDAO{
 	public boolean insert(FoodSeasRegistmodel fsr) {
 		Connection conn = null;
 		boolean result = false;
+
 		try {
 			// JDBCドライバを読み込む
 			Class.forName("org.h2.Driver");
@@ -20,7 +21,8 @@ public class FoodSeasRegistDAO{
 
 			// SQL文を準備する（AUTO_INCREMENTのNUMBER列にはNULLを指定する）
 			//ここに追加した物を入れるよ
-			String sql = "INSERT INTO food_seas VALUES (NULL, ?, ?,true)";
+			String sql = "INSERT INTO food_seas (food_seas_num, food_seas_name,food_seas_genre,food_seas_stock,food_box_num, user_num )"
+					+ "VALUES(NULL, ?, ?,true,NULL,NULL)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる

@@ -47,7 +47,7 @@ public class FoodSeasRegistServlet extends HttpServlet {
 
 		// 登録処理を行う
 		FoodSeasRegistmodel fsrDao = new FoodSeasRegistmodel();
-		if (fsrDao.insert(new FoodSeasRegistmodel(0, food_seas_name, food_seas_genre,true))) {	// 登録成功
+		if (fsrDao.insert(new FoodSeasRegistmodel(0, food_seas_name, food_seas_genre,true,0,0))) {	// 登録成功
 			request.setAttribute("result",
 			new Result("登録成功！", "レコードを登録しました。", "/B1/FoodSeasRegistServlet"));
 		}
