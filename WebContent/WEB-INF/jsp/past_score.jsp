@@ -2,15 +2,28 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
+<style>
+	.chart-container {
+    	width: 80%; /* グラフの幅を100%に設定 */
+        height: 400px; /* グラフの高さを指定 */
+        border: 1px solid #ccc; /* 枠線を追加 */
+        margin: 0 auto; /* グラフを中央揃えにする */
+    }
+    body{
+    background-image:url("${pageContext.request.contextPath}/img/scorebg.png");
+    background-size:5%;
+    }
+</style>
 <head>
 <meta charset="UTF-8">
 <title>過去の成績</title>
 </head>
-<body>
-<h1>過去の成績</h1>
+<body align=center>
+<table border="1" align=center width=30% style="background-color: white;"><tr><th><h1>過去の成績</h1></th></tr></table>
+<br><div class="chart-container" style="background-color: white;">
+	<canvas id="lineChart"></canvas>
+</div><br>
 <c:forEach var="e" items="${pastList}" >
-<details><summary>第<c:out value="${pastList[0].tour_num}"/>回ツアー（<c:out value="${pastList[0].tour_sta}"/>～<c:out value="${pastList[0].tour_fin}"/>） <c:out value="${R1+R2+R3}"/>
-</summary>
 	<c:set var="H1" value="${pastList[0].total_score}"/>
     <c:set var="H2" value="${pastList[1].total_score}"/>
 	<c:set var="H3" value="${pastList[2].total_score}"/>
@@ -32,7 +45,11 @@
 	<c:set var="R1" value="${H1+H2+H3+H4+H5+H6}"/>
 	<c:set var="R2" value="${H7+H8+H9+H10+H11+H12}"/>
 	<c:set var="R3" value="${H13+H14+H15+H16+H17+H18}"/>
-	<table border="1">
+	<c:set var="T1" value="${R1+R2+R3}"/>
+	<table border="1" align=center width=80% style="background-color:gray;"><tr><th>
+	<details><summary>第<c:out value="${pastList[0].tour_num}"/>回ツアー（<c:out value="${pastList[0].tour_sta}"/>～<c:out value="${pastList[0].tour_fin}"/>）<c:out value="${R1+R2+R3}"/>
+	</summary>
+	<table border="1" align=center width=100% style="background-color: white;">
     <tr>
     <th>日付</th>
     <th>H番号</th>
@@ -218,7 +235,53 @@
     <td><c:if test="${not empty H18}"><p>${R1+R2+R3}</p></c:if></td>
     </tr>
 	</table>
-	</details>
+	</details></th></tr></table>
 	</c:forEach>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // JSPからH1からH18の値を取得（すでに定義されていると仮定）
+    var tValues=[];
+    var lavels=[];
+
+    <% for (var i=1;i<=tValues.length;i++) { %>
+    tValues.push(${T${i}});
+    labels.push('T'+${i});
+<% } %>
+
+    // Chart.jsを使って折れ線グラフを描画する
+    var ctx = document.getElementById('lineChart').getContext('2d');
+    var lineChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels:labels,
+            datasets: [{
+                label: 'スコア',
+                data: tValues,
+                borderColor: 'rgba(75, 192, 192, 1)', // 必要に応じて色をカスタマイズ
+                borderWidth: 2,
+                fill: false
+            }]
+        },
+        options: {responsive: true,
+            plugins: {legend:
+            	{display: false}
+            },
+            scales:{
+            	x:{
+            		title:{
+            			display: true,
+                     	text: 'ホール'
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'スコア'
+                    }
+                }
+            }
+        }
+    });
+</script>
 </html>
