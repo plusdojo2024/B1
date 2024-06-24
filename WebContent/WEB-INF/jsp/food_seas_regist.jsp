@@ -4,20 +4,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>食材の登録</title>
 </head>
 <body>
 <h2>食材マイ調味料の登録</h2>
-	<form method="post" action="/B1/FoodSeasServlet">
-		食材名<input type="text" name="name"><br>
-		ジャンル<select name="genre">
+	<form method="post" action="/B1/FoodSeasRegistServlet">
+		<label>食材名<input type="text" name="food_seas_name"><br></label>
+		<label>ジャンル</label><select name="food_seas_genre">
 			<option value="meat">肉</option>
 			<option value="vege">野菜</option>
 			<option value="help">お助け</option>
 			<option value="myse">調味料</option>
-			<input type="submit" name="regist" value="登録">
 		</select>
+
 </form>
+<div>
+  <button>更に食材を登録する</button>
+</div>
+<input type="submit" name="regist" value="登録">
 <h2>調味料セットの登録・解除</h2>
 
 	<form>
@@ -51,5 +55,18 @@
 		<input type="checkbox" name="set" value="bbq">BBQソース<br>
 		<input type="checkbox" name="set" value="cheese">チーズ<br>
 	</form>
+	<script>
+	document.querySelector('button').addEventListener('click', () => {
+		  const newForm = document.createElement('input');
+		  newForm.type = 'text,select';
+
+		  const newLabel = document.createElement('label');
+		  newLabel.textContent = '食材名','ジャンル';
+
+		  newLabel.appendChild(newForm);
+		  document.querySelector('div').appendChild(newLabel);
+		});
+	</script>
+
 </body>
 </html>

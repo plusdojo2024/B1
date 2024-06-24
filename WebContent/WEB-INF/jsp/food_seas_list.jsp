@@ -19,6 +19,8 @@
 						<c:forEach var="e" items="${meatList}">
 							<input type="checkbox" name="checkbox"
 								value="${e.food_seas_num }">
+				${e.user_num },
+				${e.food_box_num },
 				${e.food_seas_num },
 				${e.food_seas_name },
 				${e.food_seas_genre },
@@ -36,6 +38,8 @@
 						<c:forEach var="e" items="${vegeList}">
 							<input type="checkbox" name="checkbox"
 								value="${e.food_seas_num }">
+				${e.user_num },
+				${e.food_box_num },
 				${e.food_seas_num },
 				${e.food_seas_name },
 				${e.food_seas_genre },
@@ -52,6 +56,8 @@
 						<c:forEach var="e" items="${helpList}">
 							<input type="checkbox" name="checkbox"
 								value="${e.food_seas_num }">
+				${e.user_num },
+				${e.food_box_num },
 				${e.food_seas_num },
 				${e.food_seas_name },
 				${e.food_seas_genre },
@@ -68,6 +74,8 @@
 					<h3 class="title">マイ調味料</h3>
 					<div class="box">
 						<c:forEach var="e" items="${myseList}">
+				${e.user_num },
+				${e.food_box_num },
 				${e.food_seas_num },
 				${e.food_seas_name },
 				${e.food_seas_genre },
