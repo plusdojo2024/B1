@@ -3,10 +3,11 @@
 <!DOCTYPEHtml>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>参加中のツアー</title>
+<meta charset="UTF-8">
+<title>参加中のツアー</title>
 </head>
 <body>
+<<<<<<< HEAD
     <h1>参加中のツアー</h1>
 
     <c:set var="H1" value="${pastList[0].total_score}"/>
@@ -220,6 +221,21 @@
 	</table>
 	<canvas id="lineChart" width="100" height="50"></canvas>
 	<a href="/B1/PastServlet">過去の成績</a>
+=======
+参加中のツアー
+<form method="get" action="ScoreServlet">
+<c:forEach var="e" items="${cardList}">
+${e.scores_num}<br>
+${e.par}<br>
+${e.time_scores}<br>
+${e.food_scores}<br>
+${e.seas_scores}<br>
+${e.cook_scores}<br>
+${e.taste_scores}<br>
+${e.total_score}<br>
+</c:forEach>
+</form>
+>>>>>>> d8e7a842af644f5e65c4c0da891dbf47e40520c4
 </body>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
