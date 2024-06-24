@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,53 +10,54 @@
 </head>
 <body>
 
-<div  class="PageFlex">
-
-	<div class="PageFlexBox"></div>
+<div id="Flex">
+メイン画面
 
 	<!-- プレイボタン -->
-	<div class="PageFlexBox">
+	<div class="box_ RowBox">
 		<div class="imgBox">
 			<a href="/B1/StatusCheckServlet?page=Play" >
-				<img src="/B1/img/golf_ball.png" class="img">
+				<img src="/B1/img/cook.png" class="img">
 			</a>
 		</div>
 	</div>
 
 	<!-- 料理、スコア、食材 -->
-	<div class="PageFlexBox">
-		<div class="SelectBlock PageFlexBox_1">
-			<a href="/B1/StatusCheckServlet?page=Cooks" class="ahref">
-				<div class="SelectBlockName">
-					<h1>料理の一覧</h1>
+	<div class="box_ RowBox">
+		<div class="box">
+			<a href="/B1/StatusCheckServlet?page=Cooks">
+				<div class="SelectBlock">
+					<h1>料理</h1>
+				</div>
+
+			</a>
+		</div>
+
+		<div class="box">
+			<a href="/B1/StatusCheckServlet?page=Foods">
+				<div class="SelectBlock">
+					<h1>食材</h1>
 				</div>
 			</a>
 		</div>
 
-		<div class="SelectBlock PageFlexBox_1">
-			<a href="/B1/StatusCheckServlet?page=Foods" class="ahref">
-				<div class="SelectBlockName">
-					<h1>食材の一覧</h1>
+		<div class="box">
+			<a href="/B1/StatusCheckServlet?page=Score">
+				<div class="SelectBlock">
+					<h1>スコア</h1>
 				</div>
 			</a>
 		</div>
+	</div>
 
-		<div class="SelectBlock PageFlexBox_1">
-			<a href="/B1/StatusCheckServlet?page=Score" class="ahref">
-				<div class="SelectBlockName">
-					<h1>スコア記録</h1>
+	<div class="box_">
+		<div id="box_regist">
+			<a href="/B1/StatusCheckServlet?page=Regist">
+				<div class="SelectBlock">
+					<h1>スコア</h1>
 				</div>
 			</a>
 		</div>
-
-		<div class="SelectBlock PageFlexBox_1">
-			<a href="/B1/StatusCheckServlet?page=Regist" class="ahref">
-				<div class="SelectBlockName">
-					<h1>本登録</h1>
-				</div>
-			</a>
-		</div>
-
 	</div>
 
 		<dialog>

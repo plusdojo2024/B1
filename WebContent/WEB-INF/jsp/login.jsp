@@ -5,54 +5,37 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="./css/login.css" rel="stylesheet" type="text/css">
 <title>献立ゴルフ</title>
 </head>
-<body class="PageFlex">
+<body>
+<div>
 
-	<div class="PageFlexBox">
+<h1>ログイン画面</h1>
 
+<div>
+<form method="post" action="/B1/LoginServlet">
+	<input type="text" name="user_name" placeholder="ユーザ名" ><br>
+	<input type="text" name="user_pass" placeholder="パスワード" ><br>
+	<input type="submit">
 
-		<div class="FormBox">
+</form>
 
-			<div class="FormTitle">ログイン</div>
-
-			<form 	method="post"
-			action="/B1/LoginServlet">
-
-			<div>
-
-
-				<input 	type="text"
-						name="user_name"
-						placeholder="ユーザ名"
-						class="TextForm"><br>
-			</div>
-
-			<div>
-				<input 	type="text"
-						name="user_pass"
-						placeholder="パスワード"
-						class="TextForm" ><br>
-			</div>
-
-			<div class="SubmitButton">
-				<input 	type="submit">
-
-			</div>
-
-			</form>
-
-		</div>
-
+		<Message:if test="${!empty Message[0]}">
 		<div>
-			<Message:if test="${!empty Message[0]}">
-				<div>${Message[0]}</div>
-				<div>${Message[1]}</div>
-			</Message:if>
+		<div>${Message[0]}</div>
+		<div>${Message[1]}</div>
 		</div>
-	</div>
+		</Message:if>
 
+
+	<h2>ログイン機能付き</h2>
+	<div><h4>空欄のまま送信</h4>
+		⇒JSP、サーブレットのアクセスページへ</div>
+	<div><h4>ログイン情報(user1,pass1)を入力</h4>
+		⇒トップページへ</div>
+
+</div>
+
+</div>
 </body>
 </html>

@@ -35,13 +35,16 @@
 
 	<h2>
 		<div>Start Time: <span id="startTimeDisplay"></span></div>
-
     	<form id="timeForm" action="saveTimes" method="post">
         <input type="hidden" id="startTime" name="startTime" value="">
         <input type="hidden" id="uploadTime" name="uploadTime" value="">
         <input type="submit" id="uploadButton" value="Send Image">
     </form>
+
+
+
 	</h2>
+
 
 
 

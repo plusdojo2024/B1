@@ -1,10 +1,6 @@
 @charset "UTF-8";
 .img-pc{
-<<<<<<< HEAD
-	height : 100px;
-=======
 	height : 200px;
->>>>>>> cf96dc07c26f7d8d7d49c299092d0859b7560e0b
 
 }
 ul {
@@ -13,30 +9,23 @@ ul {
 
 }
 p{
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
   font-family:serif;
 color:rgb(0, 0, 0);
  font-size:50px;
  font-weight:500;
-=======
->>>>>>> cf96dc07c26f7d8d7d49c299092d0859b7560e0b
+
 	font-family:serif;
 	color:#45a049;
-	text-bottom: 100;
+	text-bottom: 100px;
 	font-size:20px;
 	font-weight:500;
-<<<<<<< HEAD
-}
-=======
->>>>>>> 6024936d52bc4a3d136c8cec11c0f5c237c8245f
+
 }
 #hero {
   /* 画像ファイルの指定 */
   background-image: url(/B1/img/bg.png);
 
-<<<<<<< HEAD
   /* 画像を常に天地左右の中央に配置 */
   background-position: center center ;
 
@@ -45,21 +34,131 @@ color:rgb(0, 0, 0);
 
   background-repeat: no-repeat;
 
-  height: 2500px;
+  height: 3000px;
 
   border-radius: 30px;
 
 
 
->>>>>>> cf96dc07c26f7d8d7d49c299092d0859b7560e0b
+}
 
-=======
 .favorite {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	gap: 20px;
-<<<<<<< HEAD
-=======
->>>>>>> 6024936d52bc4a3d136c8cec11c0f5c237c8245f
->>>>>>> cf96dc07c26f7d8d7d49c299092d0859b7560e0b
+}
+#hyousyou{
+  /* 画像ファイルの指定 */
+  background-image: url(/B1/img/Hyousyou.png);
+
+
+
+
+  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+  background-size: cover;
+  background-color:rgb(255, 246, 195);
+  height: 2200px;
+  width: 1100px;
+    background-position: center center ;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.example1{
+	    background:#6495ed;
+		font-size:60px;
+  font-weight:200;
+	border: 2px solid #6495ed;
+    width: 200px;
+    height: 200px;
+	font-weight: bold;
+    border-radius: 50%;
+	color: #FFF;
+    transition: 0.5s;
+
+}
+.example2{
+ background:#228b22;
+ 	border: 2px solid #228b22;
+font-size:60px;
+  font-weight:200;
+
+    width: 200px;
+    height: 200px;
+
+	font-weight: bold;
+    border-radius: 50%;
+	color: #FFF;
+    transition: 0.5s;
+}
+.example3{
+	 	border: 2px solid #ff7f50;
+    background:#ff7f50;
+font-size:60px;
+  font-weight:200;
+
+    width: 200px;
+    height: 200px;
+	font-weight: bold;
+    border-radius: 50%;
+	color: #FFF;
+    transition: 0.5s;
+}
+
+.favor {
+ margin: 300px 10px 100px 100px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 20px;
+
+}
+
+.dia{
+font-size:30px;
+font-weight:500;
+	  background-color:rgb(255, 246, 195);
+}
+
+.scroll_content { /* リスト全体のスタイル */
+  display: flex;
+  max-width: 1200px;
+ margin-bottom:100px;
+  overflow-x: auto;
+}
+
+.scroll_content li { /* 各リストのスタイル */
+  width: 90%;
+  padding: 8px;
+  margin: 3px;
+  flex-shrink: 0;
+  list-style: none;
+}
+
+.scroll_content img { /* 画像のスタイル */
+
+  object-fit: cover;
+}
+
+.scroll_content::-webkit-scrollbar {
+  height: 12px; /* スクロールバーの高さ */
+}
+
+.scroll_content::-webkit-scrollbar-thumb {
+  background: #aaa; /* ツマミの色 */
+  border-radius: 6px; /* ツマミ両端の丸み */
+}
+
+.scroll_content::-webkit-scrollbar-track {
+  background: #ddd; /* トラックの色 */
+  border-radius: 6px; /* トラック両端の丸み */
+}
+
+
+@media screen and (min-width: 450px) {
+
+  .scroll_content li {
+    width: 45%;
+  }
+}
+.hidden {
+  display: none;
 }

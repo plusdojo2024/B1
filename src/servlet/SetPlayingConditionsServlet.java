@@ -18,7 +18,6 @@ import javax.servlet.http.HttpSession;
 import dao.FoodSeasDAO;
 import model.FoodSeasListmodel;
 
-
 @WebServlet("/SetPlayingConditionsServlet")
 public class SetPlayingConditionsServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
@@ -95,16 +94,14 @@ public class SetPlayingConditionsServlet extends HttpServlet {
         int randomHelp = rand.nextInt(help.size());
         String selectHelp = help.get(randomHelp);
 
+        String food_con = selectMeat + "," + selectVege1 + "," + selectVege2 + ",(" + selectSeas + "),(" + selectHelp + ")";
 
-
-
+        String seas_con = se
 
 
 
         // TODO Auto-generated method stub
         response.getWriter().append("Served at: ").append(request.getContextPath());
-
-
     }
 
 
@@ -115,10 +112,15 @@ public class SetPlayingConditionsServlet extends HttpServlet {
     	// 食材の提示
 
 
+
+
         // 調味料とお助けの表示も。
 
 
         // セッションスコープにfoodSeasNamesを保存
+
+
+
 
 
 

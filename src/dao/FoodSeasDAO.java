@@ -1,5 +1,4 @@
 package dao;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -9,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.FoodSeasListmodel;
-
 public class FoodSeasDAO {
 	public List<FoodSeasListmodel> select(int user_num) {
 		Connection conn = null;
@@ -21,9 +19,7 @@ public class FoodSeasDAO {
             String foodBox = "SELECT food_box_num FROM FOOD_SEAS WHERE user_num = ? ORDER BY food_box_num desc limit 1";
             PreparedStatement pStmt = conn.prepareStatement(foodBox);
             pStmt.setInt(1, user_num);
-
             ResultSet rs = pStmt.executeQuery();
-
             while (rs.next()) {
             	foodBoxNum = rs.getInt("food_box_num");
             }
@@ -31,9 +27,7 @@ public class FoodSeasDAO {
             	foodBox = "SELECT * FROM FOOD_SEAS WHERE food_box_num = ? ORDER BY food_seas_genre desc";
                 pStmt = conn.prepareStatement(foodBox);
                 pStmt.setInt(1, foodBoxNum);
-
                 rs = pStmt.executeQuery();
-
                 while (rs.next()) {
                 	FoodSeasListmodel record = new FoodSeasListmodel(
                 		rs.getInt("food_seas_num"),
@@ -46,7 +40,6 @@ public class FoodSeasDAO {
                 	foodSeasRecord.add(record);
                 }
             }
-
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }

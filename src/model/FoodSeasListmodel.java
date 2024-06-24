@@ -4,21 +4,22 @@ import java.io.Serializable;
 
 public class FoodSeasListmodel implements Serializable {
 	private int food_seas_num;			/*食材管理番号*/
-	private String food_seas_name;		/* 食材名 */
-	private String food_seas_genre;	/* 食材のジャンル */
+	private String food_seas_name ;		/* 食材名 */
+	private String food_seas_genre ;	/* 食材のジャンル */
 	private boolean food_seas_stock;	/* 在庫の有無 */
 	private int food_box_num;
 	private int user_num;
+
 //ここまででやってること
 //FoodSeasListmodelクラスを作成して、中身を決める
 //私の場合はこの4つ
 
 
 	//引数がないコンストラクタ
+
+
 	public FoodSeasListmodel() {
 	}
-
-
     //引数があるコンストラクタ
 	public FoodSeasListmodel( int food_seas_num ,String food_seas_name, String food_seas_genre, boolean food_seas_stock
 			,int food_box_num, int user_num) {
@@ -29,7 +30,6 @@ public class FoodSeasListmodel implements Serializable {
 		this.food_seas_stock = food_seas_stock;
 		this.food_box_num = food_box_num;
 		this.user_num = user_num;
-
 
 	}
 //ここまででしてること
@@ -65,7 +65,6 @@ public class FoodSeasListmodel implements Serializable {
 	public void setFood_seas_stock(boolean food_seas_stock) {
 		this.food_seas_stock = food_seas_stock;
 	}
-
 
 	public int getFood_box_num() {
 		return food_box_num;
