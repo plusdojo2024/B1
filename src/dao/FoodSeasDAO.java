@@ -52,7 +52,4 @@ public class FoodSeasDAO {
         }
         return foodSeasRecord;
     }
-
-
-
 }
