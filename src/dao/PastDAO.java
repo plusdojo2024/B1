@@ -43,7 +43,11 @@ public class PastDAO {
                     rs.getString("tour_sta"),
                     rs.getString("tour_fin"),
                     rs.getInt("cook_num"),
-                    rs.getInt("scores")
+                    rs.getInt("scores"),
+                    rs.getString("cook_date"),
+                    rs.getString("course_name"),
+                    rs.getInt("total_score"),
+                    rs.getInt("par")
                 );
                 pastList.add(record);
             }

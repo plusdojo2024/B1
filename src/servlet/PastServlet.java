@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import dao.PastDAO;
 import model.PastScore;
 
-@WebServlet("/ScoreServlet")
-public class ScoreServlet extends HttpServlet {
+@WebServlet("/PastServlet")
+public class PastServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -28,7 +28,7 @@ public class ScoreServlet extends HttpServlet {
     	request.setAttribute("pastList", pastList);
 
     	// メニューページにフォワードする
-    	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/now_tour.jsp");
+    	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/past_score.jsp");
     	dispatcher.forward(request, response);
     }
 }
