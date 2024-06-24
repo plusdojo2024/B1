@@ -239,49 +239,5 @@
 	</c:forEach>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-    // JSPからH1からH18の値を取得（すでに定義されていると仮定）
-    var tValues=[];
-    var lavels=[];
 
-    <% for (var i=1;i<=tValues.length;i++) { %>
-    tValues.push(${T${i}});
-    labels.push('T'+${i});
-<% } %>
-
-    // Chart.jsを使って折れ線グラフを描画する
-    var ctx = document.getElementById('lineChart').getContext('2d');
-    var lineChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels:labels,
-            datasets: [{
-                label: 'スコア',
-                data: tValues,
-                borderColor: 'rgba(75, 192, 192, 1)', // 必要に応じて色をカスタマイズ
-                borderWidth: 2,
-                fill: false
-            }]
-        },
-        options: {responsive: true,
-            plugins: {legend:
-            	{display: false}
-            },
-            scales:{
-            	x:{
-            		title:{
-            			display: true,
-                     	text: 'ホール'
-                    }
-                },
-                y: {
-                    title: {
-                        display: true,
-                        text: 'スコア'
-                    }
-                }
-            }
-        }
-    });
-</script>
 </html>
