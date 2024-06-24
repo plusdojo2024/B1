@@ -39,10 +39,13 @@ ${cooks[1]}
 <h2>お気に入り登録</h2>
 <select name="favorite">
 <option value="サンプル1">お気に入りに登録する</option>
-<option value="サンプル2">お気に入りに登録しない</option>
+<option value="サンプル2">努力しました！</option>
+<option value="サンプル3">早く作れました！</option>
+<option value="サンプル4">旨かったです！</option>
 </select>
 
 </form>
+
 本登録画面
 </body>
 </html>
