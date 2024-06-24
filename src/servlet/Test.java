@@ -2,13 +2,13 @@ package servlet;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
+import dao.cooksDAO;
 
 /**
  * Servlet implementation class Test
@@ -22,13 +22,14 @@ public class Test extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String user_num = "1";
 
-		HttpSession session = request.getSession();
-		session.setAttribute("user_num", user_num);
+		int user_num = 1;
+		String column_name ="COOK_IMG";
+		String value ="test.jpeg";
+		// int cook_time = 15;
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("StatusCheckPartServlet?page=DefinitiveRegistration");
-		dispatcher.forward(request,response);
+		boolean result = cooksDAO.updateCook(user_num, column_name, value);
+
 
 
 
