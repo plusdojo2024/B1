@@ -6,8 +6,7 @@
 <section >
 <head>
 <meta charset="UTF-8">
-<title>表彰一覧</title>
-<link rel="stylesheet" href="/B1/css/cooklist.css">
+<title>Insert title here</title>
 </head>
 
 <main>
@@ -28,6 +27,7 @@
 <p>作った日付<br>${e.cook_date}</p>
 		</li>
 </c:forEach>
+<<<<<<< HEAD
 </ul>
 </div>
 
@@ -49,4 +49,8 @@ function toggleDisplay() {
 <footer>
 	<a href="/B1/FavoriteServlet" class="btn">料理一覧へ</a>
 </footer>
+=======
+お気に入り一覧
+</body>
+>>>>>>> 673d0f3004db7507e0e173e19827a662453de0ff
 </html>
