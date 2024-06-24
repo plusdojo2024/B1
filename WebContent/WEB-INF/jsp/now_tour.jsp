@@ -3,33 +3,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>参加中のツアー</title>
+<meta charset="UTF-8">
+<title>参加中のツアー</title>
 </head>
 <body>
-    <h1>参加中のツアー</h1>
-
-    <table border="1">
-    <h5>第回ツアー（</h5>
-    <c:out value="${pastList[0].tour_sta }"/><h5>～）累計スコア</h5>
-        <tr>
-        <th>日付</th>
-        <th>H番号</th>
-        <th>コース</th>
-        <th>規定打数</th>
-        <th>スコア</th>
-        <th>累計スコア</th>
-        </tr>
-    <c:forEach var="e" items="${pastList}">
-        <tr>
-        <td>${e.user_num}</td>
-        <td>1H</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>累計スコア</td>
-    	</tr>
-    </c:forEach>
-	</table>
+参加中のツアー
+<form method="get" action="ScoreServlet">
+<c:forEach var="e" items="${cardList}">
+${e.scores_num}<br>
+${e.par}<br>
+${e.time_scores}<br>
+${e.food_scores}<br>
+${e.seas_scores}<br>
+${e.cook_scores}<br>
+${e.taste_scores}<br>
+${e.total_score}<br>
+</c:forEach>
+</form>
 </body>
 </html>

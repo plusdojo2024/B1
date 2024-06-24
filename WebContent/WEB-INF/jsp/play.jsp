@@ -12,9 +12,16 @@
 		<p>一致するデータはありません。</p>
 	</c:if>
 	<c:forEach var="e" items="${foodSeasNames}">
+<<<<<<< HEAD
+		<p>${e.food_seas_name}</p>
+=======
 		<p>${e.name}</p>
+>>>>>>> cf96dc07c26f7d8d7d49c299092d0859b7560e0b
 	</c:forEach>
 
+	<h2>
+	de
+	</h2>
 
 
 
