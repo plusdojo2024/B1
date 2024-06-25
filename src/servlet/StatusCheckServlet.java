@@ -61,7 +61,8 @@ public class StatusCheckServlet extends HttpServlet {
 			}else if( page.equals("Play") || page.equals("Regist") ) {
 				//プレイは調理前のみ、本登録は仮登録済みのみ
 
-				String[] Status = StatusDAO.getStatus(user_num);
+				StatusDAO sDAO = new StatusDAO();
+				String[] Status = sDAO.getStatus(user_num);
 
 				if(Status != null) {
 

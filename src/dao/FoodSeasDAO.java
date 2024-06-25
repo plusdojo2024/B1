@@ -42,6 +42,15 @@ public class FoodSeasDAO {
             }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
+        }finally {
+        	if(conn != null) {
+				try {
+					conn.close();
+				}
+				catch(Exception e) {
+					e.printStackTrace();
+				}
+			}
         }
         return foodSeasRecord;
     }

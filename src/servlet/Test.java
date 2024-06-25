@@ -18,6 +18,10 @@ import dao.cooksDAO;
 @WebServlet("/Test")
 public class Test extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9cffd653ae3e729b93da0c41beeda38e6193e8ff
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -25,6 +29,7 @@ public class Test extends HttpServlet {
 
 
 
+<<<<<<< HEAD
 		int user_num = 1;
 		String column_name ="COOK_IMG";
 		String value ="test.jpeg";
@@ -34,6 +39,41 @@ public class Test extends HttpServlet {
 
 
 
+=======
+
+		/*
+		int user_num = 18;
+		String region = "日本";
+
+		String[] PlaySeasList = SeasDAO.getSeasCon(user_num,region);
+		request.setAttribute("PlaySeasList",PlaySeasList );
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/test.jsp");
+		dispatcher.forward(request,response);
+		*/
+
+		/*
+		String user_num = "1";
+
+		HttpSession session = request.getSession();
+		session.setAttribute("user_num", user_num);
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("StatusCheckPartServlet?page=DefinitiveRegistration");
+		dispatcher.forward(request,response);
+		*/
+		/*
+		int user_num = 1;
+		FoodSeasDAO fsDAO = new FoodSeasDAO();
+		List<FoodSeasListmodel> FoodSeasList = fsDAO.select(user_num);
+
+
+
+		request.setAttribute("FS",FoodSeasList );
+		*/
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/test.jsp");
+		dispatcher.forward(request,response);
+>>>>>>> 9cffd653ae3e729b93da0c41beeda38e6193e8ff
 
 		/**/
 
@@ -75,8 +115,11 @@ public class Test extends HttpServlet {
 		dispatcher.forward(request,response);
 		*/
 
+<<<<<<< HEAD
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+=======
+>>>>>>> 9cffd653ae3e729b93da0c41beeda38e6193e8ff
 
 	}
 
@@ -84,24 +127,6 @@ public class Test extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String jsp = request.getParameter("jsp");
-//
-
-		String pass = "/WEB-INF/jsp/" + jsp +".jsp";
-//
-		String servlet = request.getParameter("servlet");
-
-//		String pass="";
-
-		if(jsp.length() != 0) {
-		pass = "/WEB-INF/jsp/" + jsp +".jsp";
-		}else {
-		pass =   servlet ;
-		}
-
-
-		RequestDispatcher dispatcher = request.getRequestDispatcher(pass);
-		dispatcher.forward(request,response);
 	}
 
 }

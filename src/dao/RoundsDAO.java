@@ -15,7 +15,11 @@ Boolean)RoundsDAO.AddHole(user_num ,round_num ,hole_num)
 
 public class RoundsDAO{
 
+<<<<<<< HEAD
 	public  static Boolean AddRoundUpdateTour(int user_num,String now_round,int tour_num) {
+=======
+	public  Boolean AddRoundUpdateTour(int user_num,String now_round,int tour_num) {
+>>>>>>> 9cffd653ae3e729b93da0c41beeda38e6193e8ff
 
 		Boolean result = false;
 
@@ -143,7 +147,11 @@ public class RoundsDAO{
 		return result;
 	};
 
+<<<<<<< HEAD
 	public static Boolean AddHole(int user_num , int round_num , int hole_num) {
+=======
+	public Boolean AddHole(int user_num , int round_num , int hole_num) {
+>>>>>>> 9cffd653ae3e729b93da0c41beeda38e6193e8ff
 
 		Boolean result = false;
 
@@ -196,7 +204,11 @@ public class RoundsDAO{
 	return result;
 	}
 
+<<<<<<< HEAD
 	public static Boolean UpdateTour(int user_num , String culum_name ,String Value ) {
+=======
+	public Boolean UpdateTour(int user_num , String culum_name ,String Value ) {
+>>>>>>> 9cffd653ae3e729b93da0c41beeda38e6193e8ff
 
 		Boolean result = false;
 

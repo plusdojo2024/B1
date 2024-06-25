@@ -15,7 +15,11 @@ import java.time.format.DateTimeFormatter;
 
 public class ToursDAO{
 
+<<<<<<< HEAD
 	public static boolean AddRound1_AddTour(int user_num) {
+=======
+	public boolean AddRound1_AddTour(int user_num) {
+>>>>>>> 9cffd653ae3e729b93da0c41beeda38e6193e8ff
 
 		//DBアクセス権
 		Connection conn = null;
@@ -137,5 +141,110 @@ public class ToursDAO{
 		}
 		return result;
 	}
+<<<<<<< HEAD
+=======
+
+
+	public boolean ChangeRoundStatus(int user_num) {
+
+		//DBアクセス権
+		Connection conn = null;
+
+		boolean result = false;
+
+		try {
+
+			//データベース読み込み
+			Class.forName("org.h2.Driver");
+
+			//データベースに接続
+			conn = DriverManager.getConnection(
+			"jdbc:h2:file:C:/pleiades/workspace/B1/B1","B1","");
+
+			try {
+
+				String RoundCheckSQL =
+				"SELECT TOUR_NUM,ROUND_ST,ROUND_ND,ROUND_TH "
+				+"FROM TOURS WHERE USER_NUM = ? ORDER BY tour_num DESC LIMIT 1";
+
+				PreparedStatement EmbedSQL = conn.prepareStatement(RoundCheckSQL);
+				EmbedSQL.setInt(1, user_num);
+
+				ResultSet Round123NumResult = EmbedSQL.executeQuery();
+
+				Round123NumResult.next();
+				int Tour_num = Round123NumResult.getInt("tour_num");
+				String Round2_num = Round123NumResult.getString("round_nd");
+				String Round3_num = Round123NumResult.getString("round_th");
+
+				String UpdateRoundStatusSQL = null;
+
+				if(Round2_num == null) {
+					//現在R1
+					UpdateRoundStatusSQL =
+					"UPDATE tours SET ROUND_STATUS = 'R1' "
+					+ "WHERE TOUR_NUM= ? ;";
+
+				}else if(Round3_num == null){
+					//現在R2
+					UpdateRoundStatusSQL =
+					"UPDATE tours SET ROUND_STATUS = 'R2' "
+					+ "WHERE TOUR_NUM= ? ;";
+
+				}else {
+
+					UpdateRoundStatusSQL =
+					"UPDATE tours SET ROUND_STATUS = 'R3' "
+					+ "WHERE TOUR_NUM= ? ;";
+
+				}
+
+				 EmbedSQL = conn.prepareStatement(UpdateRoundStatusSQL);
+				 EmbedSQL.setInt(1, Tour_num);
+
+
+				if(EmbedSQL.executeUpdate() == 1) {
+					result = true;
+				}else {
+					result = false;
+				}
+
+				}
+				catch(Exception e){
+					e.printStackTrace();
+					result = false;
+				}
+				finally{
+
+				if(conn != null) {
+					try {
+						conn.close();
+					}
+					catch(Exception e) {
+						e.printStackTrace();
+						result = false;
+					}
+				}
+			};
+		}catch(Exception e){
+			e.printStackTrace();
+			result = false;
+		}
+		finally{
+
+			if(conn != null) {
+				try {
+					conn.close();
+				}
+				catch(Exception e) {
+					e.printStackTrace();
+					result = false;
+				}
+		}
+		}
+	return result;
+	}
+
+>>>>>>> 9cffd653ae3e729b93da0c41beeda38e6193e8ff
 }
 

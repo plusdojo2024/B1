@@ -82,7 +82,11 @@ public class cooksDAO {
 		return cardList;
 	}
 
+<<<<<<< HEAD
 	public static int insertCook(int user_num, String food_con, String seas_con, int cook_time) {
+=======
+	public int insertCook(int user_num, String food_con, String seas_con, int cook_time) {
+>>>>>>> 9cffd653ae3e729b93da0c41beeda38e6193e8ff
 		Connection conn = null;
 		int cook_num = 0;
 
@@ -154,7 +158,11 @@ public class cooksDAO {
 	return cook_num;
 	}
 
+<<<<<<< HEAD
 	public static boolean updateCook(int user_num, String column_name, String value) {
+=======
+	public boolean updateCook(int user_num, String column_name, String value) {
+>>>>>>> 9cffd653ae3e729b93da0c41beeda38e6193e8ff
 		int cook_num = 0;
 		boolean result = false;
 		Connection conn = null;

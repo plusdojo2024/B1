@@ -2,14 +2,25 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPEHtml>
 <html>
+<style>
+	.chart-container {
+    	width: 80%; /* グラフの幅を100%に設定 */
+        height: 400px; /* グラフの高さを指定 */
+        border: 1px solid #ccc; /* 枠線を追加 */
+        margin: 0 auto; /* グラフを中央揃えにする */
+    }
+    body{
+    background-image:url("${pageContext.request.contextPath}/img/scorebg.png");
+    background-size:5%;
+    }
+</style>
 <head>
 <meta charset="UTF-8">
 <title>参加中のツアー</title>
 </head>
-<body>
-<<<<<<< HEAD
-    <h1>参加中のツアー</h1>
-
+<body align=center>
+    <table border="1" align=center width=30% style="background-color: white;"><tr><th><h1>参加中のツアー</h1></th></tr></table>
+	<br>
     <c:set var="H1" value="${pastList[0].total_score}"/>
     <c:set var="H2" value="${pastList[1].total_score}"/>
 	<c:set var="H3" value="${pastList[2].total_score}"/>
@@ -32,8 +43,10 @@
 	<c:set var="R2" value="${H7+H8+H9+H10+H11+H12}"/>
 	<c:set var="R3" value="${H13+H14+H15+H16+H17+H18}"/>
 
+	<table border="1" align=center width=80% style="background-color:gray;"><tr><th>
     第<c:out value="${pastList[0].tour_num}"/>回ツアー（<c:out value="${pastList[0].tour_sta }"/>～） <c:out value="${R1+R2+R3}"/>
-    <table border="1">
+    </th></tr></table>
+    <table border="1" align=center width=80% style="background-color: white;">
         <tr>
         <th>日付</th>
         <th>H番号</th>
@@ -219,23 +232,11 @@
         <td><c:if test="${not empty H18}"><p>${R1+R2+R3}</p></c:if></td>
     	</tr>
 	</table>
-	<canvas id="lineChart" width="100" height="50"></canvas>
+	<br>
+	<div class="chart-container" style="background-color: white;">
+        <canvas id="lineChart"></canvas>
+    </div>
 	<a href="/B1/PastServlet">過去の成績</a>
-=======
-参加中のツアー
-<form method="get" action="ScoreServlet">
-<c:forEach var="e" items="${cardList}">
-${e.scores_num}<br>
-${e.par}<br>
-${e.time_scores}<br>
-${e.food_scores}<br>
-${e.seas_scores}<br>
-${e.cook_scores}<br>
-${e.taste_scores}<br>
-${e.total_score}<br>
-</c:forEach>
-</form>
->>>>>>> d8e7a842af644f5e65c4c0da891dbf47e40520c4
 </body>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
