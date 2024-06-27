@@ -236,7 +236,7 @@
 	<div class="chart-container" style="background-color: white;">
         <canvas id="lineChart"></canvas>
     </div>
-	<a href="/B1/PastServlet">過去の成績</a>
+	<a href="/B1/ScoreServlet?score=past">過去の成績</a>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>

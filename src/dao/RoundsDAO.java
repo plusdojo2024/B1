@@ -240,6 +240,7 @@ public class RoundsDAO{
 				case "COOK_NUM":
 				case "SCORES_NUM":
 				case "COURCE_NAME":
+				case "PLAY_STATUS":
 				UpdateRoundSQL =
 				"UPDATE rounds SET " + culum_name +" = ? "
 				+ "WHERE ROUND_NUM = ? AND HOLE_NUM = ?";

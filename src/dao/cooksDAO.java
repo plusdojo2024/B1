@@ -190,7 +190,7 @@ public class cooksDAO {
 				case "COOK_STA":
 				case "COOK_FIN":
 				case "FOOD_USED":
-				case "SEAS=USED":
+				case "SEAS_USED":
 				case "COOK_SATIS":
 				case "AJI_SATIS":
 				case "COOK_FAV":

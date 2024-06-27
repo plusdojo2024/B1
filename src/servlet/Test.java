@@ -21,6 +21,14 @@ public class Test extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		int round_num = Integer.parseInt("3");
+		int hole_num = Integer.parseInt("3");
+		int user_num =2;
+		/*
+		cooksDAO cDAO = new cooksDAO();
+		Boolean result = cDAO.updateCook(user_num, "COOK_STA", "12:12:12");
+		*/
+
 
 
 
@@ -53,9 +61,9 @@ public class Test extends HttpServlet {
 
 		request.setAttribute("FS",FoodSeasList );
 		*/
-
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/test.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/play.jsp");
 		dispatcher.forward(request,response);
+
 
 		/**/
 
