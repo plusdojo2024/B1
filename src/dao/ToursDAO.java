@@ -15,7 +15,11 @@ import java.time.format.DateTimeFormatter;
 
 public class ToursDAO{
 
+<<<<<<< HEAD
+	public static boolean AddRound1_AddTour(int user_num) {
+=======
 	public boolean AddRound1_AddTour(int user_num) {
+>>>>>>> 9cffd653ae3e729b93da0c41beeda38e6193e8ff
 
 		//DBアクセス権
 		Connection conn = null;
@@ -137,6 +141,8 @@ public class ToursDAO{
 		}
 		return result;
 	}
+<<<<<<< HEAD
+=======
 
 
 	public boolean ChangeRoundStatus(int user_num) {
@@ -239,5 +245,6 @@ public class ToursDAO{
 	return result;
 	}
 
+>>>>>>> 9cffd653ae3e729b93da0c41beeda38e6193e8ff
 }
 

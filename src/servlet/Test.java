@@ -9,13 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.cooksDAO;
+
+
 /**
  * Servlet implementation class Test
  */
 @WebServlet("/Test")
 public class Test extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+<<<<<<< HEAD
+=======
 
+>>>>>>> 9cffd653ae3e729b93da0c41beeda38e6193e8ff
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -31,6 +37,17 @@ public class Test extends HttpServlet {
 
 
 
+<<<<<<< HEAD
+		int user_num = 1;
+		String column_name ="COOK_IMG";
+		String value ="test.jpeg";
+		// int cook_time = 15;
+
+		boolean result = cooksDAO.updateCook(user_num, column_name, value);
+
+
+
+=======
 
 		/*
 		int user_num = 18;
@@ -63,6 +80,7 @@ public class Test extends HttpServlet {
 		*/
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/play.jsp");
 		dispatcher.forward(request,response);
+>>>>>>> 9cffd653ae3e729b93da0c41beeda38e6193e8ff
 
 
 		/**/
@@ -105,6 +123,11 @@ public class Test extends HttpServlet {
 		dispatcher.forward(request,response);
 		*/
 
+<<<<<<< HEAD
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+=======
+>>>>>>> 9cffd653ae3e729b93da0c41beeda38e6193e8ff
 
 	}
 
