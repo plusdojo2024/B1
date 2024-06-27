@@ -40,7 +40,7 @@
         <div class="SelectBlock">
             <a href="/B1/StatusCheckServlet?page=Foods" class="ahref">
                 <div class="SelectBlockName">
-                    <h1>食材の一覧</h1>
+                    <h1>食材の登録</h1>
                 </div>
             </a>
         </div>
