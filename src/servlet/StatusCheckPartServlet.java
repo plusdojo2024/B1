@@ -41,18 +41,19 @@ public class StatusCheckPartServlet extends HttpServlet {
 
 		HttpSession session = request.getSession();
 
-		int user_num = Integer.parseInt((String)session.getAttribute("user_num"));
 
 		if (session.getAttribute("user_num") == null) {
-			response.sendRedirect("/B1/LoginServlet");
+			response.sendRedirect("/WEB-INF/jsp/login.jsp");
 			return;
 
 		}else {
 
+			int user_num = Integer.parseInt((String)session.getAttribute("user_num"));
+
 			String page = request.getParameter("page");
 
 			//ＤＢの参照のみ
-			if(page.equals("play")||page.equals("foodRegsit") ) {
+			if(page.equals("play")||page.equals("foodRegist") ) {
 
 				//ＤＢからステータス取得
 				StatusDAO sDAO = new StatusDAO();
@@ -67,6 +68,7 @@ public class StatusCheckPartServlet extends HttpServlet {
 						RequestDispatcher dispatcher
 						= request.getRequestDispatcher("SetPlayingConditionsServlet");
 						dispatcher.forward(request,response);
+						return;
 
 					}else if(Status[5].equals("中断")){
 
@@ -74,6 +76,7 @@ public class StatusCheckPartServlet extends HttpServlet {
 						RequestDispatcher dispatcher
 						= request.getRequestDispatcher("SetPlayingConditionsServlet");
 						dispatcher.forward(request,response);
+						return;
 
 					}else if(Status[5].equals("料理中")) {
 
@@ -81,6 +84,7 @@ public class StatusCheckPartServlet extends HttpServlet {
 						RequestDispatcher dispatcher
 						= request.getRequestDispatcher("SetPlayingConditionsServlet");
 						dispatcher.forward(request,response);
+						return;
 
 					}else {
 
@@ -88,107 +92,32 @@ public class StatusCheckPartServlet extends HttpServlet {
 						RequestDispatcher dispatcher
 						= request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
 						dispatcher.forward(request,response);
+						return;
 					}
 
-				}else {
+				}else if(page.equals("foodRegist")){
 
 					//食材一覧⇒食材登録　ＲＮのみ通す
 					if(Status[4].equals("RN")) {
 
 						//通す
-						RequestDispatcher dispatcher
-						= request.getRequestDispatcher("DefinitiveRegistrationServlet");
+						RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/food_seas_regist.jsp");
 						dispatcher.forward(request,response);
+						return;
 
 					}else {
 						//通さない
-						RequestDispatcher dispatcher
-						= request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
+						RequestDispatcher dispatcher = request.getRequestDispatcher("FoodSeasListServlet");
 						dispatcher.forward(request,response);
+						return;
 					}
 				}
 			}
 
-			if(page.equals("DefinitiveRegistration")) {
+	}
 
-				/*	本登録後の処理
-				 *	①ステータスチェック
-				 *	②条件分岐
-				 *	・R3のH6
-				 *		⇒	新ツアー作成
-				 *			(ツアーテーブル更新)
-				 *	・R1,2のH6
-				 *		⇒	新ラウンド作成
-				 *			(ラウンドテーブル更新)
-				 *	・それ以外
-				 *		⇒	新ホール追加
-				 *			(ラウンドテーブル更新)
-				 *	③各条件ごとにテーブルの行追加を行う
-				 *		⇒ツアーテーブルの更新とラウンドテーブル更新の２種
-				 *
-				 */
+}
 
-				//ＤＢからステータス取得
-				StatusDAO sDAO = new StatusDAO();
-				String[] Status = sDAO.getStatus(user_num);
-
-				if(Status[5].equals("食材不足")) {
-
-					Boolean result = null;
-
-					if(Status[4].equals("R3") && Status[3].equals("6")) {
-						//ツアー終了を宣言
-						LocalDateTime nowDate = LocalDateTime.now();
-
-						DateTimeFormatter TimeFormat =DateTimeFormatter.ofPattern("yyyy-MM-dd");
-						String tour_fin = nowDate.format(TimeFormat);
-
-						RoundsDAO rDAO = new RoundsDAO();
-						result = rDAO.UpdateTour(user_num , "TOUR_FIN" ,tour_fin ) ;
-
-						//R3のH6 ⇒ツアーテーブル挿入 ToursDAO.AddTour()
-						ToursDAO tDAO = new ToursDAO();
-						result = tDAO.AddRound1_AddTour(user_num);
-
-					}else if((Status[4].equals("R1")||Status[4].equals("R2")) && Status[3].equals("6")) {
-						//R1,2のH6 ⇒ ラウンドテーブル挿入 RoundsDAO.AddRound()
-
-						int tour_num = Integer.parseInt(Status[1]);
-						RoundsDAO rDAO = new RoundsDAO();
-						result = rDAO.AddRoundUpdateTour(user_num , Status[4] ,tour_num );
-
-					}else {
-						int round_num = Integer.parseInt(Status[2]);
-						int hole_num = Integer.parseInt(Status[3]);
-						RoundsDAO rDAO = new RoundsDAO();
-						result = rDAO.AddHole(user_num ,round_num ,hole_num);
-						//ラウンドテーブル挿入 RoundsDAO.AddHole()
-					}
-
-					if(result == true) {
-
-						sDAO = new StatusDAO();
-						Status = sDAO.getStatus(user_num);
-
-						session = request.getSession();
-						request.setAttribute("Status",Status );
-
-						RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
-						dispatcher.forward(request,response);
-					}
-
-				}else {
-					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
-					dispatcher.forward(request,response);
-				}
-
-			}
-
-
-			}
-
-
-		}
 
 
 
@@ -200,7 +129,89 @@ public class StatusCheckPartServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+
+		HttpSession session = request.getSession();
+
+
+		if (session.getAttribute("user_num") == null) {
+			response.sendRedirect("/WEB-INF/jsp/login.jsp");
+			return;
+
+		}else {
+
+		int user_num = Integer.parseInt((String)session.getAttribute("user_num"));
+
+		/*	本登録後の処理
+		 *	①ステータスチェック
+		 *	②条件分岐
+		 *	・R3のH6
+		 *		⇒	新ツアー作成
+		 *			(ツアーテーブル更新)
+		 *	・R1,2のH6
+		 *		⇒	新ラウンド作成
+		 *			(ラウンドテーブル更新)
+		 *	・それ以外
+		 *		⇒	新ホール追加
+		 *			(ラウンドテーブル更新)
+		 *	③各条件ごとにテーブルの行追加を行う
+		 *		⇒ツアーテーブルの更新とラウンドテーブル更新の２種
+		 *
+		 */
+
+
+		StatusDAO sDAO = new StatusDAO();
+		String[] Status = sDAO.getStatus(user_num);
+
+			Boolean result = false;
+
+			if(Status[4] == null) {
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
+				dispatcher.forward(request,response);
+				return;
+			}
+
+
+			if(Status[4].equals("R3") && Status[3].equals("6")) {
+				//ツアー終了を宣言
+				LocalDateTime nowDate = LocalDateTime.now();
+
+				DateTimeFormatter TimeFormat =DateTimeFormatter.ofPattern("yyyy-MM-dd");
+				String tour_fin = nowDate.format(TimeFormat);
+
+
+				RoundsDAO rDAO = new RoundsDAO();
+				result = rDAO.UpdateTour(user_num , "TOUR_FIN" ,tour_fin ) ;
+
+				//R3のH6 ⇒ツアーテーブル挿入 ToursDAO.AddTour()
+				ToursDAO tDAO = new ToursDAO();
+				result = tDAO.AddRound1_AddTour(user_num);
+
+			}else if((Status[4].equals("R1")||Status[4].equals("R2")) && Status[3].equals("6")) {
+				//R1,2のH6 ⇒ ラウンドテーブル挿入 RoundsDAO.AddRound()
+
+				int tour_num = Integer.parseInt(Status[1]);
+				RoundsDAO rDAO = new RoundsDAO();
+				result = rDAO.AddRoundUpdateTour(user_num , Status[4] ,tour_num );
+
+			}else {
+				int round_num = Integer.parseInt(Status[2]);
+				int hole_num = Integer.parseInt(Status[3]);
+
+				RoundsDAO rDAO = new RoundsDAO();
+				result = rDAO.AddHole(user_num ,round_num ,hole_num);
+				//ラウンドテーブル挿入 RoundsDAO.AddHole()
+			}
+
+			if(result) {
+
+				sDAO = new StatusDAO();
+				Status = sDAO.getStatus(user_num);
+
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
+				dispatcher.forward(request,response);
+				return;
+			}
+
 	}
 
-}
+}}

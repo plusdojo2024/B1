@@ -11,18 +11,18 @@
 <link rel="stylesheet" href="/B1/css/cooklist.css">
 </head>
 <header class="header">
-  <div class="logo"><img src="/B1/img/logo.png"></div>
+  <div class="logo"><img   src  ="/B1/img/logo.png"></div>
   <button class="hamburger-menu" id="js-hamburger-menu">
     <span class="hamburger-menu__bar"></span>
     <span class="hamburger-menu__bar"></span>
     <span class="hamburger-menu__bar"></span>
   </button>
-  <nav class="navigation">
+  <nav class="navigation"style="color:red">
     <ul class="navigation__list">
-      <li class="navigation__list-item"><a href="#" class="navigation__link">プレイ</a></li>
+      <li class="navigation__list-item"><a href="#" class="navigation__link" >プレイ </a></li>
       <li class="navigation__list-item"><a href="#" class="navigation__link">食材一覧</a></li>
       <li class="navigation__list-item"><a href="#" class="navigation__link">料理一覧</a></li>
-      <li class="navigation__list-item"><a href="#" class="navigation__link">スコア</a></li>
+      <li class="navigation__list-item"><a href="/B1/ScoreServlet" class="navigation__link">スコア</a></li>
     </ul>
   </nav>
 </header>
@@ -81,7 +81,7 @@ $(function () {
 
 
 <footer>
-	<a href="/B1/HyousyouServlet" class="btn">表彰一覧へ</a>
+	<a href="/B1/CookListServlet?cooks=favorite" class="btn">表彰一覧へ</a>
 
 </footer>
 

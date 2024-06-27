@@ -13,6 +13,59 @@
     background-image:url("${pageContext.request.contextPath}/img/scorebg.png");
     background-size:5%;
     }
+    .btn {
+	font-size:50px;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	width: 500px;
+	height:75px;
+	margin: auto;
+	padding: 1rem 4rem;
+	font-weight: bold;
+	border: 2px solid #45A049;
+	background: #0000FF;
+	color: #fff;
+	border-radius: 100vh;
+	transition: 0.5s;
+	}
+	.btn:hover{
+	color: #45A049;
+	background: #fff;
+	}
+	.dialog-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+
+	.dialog-box {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1010;
+        overflow-y: auto; /* 縦方向のスクロールを可能にする */
+        max-height: 80%; /* ダイアログの最大高さを設定 */
+    }
+	textarea {
+  		resize: none;
+  		width:45%;
+ 		height:100px;
+  	}
+  	.dia{
+		background-color:#FFFF88;
+    	background-size:30%;
+  	}
 </style>
 <head>
 <meta charset="UTF-8">
@@ -172,7 +225,7 @@
     </tr>
     <tr>
     <td><c:out value="${pastList[12].cook_date}"/></td>
-    <td><a href="">13H</a></td>
+    <td><a href="#" id="open-dialog">13H</a></td>
     <td><c:out value="${pastList[12].course_name}"/></td>
     <td><c:out value="${pastList[12].par}"/></td>
     <td><p>${H13}</p></td>
@@ -237,7 +290,122 @@
 	</table>
 	</details></th></tr></table>
 	</c:forEach>
+	<div class="dialog-overlay" id="dialog-overlay"><div class="dialog-box">
+		<div class="dia" align=center>
+		2024年6月18日 第2回ツアー 2R13H par5<br>
+		<h4>スコア -1 バーディ</h4>
+		<img src="${pageContext.request.contextPath}/img/yasaita.jpg" width=50% height=50%><br>
+		<h4>豚野菜味噌炒め</h4>
+		▼スコア詳細
+		<table align=center>
+		<tr><td>調理時間</td>
+		<td><c:out value="${scoreList[0].total_score}"/></td>
+		<td>±0</td></tr>
+		<tr><td>使用食材</td>
+		<td>豚肉</td>
+		<td>±0</td></tr>
+		<tr><td></td>
+		<td>キャベツ</td>
+		<td>±0</td></tr>
+		<tr><td></td>
+		<td>もやし</td>
+		<td>±0</td></tr>
+		<tr><td></td>
+		<td>人参</td>
+		<td>+1</td></tr>
+		<tr><td></td>
+		<td>ピーマン</td>
+		<td>+1</td></tr>
+		<tr><td></td>
+		<td>きくらげ</td>
+		<td>+1</td></tr>
+		<tr><td>使用調味料</td>
+		<td>味噌</td>
+		<td>±0</td></tr>
+		<tr><td></td>
+		<td>砂糖</td>
+		<td>±0</td></tr>
+		<tr><td>調理満足度</td>
+		<td>☆☆☆</td>
+		<td>±0</td></tr>
+		<tr><td>味満足度</td>
+		<td>☆☆☆</td>
+		<td>±0</td></tr>
+		<tr><td>規定打数</td>
+		<td>par5</td>
+		<td>-4</td></tr>
+		<tr><td>------------</td>
+		<td>----------</td>
+		<td>-----</td></tr>
+		<tr><td>総合評価</td>
+		<td></td>
+		<td>-1</td></tr>
+		</table><br><br>
+		<textarea readonly>コメント</textarea><br>
+		</div>
+    	<p><a href="#" id="close-dialog">閉じる</a></p>
+  	</div></div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  // ダイアログを開くリンクの処理
+  document.getElementById('open-dialog').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('dialog-overlay').style.display = 'block';
+  });
 
+  // ダイアログを閉じるリンクの処理
+  document.getElementById('close-dialog').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('dialog-overlay').style.display = 'none';
+  });
+
+  // エスケープキーでダイアログを閉じる処理
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      document.getElementById('dialog-overlay').style.display = 'none';
+    }
+  });
+</script>
+<script>
+    // JSPからH1からH18の値を取得（すでに定義されていると仮定）
+    var tValues = [
+        ${T1},${T2},${T3},${T4},${T5},${T6},${T7},${T8},${T9},${T10}
+    ];
+
+    // Chart.jsを使って折れ線グラフを描画する
+    var ctx = document.getElementById('lineChart').getContext('2d');
+    var lineChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['T1','T2','T3','T4','T5','T6','T7','T8','T9','T10'],
+            datasets: [{
+                label: 'スコア',
+                data: tValues,
+                borderColor: 'rgba(75, 192, 192, 1)', // 必要に応じて色をカスタマイズ
+                borderWidth: 2,
+                fill: false
+            }]
+        },
+        options: {responsive: true,
+            plugins: {legend:
+            	{display: false}
+            },
+            scales:{
+            	x:{
+            		title:{
+            			display: true,
+                     	text: 'ツアー'
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'スコア'
+                    }
+                }
+            }
+        }
+    });
+</script>
 </html>

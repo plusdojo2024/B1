@@ -42,19 +42,32 @@ public class StatusCheckServlet extends HttpServlet {
 		}else {
 		//ログイン成功時の処理
 
+
+
 			//セッションスコープ内のuser_numを取り出す
 			int user_num = Integer.parseInt((String)session.getAttribute("user_num"));
 
+
+
 			//サーブレットについたタグを読み取る
 			String page = request.getParameter("page");
-			if( page.equals("Cooks") || page.equals("Foods")) {
+			if( page.equals("Cooks") || page.equals("Foods") || page.equals("Score")) {
 			//料理一覧と食材一覧はプレイステータス関係なし
 
 				if( page.equals("Cooks")) {
-					RequestDispatcher dispatcher = request.getRequestDispatcher("ShowDishList");
+					RequestDispatcher dispatcher = request.getRequestDispatcher("CookListServlet?cooks=list");
 					dispatcher.forward(request,response);
-				}else{
+					return;
+				}else if(page.equals("Foods")){
 					RequestDispatcher dispatcher = request.getRequestDispatcher("FoodSeasListServlet");
+					dispatcher.forward(request,response);
+					return;
+				}else if(page.equals("Score")) {
+					RequestDispatcher dispatcher = request.getRequestDispatcher("ScoreServlet?score=current");
+					dispatcher.forward(request,response);
+					return;
+				}else {
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
 					dispatcher.forward(request,response);
 				}
 
@@ -70,12 +83,12 @@ public class StatusCheckServlet extends HttpServlet {
 						//プレイ選択時
 						if(Status[5].equals("調理前")) {
 
-							RequestDispatcher dispatcher = request.getRequestDispatcher("WorldTourPlayServlet");
+							RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/worldtour.jsp");
 							dispatcher.forward(request,response);
 
 						}else {
 							// エラーメッセージをリクエストスコープに格納する
-							String[] ErrorMessage = {"プレイだめ","だめ"};
+							String[] ErrorMessage = {"プレイできません","食材の登録または本登録を済ましてください"};
 							request.setAttribute("ErrorMessage",ErrorMessage );
 
 							RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/main.jsp");
@@ -84,10 +97,13 @@ public class StatusCheckServlet extends HttpServlet {
 
 					}else {
 						//本登録選択時
+
 						if(Status[5] .equals("仮登録")) {
 							RequestDispatcher dispatcher = request.getRequestDispatcher("DefinitiveRegistrationServlet");
 							dispatcher.forward(request,response);
+
 						}else {
+
 							// エラーメッセージをリクエストスコープに格納する
 							String[] ErrorMessage = {"本登録だめ","だめ"};
 							request.setAttribute("ErrorMessage",ErrorMessage );

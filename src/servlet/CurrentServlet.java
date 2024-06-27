@@ -21,6 +21,9 @@ public class CurrentServlet extends HttpServlet {
     	// 検索処理を行う
     	ScoreDAO sDao = new ScoreDAO();
     	// ここを改造しました
+
+
+
     	int scores_num=1;
     	List<NowTourScore> scoreList = sDao.select(scores_num);
 

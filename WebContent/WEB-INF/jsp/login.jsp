@@ -27,14 +27,18 @@
 				<input 	type="text"
 						name="user_name"
 						placeholder="ユーザ名"
-						class="TextForm"><br>
+						class="TextForm"
+						required
+						><br>
 			</div>
 
 			<div>
-				<input 	type="text"
+				<input 	type="password"
 						name="user_pass"
 						placeholder="パスワード"
-						class="TextForm" ><br>
+						class="TextForm"
+						required
+						><br>
 			</div>
 
 			<div class="SubmitButton">
