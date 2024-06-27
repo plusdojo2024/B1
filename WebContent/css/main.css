@@ -43,6 +43,10 @@ body, html {
     justify-content: center;
     align-items: center;
     background-color: #f0f0f0; /* 背景色の設定 */
+	background-image: url('/path/to/your/image.jpg'); /* 背景画像のパス */
+    background-size: cover; /* 画像を全体に表示 */
+    background-repeat: no-repeat; /* 画像を繰り返さない */
+    background-position: center; /* 画像を中央に配置 */
 }
 
 .container {
